@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (4.9.1)
+  - AlamofireObjectMapper (5.2.1):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
+  - ObjectMapper (3.5.3)
+  - SwiftEntryKit (2.0.0)
+  - SwiftyJSON (4.3.0)
+  - VNavigator (0.4.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireObjectMapper (~> 5.2)
+  - ObjectMapper (~> 3.5)
+  - SwiftEntryKit (= 2.0.0)
+  - SwiftyJSON (~> 4.0)
+  - VNavigator
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireObjectMapper
+    - ObjectMapper
+    - SwiftEntryKit
+    - SwiftyJSON
+    - VNavigator
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
+  SwiftEntryKit: 61b5fa36f34a97dd8013e48a7345bc4c4720be9a
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  VNavigator: ee92f0c92e5a997f4cda8796e910fe6c5488c14f
+
+PODFILE CHECKSUM: b0c0a0245848040bbef768abfde80f88ff35775d
+
+COCOAPODS: 1.11.3
