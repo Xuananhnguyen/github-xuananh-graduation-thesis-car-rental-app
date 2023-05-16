@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DD1E351A11F934092E16761E /* Pods_Car_Rental_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7846643308F87A1C46D41B86 /* Pods_Car_Rental_App.framework */; };
-		F90D9F0329ABE81600DED210 /* IBM_Plex_Sans_KR in Resources */ = {isa = PBXBuildFile; fileRef = F90D9EFF29ABE81500DED210 /* IBM_Plex_Sans_KR */; };
-		F90D9F0429ABE81600DED210 /* Red_Hat_Text in Resources */ = {isa = PBXBuildFile; fileRef = F90D9F0029ABE81500DED210 /* Red_Hat_Text */; };
-		F90D9F0529ABE81600DED210 /* Roboto in Resources */ = {isa = PBXBuildFile; fileRef = F90D9F0129ABE81500DED210 /* Roboto */; };
-		F90D9F0629ABE81600DED210 /* Inconsolata in Resources */ = {isa = PBXBuildFile; fileRef = F90D9F0229ABE81600DED210 /* Inconsolata */; };
 		F927225629A7DBFA0033066C /* HandleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927225529A7DBFA0033066C /* HandleResponse.swift */; };
 		F927225829A9F1250033066C /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927225729A9F1250033066C /* NetworkClient.swift */; };
 		F94B14252932943900AC41A1 /* View+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94B14242932943900AC41A1 /* View+App.swift */; };
@@ -74,10 +70,6 @@
 		37DBFAEC2236E9F5BF693046 /* Pods-Car Rental App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Car Rental App.debug.xcconfig"; path = "Target Support Files/Pods-Car Rental App/Pods-Car Rental App.debug.xcconfig"; sourceTree = "<group>"; };
 		57BACBFF04BA743502642835 /* Pods-Car Rental App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Car Rental App.release.xcconfig"; path = "Target Support Files/Pods-Car Rental App/Pods-Car Rental App.release.xcconfig"; sourceTree = "<group>"; };
 		7846643308F87A1C46D41B86 /* Pods_Car_Rental_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Car_Rental_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F90D9EFF29ABE81500DED210 /* IBM_Plex_Sans_KR */ = {isa = PBXFileReference; lastKnownFileType = folder; name = IBM_Plex_Sans_KR; path = ../../../../../../../Downloads/IBM_Plex_Sans_KR; sourceTree = "<group>"; };
-		F90D9F0029ABE81500DED210 /* Red_Hat_Text */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Red_Hat_Text; path = ../../../../../../../Downloads/Red_Hat_Text; sourceTree = "<group>"; };
-		F90D9F0129ABE81500DED210 /* Roboto */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Roboto; path = ../../../../../../../Downloads/Roboto; sourceTree = "<group>"; };
-		F90D9F0229ABE81600DED210 /* Inconsolata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Inconsolata; path = ../../../../../../../Downloads/Inconsolata; sourceTree = "<group>"; };
 		F927225529A7DBFA0033066C /* HandleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleResponse.swift; sourceTree = "<group>"; };
 		F927225729A9F1250033066C /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		F94B14242932943900AC41A1 /* View+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+App.swift"; sourceTree = "<group>"; };
@@ -169,24 +161,12 @@
 		F90D9EFD29ABE7B100DED210 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
-				F90D9EFE29ABE7DA00DED210 /* Fonts */,
 				F94B14242932943900AC41A1 /* View+App.swift */,
 				F9F9601D2923ED0C00919CF9 /* TextStyle.swift */,
 				F9F9600D2921585400919CF9 /* ImageName.swift */,
 				F9F9600F29215F6000919CF9 /* ColorName.swift */,
 			);
 			path = SupportFiles;
-			sourceTree = "<group>";
-		};
-		F90D9EFE29ABE7DA00DED210 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				F90D9EFF29ABE81500DED210 /* IBM_Plex_Sans_KR */,
-				F90D9F0229ABE81600DED210 /* Inconsolata */,
-				F90D9F0029ABE81500DED210 /* Red_Hat_Text */,
-				F90D9F0129ABE81500DED210 /* Roboto */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F927225429A7DBCA0033066C /* Network */ = {
@@ -575,12 +555,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F90D9F0629ABE81600DED210 /* Inconsolata in Resources */,
-				F90D9F0529ABE81600DED210 /* Roboto in Resources */,
 				F9AB78DD291967E3005F4FF2 /* Preview Assets.xcassets in Resources */,
-				F90D9F0329ABE81600DED210 /* IBM_Plex_Sans_KR in Resources */,
 				F9AB78DA291967E3005F4FF2 /* Assets.xcassets in Resources */,
-				F90D9F0429ABE81600DED210 /* Red_Hat_Text in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
