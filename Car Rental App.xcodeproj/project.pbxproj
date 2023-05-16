@@ -209,13 +209,6 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		F927225C29ABC8920033066C /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
 		F94B14282933173600AC41A1 /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,13 +314,6 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		F9770A8129BC3A7900596443 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
 		F9770A8429BE253200596443 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,10 +403,8 @@
 				F9770A9929BE38B700596443 /* Extension */,
 				F9770A5329B474A200596443 /* App */,
 				F9770A5D29B476C300596443 /* Core */,
-				F927225C29ABC8920033066C /* UIKit */,
 				F927225B29AB90050033066C /* Common */,
 				F927225429A7DBCA0033066C /* Network */,
-				F9770A8129BC3A7900596443 /* Base */,
 				F94B14282933173600AC41A1 /* NavigationBar */,
 				F94B14372936723B00AC41A1 /* Cart */,
 				F9522864292A910500AFF79B /* Profile */,
