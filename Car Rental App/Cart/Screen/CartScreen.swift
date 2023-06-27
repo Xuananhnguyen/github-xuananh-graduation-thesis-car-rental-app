@@ -17,7 +17,7 @@ struct CartScreen: AppNavigator {
             VStack(alignment: .leading, spacing: 0){
                 
                 Text("My Chart")
-                    .textStyle(.Roboto_Regular, size: 20)
+                    .textStyle(.ROBOTO_REGULAR, size: 20)
                     .foregroundColor(Color(BLACK_000000))
                     .padding(.vertical, 25)
                     .frame(maxWidth: .infinity, alignment: .leading)

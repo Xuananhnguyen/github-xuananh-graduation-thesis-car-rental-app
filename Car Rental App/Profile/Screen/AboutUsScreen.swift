@@ -15,20 +15,20 @@ struct AboutUsScreen: AppNavigator {
         BaseNavigationView(builderContent: {
             VStack(spacing: 0) {
                 Text("About Us")
-                    .textStyle(.Roboto, size: 24)
+                    .textStyle(.ROBOTO_REGULAR, size: 24)
                     .foregroundColor(Color(BLACK_000000))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.vertical, 25)
                 
                 
                 Text("This is a product of a student at the Hanoi University of Mining and Geology")
-                    .textStyle(.Roboto, size: 19)
+                    .textStyle(.ROBOTO_REGULAR, size: 19)
                     .foregroundColor(Color(GRAY_6B6B6B))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.bottom, 50)
                 
                 Text("Reach Us")
-                    .textStyle(.Roboto, size: 16)
+                    .textStyle(.ROBOTO_REGULAR, size: 16)
                     .foregroundColor(Color(BLACK_000000))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.bottom, 20)

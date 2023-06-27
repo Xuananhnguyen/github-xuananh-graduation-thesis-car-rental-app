@@ -8,8 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		DD1E351A11F934092E16761E /* Pods_Car_Rental_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7846643308F87A1C46D41B86 /* Pods_Car_Rental_App.framework */; };
-		F927225629A7DBFA0033066C /* HandleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927225529A7DBFA0033066C /* HandleResponse.swift */; };
-		F927225829A9F1250033066C /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927225729A9F1250033066C /* NetworkClient.swift */; };
+		F932B43E2A4843AC00E6FDFB /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F932B43B2A4843AC00E6FDFB /* Roboto-Regular.ttf */; };
+		F932B43F2A4843AC00E6FDFB /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F932B43C2A4843AC00E6FDFB /* Roboto-Medium.ttf */; };
+		F932B4402A4843AC00E6FDFB /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F932B43D2A4843AC00E6FDFB /* Roboto-Bold.ttf */; };
+		F932B4442A48457300E6FDFB /* PTSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F932B4422A48457300E6FDFB /* PTSans-Regular.ttf */; };
+		F932B4452A48457300E6FDFB /* PTSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F932B4432A48457300E6FDFB /* PTSans-Bold.ttf */; };
+		F932B44D2A48464C00E6FDFB /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F932B4492A48464B00E6FDFB /* Inter-Medium.ttf */; };
+		F932B44E2A48464C00E6FDFB /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F932B44A2A48464C00E6FDFB /* Inter-Regular.ttf */; };
+		F932B44F2A48464C00E6FDFB /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F932B44B2A48464C00E6FDFB /* Inter-Bold.ttf */; };
+		F932B4532A4848D100E6FDFB /* Imprima-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F932B4522A4848D100E6FDFB /* Imprima-Regular.ttf */; };
+		F932B4562A484DB600E6FDFB /* GhostButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932B4552A484DB600E6FDFB /* GhostButton.swift */; };
+		F932B4582A489DA600E6FDFB /* SettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932B4572A489DA600E6FDFB /* SettingScreen.swift */; };
 		F94B14252932943900AC41A1 /* View+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94B14242932943900AC41A1 /* View+App.swift */; };
 		F94B14272933138600AC41A1 /* MyProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94B14262933138600AC41A1 /* MyProfileScreen.swift */; };
 		F94B143A2936734200AC41A1 /* CartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94B14392936734200AC41A1 /* CartScreen.swift */; };
@@ -21,7 +30,6 @@
 		F9522870292AA2F900AFF79B /* ButtonProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952286F292AA2F900AFF79B /* ButtonProfile.swift */; };
 		F97294152927E2C200E89C68 /* ViewMoreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97294142927E2C200E89C68 /* ViewMoreScreen.swift */; };
 		F97294172927E2E200E89C68 /* CarDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97294162927E2E200E89C68 /* CarDetailScreen.swift */; };
-		F9770A5529B474C100596443 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9770A5429B474C100596443 /* AppDelegate.swift */; };
 		F9770A5729B474FA00596443 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9770A5629B474FA00596443 /* LoadingViewModel.swift */; };
 		F9770A5C29B4762500596443 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9770A5B29B4762500596443 /* LoadingView.swift */; };
 		F9770A5F29B476DA00596443 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9770A5E29B476DA00596443 /* Extension.swift */; };
@@ -53,6 +61,8 @@
 		F9AB78E9291AAFCC005F4FF2 /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB78E8291AAFCC005F4FF2 /* SignInScreen.swift */; };
 		F9AB78EC291AB9CF005F4FF2 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB78EB291AB9CF005F4FF2 /* TextFieldView.swift */; };
 		F9AB78EE291AC680005F4FF2 /* SecureTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB78ED291AC680005F4FF2 /* SecureTextFieldView.swift */; };
+		F9D37FBA2A40CBB1002D6817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9D37FB92A40CBB1002D6817 /* GoogleService-Info.plist */; };
+		F9D37FBC2A40D0B5002D6817 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D37FBB2A40D0B5002D6817 /* View+Extension.swift */; };
 		F9F960082921492B00919CF9 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F960072921492B00919CF9 /* SignUpScreen.swift */; };
 		F9F9600B292156DE00919CF9 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F9600A292156DE00919CF9 /* HomeScreen.swift */; };
 		F9F9600E2921585400919CF9 /* ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F9600D2921585400919CF9 /* ImageName.swift */; };
@@ -70,8 +80,18 @@
 		37DBFAEC2236E9F5BF693046 /* Pods-Car Rental App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Car Rental App.debug.xcconfig"; path = "Target Support Files/Pods-Car Rental App/Pods-Car Rental App.debug.xcconfig"; sourceTree = "<group>"; };
 		57BACBFF04BA743502642835 /* Pods-Car Rental App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Car Rental App.release.xcconfig"; path = "Target Support Files/Pods-Car Rental App/Pods-Car Rental App.release.xcconfig"; sourceTree = "<group>"; };
 		7846643308F87A1C46D41B86 /* Pods_Car_Rental_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Car_Rental_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F927225529A7DBFA0033066C /* HandleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleResponse.swift; sourceTree = "<group>"; };
-		F927225729A9F1250033066C /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		F932B4392A4842E200E6FDFB /* Car-Rental-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Car-Rental-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F932B43B2A4843AC00E6FDFB /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		F932B43C2A4843AC00E6FDFB /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		F932B43D2A4843AC00E6FDFB /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		F932B4422A48457300E6FDFB /* PTSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Regular.ttf"; sourceTree = "<group>"; };
+		F932B4432A48457300E6FDFB /* PTSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Bold.ttf"; sourceTree = "<group>"; };
+		F932B4492A48464B00E6FDFB /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		F932B44A2A48464C00E6FDFB /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		F932B44B2A48464C00E6FDFB /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		F932B4522A4848D100E6FDFB /* Imprima-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Imprima-Regular.ttf"; sourceTree = "<group>"; };
+		F932B4552A484DB600E6FDFB /* GhostButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostButton.swift; sourceTree = "<group>"; };
+		F932B4572A489DA600E6FDFB /* SettingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreen.swift; sourceTree = "<group>"; };
 		F94B14242932943900AC41A1 /* View+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+App.swift"; sourceTree = "<group>"; };
 		F94B14262933138600AC41A1 /* MyProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileScreen.swift; sourceTree = "<group>"; };
 		F94B14392936734200AC41A1 /* CartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartScreen.swift; sourceTree = "<group>"; };
@@ -83,7 +103,6 @@
 		F952286F292AA2F900AFF79B /* ButtonProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonProfile.swift; sourceTree = "<group>"; };
 		F97294142927E2C200E89C68 /* ViewMoreScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMoreScreen.swift; sourceTree = "<group>"; };
 		F97294162927E2E200E89C68 /* CarDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailScreen.swift; sourceTree = "<group>"; };
-		F9770A5429B474C100596443 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9770A5629B474FA00596443 /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
 		F9770A5B29B4762500596443 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F9770A5E29B476DA00596443 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -116,6 +135,8 @@
 		F9AB78E8291AAFCC005F4FF2 /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreen.swift; sourceTree = "<group>"; };
 		F9AB78EB291AB9CF005F4FF2 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		F9AB78ED291AC680005F4FF2 /* SecureTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextFieldView.swift; sourceTree = "<group>"; };
+		F9D37FB92A40CBB1002D6817 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F9D37FBB2A40D0B5002D6817 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		F9F960072921492B00919CF9 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
 		F9F9600A292156DE00919CF9 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		F9F9600D2921585400919CF9 /* ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageName.swift; sourceTree = "<group>"; };
@@ -169,24 +190,88 @@
 			path = SupportFiles;
 			sourceTree = "<group>";
 		};
-		F927225429A7DBCA0033066C /* Network */ = {
+		F927225429A7DBCA0033066C /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				F927225529A7DBFA0033066C /* HandleResponse.swift */,
-				F927225729A9F1250033066C /* NetworkClient.swift */,
 			);
-			path = Network;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		F927225B29AB90050033066C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F932B4542A484DA300E6FDFB /* Button */,
 				F9770A9329BE361500596443 /* SwiftUI */,
 				F9770A8729BE2DD500596443 /* Constants */,
 				F9770A8429BE253200596443 /* Extension */,
 				F9770A5829B4755A00596443 /* Indicator */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		F932B43A2A48431B00E6FDFB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F932B4512A4848C600E6FDFB /* Imprima */,
+				F932B4482A48463E00E6FDFB /* Inter */,
+				F932B4472A48462A00E6FDFB /* PTSans */,
+				F932B4462A48461600E6FDFB /* Roboto */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F932B4412A4843F100E6FDFB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F9AB78D9291967E3005F4FF2 /* Assets.xcassets */,
+				F932B43A2A48431B00E6FDFB /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F932B4462A48461600E6FDFB /* Roboto */ = {
+			isa = PBXGroup;
+			children = (
+				F932B43B2A4843AC00E6FDFB /* Roboto-Regular.ttf */,
+				F932B43C2A4843AC00E6FDFB /* Roboto-Medium.ttf */,
+				F932B43D2A4843AC00E6FDFB /* Roboto-Bold.ttf */,
+			);
+			path = Roboto;
+			sourceTree = "<group>";
+		};
+		F932B4472A48462A00E6FDFB /* PTSans */ = {
+			isa = PBXGroup;
+			children = (
+				F932B4422A48457300E6FDFB /* PTSans-Regular.ttf */,
+				F932B4432A48457300E6FDFB /* PTSans-Bold.ttf */,
+			);
+			path = PTSans;
+			sourceTree = "<group>";
+		};
+		F932B4482A48463E00E6FDFB /* Inter */ = {
+			isa = PBXGroup;
+			children = (
+				F932B44B2A48464C00E6FDFB /* Inter-Bold.ttf */,
+				F932B4492A48464B00E6FDFB /* Inter-Medium.ttf */,
+				F932B44A2A48464C00E6FDFB /* Inter-Regular.ttf */,
+			);
+			path = Inter;
+			sourceTree = "<group>";
+		};
+		F932B4512A4848C600E6FDFB /* Imprima */ = {
+			isa = PBXGroup;
+			children = (
+				F932B4522A4848D100E6FDFB /* Imprima-Regular.ttf */,
+			);
+			path = Imprima;
+			sourceTree = "<group>";
+		};
+		F932B4542A484DA300E6FDFB /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				F932B4552A484DB600E6FDFB /* GhostButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		F94B14282933173600AC41A1 /* NavigationBar */ = {
@@ -245,6 +330,7 @@
 				F9522867292A93BB00AFF79B /* ProfileScreen.swift */,
 				F94B14262933138600AC41A1 /* MyProfileScreen.swift */,
 				F9A89617293920B4005BB896 /* AboutUsScreen.swift */,
+				F932B4572A489DA600E6FDFB /* SettingScreen.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -268,7 +354,6 @@
 		F9770A5329B474A200596443 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				F9770A5429B474C100596443 /* AppDelegate.swift */,
 				F9770A5629B474FA00596443 /* LoadingViewModel.swift */,
 				F9770A8C29BE317700596443 /* AppDataManager.swift */,
 			);
@@ -339,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				F9770A9A29BE38D100596443 /* Double+Extension.swift */,
+				F9D37FBB2A40D0B5002D6817 /* View+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -380,11 +466,13 @@
 		F9AB78D4291967E2005F4FF2 /* Car Rental App */ = {
 			isa = PBXGroup;
 			children = (
+				F932B4392A4842E200E6FDFB /* Car-Rental-App-Info.plist */,
+				F9D37FB92A40CBB1002D6817 /* GoogleService-Info.plist */,
 				F9770A9929BE38B700596443 /* Extension */,
 				F9770A5329B474A200596443 /* App */,
 				F9770A5D29B476C300596443 /* Core */,
 				F927225B29AB90050033066C /* Common */,
-				F927225429A7DBCA0033066C /* Network */,
+				F927225429A7DBCA0033066C /* Networking */,
 				F94B14282933173600AC41A1 /* NavigationBar */,
 				F94B14372936723B00AC41A1 /* Cart */,
 				F9522864292A910500AFF79B /* Profile */,
@@ -393,7 +481,7 @@
 				F9F960142922977400919CF9 /* MockData */,
 				F9AB78D5291967E2005F4FF2 /* Car_Rental_AppApp.swift */,
 				F9AB78D7291967E2005F4FF2 /* ContentView.swift */,
-				F9AB78D9291967E3005F4FF2 /* Assets.xcassets */,
+				F932B4412A4843F100E6FDFB /* Resources */,
 				F9AB78DB291967E3005F4FF2 /* Preview Content */,
 				F952286D292A9FD600AFF79B /* Enum.swift */,
 				F90D9EFD29ABE7B100DED210 /* SupportFiles */,
@@ -513,6 +601,8 @@
 			dependencies = (
 			);
 			name = "Car Rental App";
+			packageProductDependencies = (
+			);
 			productName = "Car Rental App";
 			productReference = F9AB78D2291967E2005F4FF2 /* Car Rental App.app */;
 			productType = "com.apple.product-type.application";
@@ -541,6 +631,8 @@
 				Base,
 			);
 			mainGroup = F9AB78C9291967E2005F4FF2;
+			packageReferences = (
+			);
 			productRefGroup = F9AB78D3291967E2005F4FF2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -555,8 +647,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F932B43F2A4843AC00E6FDFB /* Roboto-Medium.ttf in Resources */,
+				F932B4532A4848D100E6FDFB /* Imprima-Regular.ttf in Resources */,
 				F9AB78DD291967E3005F4FF2 /* Preview Assets.xcassets in Resources */,
+				F932B44F2A48464C00E6FDFB /* Inter-Bold.ttf in Resources */,
+				F932B4452A48457300E6FDFB /* PTSans-Bold.ttf in Resources */,
+				F932B4402A4843AC00E6FDFB /* Roboto-Bold.ttf in Resources */,
 				F9AB78DA291967E3005F4FF2 /* Assets.xcassets in Resources */,
+				F932B43E2A4843AC00E6FDFB /* Roboto-Regular.ttf in Resources */,
+				F932B44E2A48464C00E6FDFB /* Inter-Regular.ttf in Resources */,
+				F9D37FBA2A40CBB1002D6817 /* GoogleService-Info.plist in Resources */,
+				F932B4442A48457300E6FDFB /* PTSans-Regular.ttf in Resources */,
+				F932B44D2A48464C00E6FDFB /* Inter-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,8 +721,6 @@
 				F9F9601029215F6000919CF9 /* ColorName.swift in Sources */,
 				F99CB8EA2940FBA600B6E38A /* BackHeader.swift in Sources */,
 				F99CB8F22945D42100B6E38A /* CartViewModel.swift in Sources */,
-				F9770A5529B474C100596443 /* AppDelegate.swift in Sources */,
-				F927225829A9F1250033066C /* NetworkClient.swift in Sources */,
 				F9F960222924043400919CF9 /* CarModel.swift in Sources */,
 				F9F960182922987600919CF9 /* TypeOfCarModel.swift in Sources */,
 				F9522863292A861500AFF79B /* SearchView.swift in Sources */,
@@ -633,10 +733,11 @@
 				F9F960202924042200919CF9 /* CarBoxView.swift in Sources */,
 				F99CB8F62946325C00B6E38A /* TextFieldCustom.swift in Sources */,
 				F9AB78D8291967E2005F4FF2 /* ContentView.swift in Sources */,
+				F932B4582A489DA600E6FDFB /* SettingScreen.swift in Sources */,
 				F9770A8B29BE305800596443 /* PopupHandle.swift in Sources */,
+				F9D37FBC2A40D0B5002D6817 /* View+Extension.swift in Sources */,
 				F94B143C2937D2BF00AC41A1 /* CartItem.swift in Sources */,
 				F9AB78EC291AB9CF005F4FF2 /* TextFieldView.swift in Sources */,
-				F927225629A7DBFA0033066C /* HandleResponse.swift in Sources */,
 				F94B14272933138600AC41A1 /* MyProfileScreen.swift in Sources */,
 				F9F960082921492B00919CF9 /* SignUpScreen.swift in Sources */,
 				F9F9600E2921585400919CF9 /* ImageName.swift in Sources */,
@@ -661,6 +762,7 @@
 				F9AB78EE291AC680005F4FF2 /* SecureTextFieldView.swift in Sources */,
 				F94B143A2936734200AC41A1 /* CartScreen.swift in Sources */,
 				F9F9601A292298EC00919CF9 /* HomeDataMock.swift in Sources */,
+				F932B4562A484DB600E6FDFB /* GhostButton.swift in Sources */,
 				F97294172927E2E200E89C68 /* CarDetailScreen.swift in Sources */,
 				F9770A8329BC3ABA00596443 /* ForgotPassword.swift in Sources */,
 			);
@@ -795,6 +897,7 @@
 				DEVELOPMENT_TEAM = 57U93JGY95;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Car-Rental-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = TIIRA;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -831,6 +934,7 @@
 				DEVELOPMENT_TEAM = 57U93JGY95;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Car-Rental-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = TIIRA;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

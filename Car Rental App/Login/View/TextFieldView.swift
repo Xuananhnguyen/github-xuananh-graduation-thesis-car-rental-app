@@ -11,7 +11,7 @@ struct TextFieldView: View {
     @State var title: String = ""
     @Binding var inputContent: String
     var fontSizeTitle: CGFloat = 16
-    var fontSytle: TextStyle = .Roboto
+    var fontSytle: TextStyle = .ROBOTO_MEDIUM
     var icon: String = ""
     var lineColor: String = GRAY_E5E5E5
     

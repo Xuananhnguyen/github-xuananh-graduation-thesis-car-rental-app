@@ -26,31 +26,31 @@ struct PaymentScreen: AppNavigator {
                         }
                     
                     Text("Thank You")
-                        .textStyle(.Roboto, size: 24)
+                        .textStyle(.ROBOTO_MEDIUM, size: 24)
                         .foregroundColor(Color(GREEN_6AC649))
                         .padding(.top, 50)
                         .padding(.bottom, 19)
                     
                     HStack(spacing: 0){
                         Text("payment made".uppercased())
-                            .textStyle(.PT_Sans, size: 16)
+                            .textStyle(.PT_SANS_REGULAR, size: 16)
                             .foregroundColor(Color(GREEN_2B4C59))
                         Spacer()
                         
                         Text("$\(price)")
-                            .textStyle(.PT_Sans, size: 17)
+                            .textStyle(.PT_SANS_REGULAR, size: 17)
                             .foregroundColor(Color(GREEN_6AC649))
                     }
                     .padding(.bottom, 39)
                     
                     Text("Well done Your payment is Successfuly  done and your car is on its way.")
-                        .textStyle(.Roboto_Regular, size: 18)
+                        .textStyle(.ROBOTO_REGULAR, size: 18)
                         .foregroundColor(Color(GRAY_676767))
                         .padding(.bottom, 95)
                     Spacer()
                     Button(action: {}, label: {
                         Text("Track")
-                            .textStyle(.Roboto, size: 20)
+                            .textStyle(.ROBOTO_REGULAR, size: 20)
                             .foregroundColor(Color(GREEN_2B4C59))
                             .frame(maxWidth: .infinity)
                             .frame(height: 52)
@@ -65,7 +65,7 @@ struct PaymentScreen: AppNavigator {
                         navigator.popToView(HomeScreen.self)
                     }, label: {
                         Text("Go Back")
-                            .textStyle(.Roboto, size: 20)
+                            .textStyle(.ROBOTO_BOLD, size: 20)
                             .foregroundColor(Color(WHITE_FFFFFF))
                             .frame(maxWidth: .infinity)
                             .frame(height: 52)

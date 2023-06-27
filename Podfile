@@ -10,8 +10,10 @@ target 'Car Rental App' do
 
 pod 'VNavigator'
 pod 'Alamofire'
-pod 'ObjectMapper', '~> 3.5'
-pod 'AlamofireObjectMapper', '~> 5.2'
 pod 'SwiftEntryKit', '2.0.0'
 pod 'SwiftyJSON', '~> 4.0'
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'Firebase/Database'
+
 end

@@ -24,10 +24,10 @@ struct CartItem: View {
                 
                 VStack(alignment: .leading, spacing: 6){
                     Text(nameCar)
-                        .textStyle(.PT_Sans, size: 11)
+                        .textStyle(.PT_SANS_REGULAR, size: 11)
                         .foregroundColor(Color(GREEN_2B4C59))
                     Text("$ \(price)")
-                        .textStyle(.PT_Sans, size: 11)
+                        .textStyle(.PT_SANS_REGULAR, size: 11)
                         .foregroundColor(Color(RED_C64949))
                     qualityView
                 }
@@ -54,7 +54,7 @@ extension CartItem {
             })
             
             Text("\(quality)")
-                .textStyle(.Roboto, size: 12)
+                .textStyle(.ROBOTO_MEDIUM, size: 12)
                 .foregroundColor(Color(GREEN_2B4C59))
                 .padding(.horizontal, 10)
             
@@ -74,7 +74,7 @@ extension CartItem {
                 onPressDelete?()
             }, label: {
                 Text("Delete")
-                    .textStyle(.PT_Sans, size: 10)
+                    .textStyle(.PT_SANS_REGULAR, size: 10)
                     .foregroundColor(Color(BROWN_988080))
                     .frame(width: 44, height: 11, alignment: .center)
                     .overlay(
