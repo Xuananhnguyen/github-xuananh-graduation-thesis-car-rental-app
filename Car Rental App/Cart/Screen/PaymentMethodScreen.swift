@@ -28,11 +28,11 @@ struct PaymentMethodScreen: AppNavigator {
                     VStack {
                         HStack {
                             Text("Card Number:")
-                                .textStyle(.PT_Sans, size: 16)
+                                .textStyle(.PT_SANS_REGULAR, size: 16)
                                 .foregroundColor(Color(GRAY_838383))
                             Spacer()
                             TextField(cardNumber, text: $cardNumber)
-                                .textStyle(.Roboto, size: 13)
+                                .textStyle(.ROBOTO_REGULAR, size: 13)
                                 .foregroundColor(Color(GRAY_838383))
                         }
                         
@@ -46,11 +46,11 @@ struct PaymentMethodScreen: AppNavigator {
                     VStack {
                         HStack {
                             Text("Expiration Date:")
-                                .textStyle(.PT_Sans, size: 16)
+                                .textStyle(.PT_SANS_REGULAR, size: 16)
                                 .foregroundColor(Color(GRAY_838383))
                             Spacer()
                             TextField(expirationDate, text: $expirationDate)
-                                .textStyle(.Roboto, size: 13)
+                                .textStyle(.ROBOTO_MEDIUM, size: 13)
                                 .foregroundColor(Color(GRAY_838383))
                         }
                         
@@ -64,11 +64,11 @@ struct PaymentMethodScreen: AppNavigator {
                     VStack {
                         HStack {
                             Text("CCV:")
-                                .textStyle(.PT_Sans, size: 16)
+                                .textStyle(.PT_SANS_REGULAR, size: 16)
                                 .foregroundColor(Color(GRAY_838383))
                             
                             TextField(ccv, text: $ccv)
-                                .textStyle(.Roboto, size: 13)
+                                .textStyle(.ROBOTO_MEDIUM, size: 13)
                                 .foregroundColor(Color(GRAY_838383))
                         }
                         .frame(maxWidth: .infinity, alignment: .center)

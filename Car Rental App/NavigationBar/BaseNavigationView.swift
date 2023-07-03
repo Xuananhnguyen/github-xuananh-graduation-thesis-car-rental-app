@@ -18,7 +18,7 @@ struct BaseNavigationView<CustomHeader: View, Content: View>: View {
     private var backGroundColor: Color = Color(WHITE_FFFFFF)
     private var navigatorBarBackgroundColor: Color = Color(WHITE_FFFFFF)
     private var paddingBottom: CGFloat = 2
-    private var textStyleTitle: Font = TextStyle.Roboto.font(size: 20)
+    private var textStyleTitle: Font = TextStyle.ROBOTO_MEDIUM.font(size: 20)
     
     var body: some View {
         VStack(spacing: 0) {
@@ -72,7 +72,7 @@ extension BaseNavigationView {
         backgroundColor: Color = Color(WHITE_FFFFFF),
         navigatorBarBackgroundColor: Color = Color(WHITE_FFFFFF),
         paddingBottom: CGFloat = 2,
-        textStyleTitle: Font = TextStyle.Roboto.font(size: 20),
+        textStyleTitle: Font = TextStyle.ROBOTO_MEDIUM.font(size: 20),
         @ViewBuilder builderHeader: () -> CustomHeader,
         @ViewBuilder builderContent: () -> Content
     ) {
@@ -98,7 +98,7 @@ extension BaseNavigationView where CustomHeader == EmptyView {
         backgroundColor: Color = Color(WHITE_FFFFFF),
         navigatorBarBackgroundColor: Color = Color(WHITE_FFFFFF),
         paddingBottom: CGFloat = 2,
-        textStyleTitle: Font = TextStyle.Roboto.font(size: 20),
+        textStyleTitle: Font = TextStyle.ROBOTO_MEDIUM.font(size: 20),
         @ViewBuilder builderContent: () -> Content
     ) {
         self.init(

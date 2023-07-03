@@ -7,6 +7,7 @@
 
 import SwiftUI
 import VNavigator
+import FirebaseAuth
 
 struct SignInScreen: AppNavigator {
     @State var email: String = ""
@@ -16,75 +17,86 @@ struct SignInScreen: AppNavigator {
     
     var body: some View {
         BaseNavigationView(isHiddenBackButton: false) {
-            VStack(alignment: .center, spacing: 0) {
-                Image(IMG_CAR)
-                    .resizable()
-                    .frame(width: 150, height: 150)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.bottom, 50)
-                
-                Text("Login")
-                    .font(.system(size: 48, weight: .regular))
-                    .foregroundColor(Color(BLACK_000000))
-                    .padding(.bottom, 20)
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .center, spacing: 0) {
+                    Image(IMG_CAR)
+                        .resizable()
+                        .frame(width: 150, height: 150)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(.bottom, 40)
+                    VStack(alignment: .leading, spacing: 0){
+                        Text("Sign In")
+                            .textStyle(.IMPRIMA_REGULAR, size: 50)
+                            .foregroundColor(Color(BLACK_000000))
+                            .padding(.bottom, 20)
+                        
+                        VLine()
+                            .background(Color(GREEN_2B4C59))
+                            .frame(width: 58, height: 4, alignment: .leading)
+                    }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                
-                Divider()
-                    .frame(width: 58, height: 4, alignment: .leading)
-                    .background(Color(GREEN_2B4C59))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.bottom, 20)
-                
-                TextFieldView(title: "Email",
-                              inputContent: $email)
-                .padding(.bottom, 28)
-                
-                
-                SecureTextFieldView(title: "Password",
-                                    inputContent: $password)
-                
-                Button(action: {
+                    .padding(.bottom, 60)
                     
-                }, label: {
-                    Text("Forgot password?")
-                        .font(.system(size: 11, weight: .regular))
-                        .foregroundColor(Color(BLACK_000000))
-                        .padding(.top, 12)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                })
-                .padding(.bottom, 60)
-                
-                Button(action: {
-                    validate(email: email, password: password)
-                }, label: {
-                    Text("Login".uppercased())
-                        .font(.system(size: 20, weight: .bold))
-                        .foregroundColor(Color(WHITE_FFFFFF))
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 52)
-                        .background(Color(GREEN_2B4C59))
-                        .cornerRadius(10)
-                })                
-                Spacer()
-                
-                HStack(spacing: 0){
-                    Text("Don’t Have an account yet?")
-                        .font(.system(size: 15, weight: .light))
-                        .foregroundColor(Color(BLACK_000000))
-                    Spacer()
+                    TextFieldView(title: "Email or phone".uppercased(),
+                                  inputContent: $email)
+                    .padding(.bottom, 28)
+                    
+                    SecureTextFieldView(title: "Password".uppercased(),
+                                        inputContent: $password)
+                    
                     Button(action: {
-                        navigator.pushToView(view: SignUpScreen())
+                        UIApplication.shared.endEditing()
                     }, label: {
-                        Text("SIGN UP")
-                            .italic()
-                            .font(.system(size: 13, weight: .light))
-                            .foregroundColor(Color(YELLOW_FCC21B))
+                        Text("Forgot password?")
+                            .textStyle(.INTER_REGULAR, size: 15)
+                            .foregroundColor(Color(BLACK_000000))
+                            .padding(.top, 12)
+                            .frame(maxWidth: .infinity, alignment: .trailing)
                     })
+                    .padding(.bottom, 60)
+                    
+                    Button(action: {
+                        validate(email: email, password: password)
+//                        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password, completion: { authResult, error in
+//                            guard let result = authResult, error == nil else {
+//                                print("Failed to log in user with email: \(email)")
+//                                return
+//                            }
+//
+//                            let user = result.user
+//                            print("Logged In User: \(user)")
+//                        })
+                        UIApplication.shared.endEditing()
+                    }, label: {
+                        Text("Login".uppercased())
+                            .textStyle(.INTER_BOLD, size: 20)
+                            .foregroundColor(Color(WHITE_FFFFFF))
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 52)
+                            .background(Color(GREEN_2B4C59))
+                            .cornerRadius(10)
+                    })
+                    .padding(.bottom, 30)
+                    
+                    HStack(spacing: 0){
+                        Text("Don’t Have an account yet?")
+                            .textStyle(.INTER_REGULAR, size: 15)
+                            .foregroundColor(Color(BLACK_000000))
+                        Spacer()
+                        Button(action: {
+                            UIApplication.shared.endEditing()
+                            navigator.pushToView(view: SignUpScreen())
+                        }, label: {
+                            Text("Sign Up".uppercased())
+                                .textStyle(.INTER_BOLD, size: 13)
+                                .foregroundColor(Color(YELLOW_FCC21B))
+                        })
+                    }
                 }
+                .padding(.horizontal, 24)
+                .background(Color(WHITE_FFFFFF).ignoresSafeArea())
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            .padding(.horizontal, 24)
-            .background(Color(WHITE_FFFFFF).ignoresSafeArea())
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }

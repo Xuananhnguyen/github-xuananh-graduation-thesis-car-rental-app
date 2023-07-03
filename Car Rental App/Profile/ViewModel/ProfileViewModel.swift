@@ -8,5 +8,5 @@
 import Foundation
 
 class ProfileViewModel: ObservableObject {
-    var dataProfile: [ProfileModel] = mockDataProfile
+    
 }

@@ -17,7 +17,7 @@ struct MyProfileScreen: AppNavigator {
         BaseNavigationView(builderContent: {
             VStack(spacing: 20) {
                 Text("Profile")
-                    .textStyle(.Roboto_Bold, size: 24)
+                    .textStyle(.ROBOTO_BOLD, size: 24)
                     .foregroundColor(Color(BLACK_000000))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.vertical, 10)
@@ -34,10 +34,15 @@ struct MyProfileScreen: AppNavigator {
                 TextFieldView(title: "Address:",
                               inputContent: $address)
                 
+                TextFieldView(title: "Gender:",
+                              inputContent: $address)
+                
                 Spacer()
-                Button(action: {}, label: {
+                Button(action: {
+                    
+                }, label: {
                     Text("Save Changes")
-                        .font(.system(size: 20, weight: .bold))
+                        .textStyle(.INTER_BOLD, size: 20)
                         .foregroundColor(Color(WHITE_FFFFFF))
                         .frame(maxWidth: .infinity)
                         .frame(height: 52)

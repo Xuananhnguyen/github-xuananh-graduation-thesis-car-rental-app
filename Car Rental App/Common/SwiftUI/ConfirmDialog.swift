@@ -11,7 +11,7 @@ import VNavigator
 struct ConfirmDialog: AppNavigator {
     var title: String = ""
     var content: String
-    var textStyleContent: TextStyle = .Roboto_Bold
+    var textStyleContent: TextStyle = .ROBOTO_BOLD
     var textContentSize: CGFloat = 18
     var titleButton: String = "ok".uppercased()
     var enableScrollView: Bool = false
@@ -24,7 +24,7 @@ struct ConfirmDialog: AppNavigator {
                 Text(title)
                     .lineSpacing(6)
                     .multilineTextAlignment(.center)
-                    .textStyle(.Roboto_Bold, size: 20)
+                    .textStyle(.ROBOTO_BOLD, size: 20)
                     .padding(.horizontal, 16)
             }
             Spacer().frame(height: 20)
@@ -57,14 +57,14 @@ struct ConfirmDialog: AppNavigator {
                     })
                 }, label: {
                     Text(titleButton)
-                        .textStyle(.Roboto_Bold, size: 17)
+                        .textStyle(.ROBOTO_BOLD, size: 17)
                         .frame(maxWidth: .infinity)
                         .foregroundColor(Color(GREEN_2B4C59))
                 })
             }.frame(height: 40)
         }
         .foregroundColor(Color(BLACK_000000))
-        .frame(minWidth: UIApplication.shared.statusBarOrientation.isLandscape ? 0.3.w : 0.7.w, maxWidth: UIApplication.shared.statusBarOrientation.isLandscape ? 0.3.w : 0.7.w)
+        .frame(minWidth: 0.3.w, maxWidth: 0.7.w)
         .background(Color(WHITE_FFFFFF))
         .cornerRadius(15)
         .padding(.vertical, 32)

@@ -7,10 +7,10 @@
 
 import Foundation
 
-enum ProfileType: String {
+enum ProfileType: CaseIterable {
     case myProfile
     case settings
-    case history
+    case notification
     case privacy
     case helpAndInfo
     
@@ -20,8 +20,8 @@ enum ProfileType: String {
             return "My Profile"
         case .settings:
             return "Settings"
-        case .history:
-            return "History"
+        case .notification:
+            return "Notification"
         case .privacy:
             return "Privacy"
         case .helpAndInfo:
@@ -35,12 +35,29 @@ enum ProfileType: String {
             return IC_MY_PROFILE
         case .settings:
             return IC_SETTINGS
-        case .history:
+        case .notification:
             return IC_BELL
         case .privacy:
             return IC_KEY
         case .helpAndInfo:
             return IC_HELP_INFO
+        }
+    }
+}
+
+enum SettingType: CaseIterable {
+    case profileSettings
+    case language
+    case setPassword
+    
+    var nameSetting: String {
+        switch self {
+        case .profileSettings:
+            return "Profile Settings"
+        case .language:
+            return "Language"
+        case .setPassword:
+            return "Set Password"
         }
     }
 }

@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct ButtonProfile: View {
-    @State var image: String = IC_SETTINGS
-    @State var nameFeature: String = "Settings"
+    var image: String = ""
+    var nameFeature: String = ""
     var onPress: (() -> Void)?
     
     var body: some View {
         HStack {
-            Image(image)
-                .frame(width: 24, height: 23)
-            Spacer()
+            if !image.isEmpty {
+                Image(image)
+                    .frame(width: 24, height: 23)
+                Spacer()
+            }
             
             Text(nameFeature)
                 .font(.system(size: 16, weight: .bold))

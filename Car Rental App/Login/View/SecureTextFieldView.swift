@@ -11,21 +11,26 @@ struct SecureTextFieldView: View {
     @State var title: String = "Password"
     @Binding var inputContent: String
     @State var isShowPassword: Bool = false
-    var fontSizeTitle: CGFloat = 16
-    var fontWeight: Font.Weight = .regular
+    var fontSytle: TextStyle = .ROBOTO_MEDIUM
     
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text(title)
-                .font(.system(size: fontSizeTitle, weight: fontWeight))
+            if !title.isEmpty {
+                Text(title)
+                    .textStyle(fontSytle, size: 16)
+                    .foregroundColor(Color(GREEN_2B4C59))
+            }
+            
             ZStack(alignment: .trailing) {
                 Group {
                     if isShowPassword {
                         TextField(inputContent, text: $inputContent)
-                            .font(.system(size: 16, weight: .light))
+                            .textStyle(fontSytle, size: 16)
+                            .foregroundColor(Color(GRAY_A1A1A1))
                     } else {
                         SecureField(inputContent, text: $inputContent)
-                            .font(.system(size: 16, weight: .light))
+                            .textStyle(fontSytle, size: 16)
+                            .foregroundColor(Color(GRAY_A1A1A1))
                     }
                 }
                 .padding(.trailing, 32)

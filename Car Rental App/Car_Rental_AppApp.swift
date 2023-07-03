@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct Car_Rental_AppApp: App {
@@ -17,3 +18,25 @@ struct Car_Rental_AppApp: App {
         }
     }
 }
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    static var orientationLock = UIInterfaceOrientationMask.portrait
+    var window: UIWindow?
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        setupFirebase()
+        
+        return true
+    }
+}
+
+
+// MARK: - FIREBASE
+extension AppDelegate {
+    func setupFirebase() {
+        FirebaseApp.configure()
+    }
+}
+
+

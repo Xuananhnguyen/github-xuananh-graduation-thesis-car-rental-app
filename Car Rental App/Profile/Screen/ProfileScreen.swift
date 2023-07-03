@@ -11,7 +11,7 @@ import VNavigator
 struct ProfileScreen: AppNavigator {
     @StateObject var viewModel = ProfileViewModel()
     @State var nameUser: String = "User Demo"
-    var feature: [ProfileType] = [.myProfile, .settings, .helpAndInfo, .history, .privacy]
+    var feature: [ProfileType] = [.myProfile, .settings, .helpAndInfo, .notification, .privacy]
     
     var body: some View {
         BaseNavigationView(isHiddenBackButton: false, builderHeader: {
@@ -80,14 +80,12 @@ extension ProfileScreen {
         switch feature {
         case .myProfile:
             navigator.pushToView(view: MyProfileScreen())
-        case .settings:
-            return
-        case .history:
-            return
-        case .privacy:
-            return
         case .helpAndInfo:
             navigator.pushToView(view: AboutUsScreen())
+        case .settings:
+            navigator.pushToView(view: SettingScreen())
+        case .notification, .privacy:
+            return Popup.presentPopup(alertView: ConfirmDialog(content: "Comming Soon"))
         }
     }
 }
