@@ -9,4 +9,7 @@ import Foundation
 
 class ProfileViewModel: ObservableObject {
     
+    func signOut() throws {
+        try AuthenticationManager.shared.signOut()
+    }
 }

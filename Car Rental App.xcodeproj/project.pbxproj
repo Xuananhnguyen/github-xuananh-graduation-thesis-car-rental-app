@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		DD1E351A11F934092E16761E /* Pods_Car_Rental_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7846643308F87A1C46D41B86 /* Pods_Car_Rental_App.framework */; };
+		F91807052A5038FC0084F113 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91807042A5038FC0084F113 /* SignUpViewModel.swift */; };
+		F91807072A5039090084F113 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91807062A5039090084F113 /* SignInViewModel.swift */; };
+		F91807092A5041FF0084F113 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91807082A5041FF0084F113 /* AuthenticationManager.swift */; };
 		F932B43E2A4843AC00E6FDFB /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F932B43B2A4843AC00E6FDFB /* Roboto-Regular.ttf */; };
 		F932B43F2A4843AC00E6FDFB /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F932B43C2A4843AC00E6FDFB /* Roboto-Medium.ttf */; };
 		F932B4402A4843AC00E6FDFB /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F932B43D2A4843AC00E6FDFB /* Roboto-Bold.ttf */; };
@@ -28,12 +31,14 @@
 		F952286B292A9EDC00AFF79B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952286A292A9EDC00AFF79B /* ProfileViewModel.swift */; };
 		F952286E292A9FD600AFF79B /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952286D292A9FD600AFF79B /* Enum.swift */; };
 		F9522870292AA2F900AFF79B /* ButtonProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952286F292AA2F900AFF79B /* ButtonProfile.swift */; };
+		F96D18572A55D38B0059D609 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F96D18592A55D38B0059D609 /* Localizable.strings */; };
+		F96D185F2A55DDDD0059D609 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96D185E2A55DDDD0059D609 /* ForgotPasswordViewModel.swift */; };
 		F97294152927E2C200E89C68 /* ViewMoreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97294142927E2C200E89C68 /* ViewMoreScreen.swift */; };
 		F97294172927E2E200E89C68 /* CarDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97294162927E2E200E89C68 /* CarDetailScreen.swift */; };
 		F9770A5729B474FA00596443 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9770A5629B474FA00596443 /* LoadingViewModel.swift */; };
 		F9770A5C29B4762500596443 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9770A5B29B4762500596443 /* LoadingView.swift */; };
 		F9770A5F29B476DA00596443 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9770A5E29B476DA00596443 /* Extension.swift */; };
-		F9770A8329BC3ABA00596443 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9770A8229BC3ABA00596443 /* ForgotPassword.swift */; };
+		F9770A8329BC3ABA00596443 /* ForgotPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9770A8229BC3ABA00596443 /* ForgotPasswordScreen.swift */; };
 		F9770A8629BE255C00596443 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9770A8529BE255C00596443 /* String+Extension.swift */; };
 		F9770A8929BE2E0400596443 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9770A8829BE2E0400596443 /* Constant.swift */; };
 		F9770A8B29BE305800596443 /* PopupHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9770A8A29BE305800596443 /* PopupHandle.swift */; };
@@ -80,6 +85,9 @@
 		37DBFAEC2236E9F5BF693046 /* Pods-Car Rental App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Car Rental App.debug.xcconfig"; path = "Target Support Files/Pods-Car Rental App/Pods-Car Rental App.debug.xcconfig"; sourceTree = "<group>"; };
 		57BACBFF04BA743502642835 /* Pods-Car Rental App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Car Rental App.release.xcconfig"; path = "Target Support Files/Pods-Car Rental App/Pods-Car Rental App.release.xcconfig"; sourceTree = "<group>"; };
 		7846643308F87A1C46D41B86 /* Pods_Car_Rental_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Car_Rental_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F91807042A5038FC0084F113 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		F91807062A5039090084F113 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		F91807082A5041FF0084F113 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		F932B4392A4842E200E6FDFB /* Car-Rental-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Car-Rental-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F932B43B2A4843AC00E6FDFB /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		F932B43C2A4843AC00E6FDFB /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
@@ -101,12 +109,14 @@
 		F952286A292A9EDC00AFF79B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		F952286D292A9FD600AFF79B /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		F952286F292AA2F900AFF79B /* ButtonProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonProfile.swift; sourceTree = "<group>"; };
+		F96D18582A55D38B0059D609 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F96D185E2A55DDDD0059D609 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		F97294142927E2C200E89C68 /* ViewMoreScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMoreScreen.swift; sourceTree = "<group>"; };
 		F97294162927E2E200E89C68 /* CarDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailScreen.swift; sourceTree = "<group>"; };
 		F9770A5629B474FA00596443 /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
 		F9770A5B29B4762500596443 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F9770A5E29B476DA00596443 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		F9770A8229BC3ABA00596443 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		F9770A8229BC3ABA00596443 /* ForgotPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordScreen.swift; sourceTree = "<group>"; };
 		F9770A8529BE255C00596443 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		F9770A8829BE2E0400596443 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F9770A8A29BE305800596443 /* PopupHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupHandle.swift; sourceTree = "<group>"; };
@@ -190,6 +200,24 @@
 			path = SupportFiles;
 			sourceTree = "<group>";
 		};
+		F91807022A5034910084F113 /* AuthenticationManager */ = {
+			isa = PBXGroup;
+			children = (
+				F91807082A5041FF0084F113 /* AuthenticationManager.swift */,
+			);
+			path = AuthenticationManager;
+			sourceTree = "<group>";
+		};
+		F91807032A50385A0084F113 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F91807042A5038FC0084F113 /* SignUpViewModel.swift */,
+				F91807062A5039090084F113 /* SignInViewModel.swift */,
+				F96D185E2A55DDDD0059D609 /* ForgotPasswordViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F927225429A7DBCA0033066C /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +251,7 @@
 		F932B4412A4843F100E6FDFB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F96D18542A55D3410059D609 /* String */,
 				F9AB78D9291967E3005F4FF2 /* Assets.xcassets */,
 				F932B43A2A48431B00E6FDFB /* Fonts */,
 			);
@@ -351,6 +380,31 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		F96D18542A55D3410059D609 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				F96D18592A55D38B0059D609 /* Localizable.strings */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		F96D185A2A55D4BA0059D609 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F9D37FBB2A40D0B5002D6817 /* View+Extension.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F96D185B2A55D4C30059D609 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				F9770A9A29BE38D100596443 /* Double+Extension.swift */,
+				F9770A8529BE255C00596443 /* String+Extension.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 		F9770A5329B474A200596443 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,7 +436,8 @@
 		F9770A8429BE253200596443 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				F9770A8529BE255C00596443 /* String+Extension.swift */,
+				F96D185B2A55D4C30059D609 /* Foundation */,
+				F96D185A2A55D4BA0059D609 /* View */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -418,15 +473,6 @@
 				F9770A9729BE371400596443 /* Line.swift */,
 			);
 			path = SwiftUI;
-			sourceTree = "<group>";
-		};
-		F9770A9929BE38B700596443 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				F9770A9A29BE38D100596443 /* Double+Extension.swift */,
-				F9D37FBB2A40D0B5002D6817 /* View+Extension.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		F99CB8EF2945D3F100B6E38A /* ViewModel */ = {
@@ -466,9 +512,9 @@
 		F9AB78D4291967E2005F4FF2 /* Car Rental App */ = {
 			isa = PBXGroup;
 			children = (
+				F91807022A5034910084F113 /* AuthenticationManager */,
 				F932B4392A4842E200E6FDFB /* Car-Rental-App-Info.plist */,
 				F9D37FB92A40CBB1002D6817 /* GoogleService-Info.plist */,
-				F9770A9929BE38B700596443 /* Extension */,
 				F9770A5329B474A200596443 /* App */,
 				F9770A5D29B476C300596443 /* Core */,
 				F927225B29AB90050033066C /* Common */,
@@ -500,6 +546,7 @@
 		F9AB78E329196BA5005F4FF2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F91807032A50385A0084F113 /* ViewModel */,
 				F9AB78EA291AB9B0005F4FF2 /* View */,
 				F9AB78E429196BB3005F4FF2 /* Screen */,
 			);
@@ -512,7 +559,7 @@
 				F9F960072921492B00919CF9 /* SignUpScreen.swift */,
 				F9AB78E629196C17005F4FF2 /* GetStartedScreen.swift */,
 				F9AB78E8291AAFCC005F4FF2 /* SignInScreen.swift */,
-				F9770A8229BC3ABA00596443 /* ForgotPassword.swift */,
+				F9770A8229BC3ABA00596443 /* ForgotPasswordScreen.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -656,6 +703,7 @@
 				F9AB78DA291967E3005F4FF2 /* Assets.xcassets in Resources */,
 				F932B43E2A4843AC00E6FDFB /* Roboto-Regular.ttf in Resources */,
 				F932B44E2A48464C00E6FDFB /* Inter-Regular.ttf in Resources */,
+				F96D18572A55D38B0059D609 /* Localizable.strings in Resources */,
 				F9D37FBA2A40CBB1002D6817 /* GoogleService-Info.plist in Resources */,
 				F932B4442A48457300E6FDFB /* PTSans-Regular.ttf in Resources */,
 				F932B44D2A48464C00E6FDFB /* Inter-Medium.ttf in Resources */,
@@ -747,28 +795,43 @@
 				F9770A9829BE371400596443 /* Line.swift in Sources */,
 				F9770A9B29BE38D100596443 /* Double+Extension.swift in Sources */,
 				F9AB78E9291AAFCC005F4FF2 /* SignInScreen.swift in Sources */,
+				F91807072A5039090084F113 /* SignInViewModel.swift in Sources */,
 				F9522870292AA2F900AFF79B /* ButtonProfile.swift in Sources */,
 				F9770A8929BE2E0400596443 /* Constant.swift in Sources */,
 				F9F9600B292156DE00919CF9 /* HomeScreen.swift in Sources */,
 				F9AB78D6291967E2005F4FF2 /* Car_Rental_AppApp.swift in Sources */,
 				F99CB8F8294647BF00B6E38A /* PurchaseScreen.swift in Sources */,
+				F91807092A5041FF0084F113 /* AuthenticationManager.swift in Sources */,
 				F94B14252932943900AC41A1 /* View+App.swift in Sources */,
+				F91807052A5038FC0084F113 /* SignUpViewModel.swift in Sources */,
 				F9770A5C29B4762500596443 /* LoadingView.swift in Sources */,
 				F9770A9229BE34B500596443 /* DispatchQueue+Extension.swift in Sources */,
 				F9770A9529BE362A00596443 /* ConfirmDialog.swift in Sources */,
 				F9770A9029BE335B00596443 /* UIApplication+Extension.swift in Sources */,
 				F9AB78E729196C17005F4FF2 /* GetStartedScreen.swift in Sources */,
 				F952286B292A9EDC00AFF79B /* ProfileViewModel.swift in Sources */,
+				F96D185F2A55DDDD0059D609 /* ForgotPasswordViewModel.swift in Sources */,
 				F9AB78EE291AC680005F4FF2 /* SecureTextFieldView.swift in Sources */,
 				F94B143A2936734200AC41A1 /* CartScreen.swift in Sources */,
 				F9F9601A292298EC00919CF9 /* HomeDataMock.swift in Sources */,
 				F932B4562A484DB600E6FDFB /* GhostButton.swift in Sources */,
 				F97294172927E2E200E89C68 /* CarDetailScreen.swift in Sources */,
-				F9770A8329BC3ABA00596443 /* ForgotPassword.swift in Sources */,
+				F9770A8329BC3ABA00596443 /* ForgotPasswordScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F96D18592A55D38B0059D609 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F96D18582A55D38B0059D609 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F9AB78DE291967E3005F4FF2 /* Debug */ = {

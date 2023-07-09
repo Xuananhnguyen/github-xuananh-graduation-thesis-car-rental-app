@@ -10,6 +10,7 @@ import VNavigator
 
 struct HomeScreen: AppNavigator {
     @StateObject var viewModel = HomeViewModel()
+    @State private var showSignInView: Bool = false
     let columns = [GridItem(.flexible()),
                     GridItem(.flexible())]
     
@@ -61,7 +62,10 @@ struct HomeScreen: AppNavigator {
                 .padding(.horizontal, 16)
             }
             .onAppear {
+//                let authUser = try? AuthenticationManager.shared.getAuthenticateUser()
+//                self.showSignInView = authUser == nil ? true : false
                 viewModel.listPrefixCar()
+            
             }
         })
     }
