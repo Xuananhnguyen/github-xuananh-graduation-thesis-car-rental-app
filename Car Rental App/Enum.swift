@@ -17,15 +17,15 @@ enum ProfileType: CaseIterable {
     var name: String {
         switch self {
         case .myProfile:
-            return "My Profile"
+            return "myProfile".localized
         case .settings:
-            return "Settings"
+            return "settings".localized
         case .notification:
-            return "Notification"
+            return "notification".localized
         case .privacy:
-            return "Privacy"
+            return "privacy".localized
         case .helpAndInfo:
-            return "Help & Info"
+            return "helpAndInfo".localized
         }
     }
     
@@ -53,11 +53,11 @@ enum SettingType: CaseIterable {
     var nameSetting: String {
         switch self {
         case .profileSettings:
-            return "Profile Settings"
+            return "profileSettings".localized
         case .language:
-            return "Language"
+            return "language".localized
         case .setPassword:
-            return "Set Password"
+            return "setPassword".localized
         }
     }
 }

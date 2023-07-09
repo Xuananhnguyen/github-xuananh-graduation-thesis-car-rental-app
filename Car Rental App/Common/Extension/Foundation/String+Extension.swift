@@ -12,4 +12,9 @@ extension String {
         let validateRule = NSPredicate(format: "SELF MATCHES %@", regex)
         return validateRule.evaluate(with: self)
     }
+    
+    var localized: String {
+        let localizedText = NSLocalizedString(self, comment: "")
+        return localizedText.isEmpty ? self : localizedText
+    }
 }

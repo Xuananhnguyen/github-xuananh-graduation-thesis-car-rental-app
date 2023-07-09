@@ -8,6 +8,7 @@
 import SwiftUI
 import VNavigator
 
+@MainActor
 struct ProfileScreen: AppNavigator {
     @StateObject var viewModel = ProfileViewModel()
     @State var nameUser: String = "User Demo"
@@ -40,7 +41,15 @@ struct ProfileScreen: AppNavigator {
                     .padding(.bottom, 80)
                     
                     Button(action: {
-                        navigator.popToRootView()
+                        Task {
+                            do {
+                                try viewModel.signOut()
+                                print("Logout success")
+                                navigator.popToRootView()
+                            } catch {
+                                print(error)
+                            }
+                        }
                     }, label: {
                         Text("Log Out")
                             .font(.system(size: 20, weight: .bold))

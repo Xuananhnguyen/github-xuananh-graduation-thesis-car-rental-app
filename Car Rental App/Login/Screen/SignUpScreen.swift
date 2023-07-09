@@ -8,12 +8,11 @@
 import SwiftUI
 import VNavigator
 import FirebaseAuth
+import FirebaseDatabase
 
+@MainActor
 struct SignUpScreen: AppNavigator {
-    @State var phoneNumber: String = ""
-    @State var email: String = ""
-    @State var password: String = ""
-    @State var confirmPassword: String = ""
+    @StateObject var viewModel = SignUpViewModel()
     
     var body: some View {
         BaseNavigationView(isHiddenBackButton: false) {
@@ -40,38 +39,26 @@ struct SignUpScreen: AppNavigator {
                         .padding(.bottom, 60)
                         
                         VStack(spacing: 16){
-                            TextFieldView(title: "Full Name".uppercased(),
-                                          inputContent: $phoneNumber)
-                            
-                            TextFieldView(title: "Email or phone".uppercased(),
-                                          inputContent: $email)
+                            TextFieldView(title: "Email".uppercased(),
+                                          inputContent: $viewModel.email)
                             
                             SecureTextFieldView(title: "Password".uppercased(),
-                                                inputContent: $password)
+                                                inputContent: $viewModel.password)
                             
                             SecureTextFieldView(title: "Confirm Password".uppercased(),
-                                                inputContent: $confirmPassword)
+                                                inputContent: $viewModel.confirmPassword)
                         }
                         .padding(.bottom, 30)
                         
                         Spacer()
                         
                         Button(action: {
-                            if !phoneNumber.isEmpty || !email.isEmpty || !password.isEmpty || !confirmPassword.isEmpty {
-                                if password != confirmPassword {
+                            if !viewModel.email.isEmpty || !viewModel.password.isEmpty || !viewModel.confirmPassword.isEmpty {
+                                if viewModel.password != viewModel.confirmPassword {
                                     let confirmDialog = ConfirmDialog(content: "Password and Confirm Password not match")
                                     Popup.presentPopup(alertView: confirmDialog)
                                 } else {
-                                    FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                                        guard let result = authResult, error == nil else {
-                                            print("Error creating user")
-                                            return
-                                        }
-                                        
-                                        let user = result.user
-                                        print("Created user: \(user)")
-                                    }
-    //                                navigator.pushToView(view: HomeScreen())
+                                    signUp()
                                 }
                             }
                         }, label: {
@@ -95,7 +82,7 @@ struct SignUpScreen: AppNavigator {
 
 
 extension SignUpScreen {
-    private func validate(email: String, phoneNumber: String, password: String, confirmPassword: String) {
+    private func validate(email: String, password: String, confirmPassword: String) {
         if email.isEmpty || password.isEmpty {
             let confirmDialog = ConfirmDialog(content: "Email or Password empty")
             Popup.presentPopup(alertView: confirmDialog)
@@ -104,6 +91,18 @@ extension SignUpScreen {
             Popup.presentPopup(alertView: confirmDialog)
         } else {
             navigator.pushToView(view: HomeScreen())
+        }
+    }
+    
+    private func signUp() {
+        Task {
+            do {
+                try await viewModel.signUp()
+                print("Sign Up Success")
+                navigator.pushToView(view: HomeScreen())
+            } catch {
+                print(error)
+            }
         }
     }
 }

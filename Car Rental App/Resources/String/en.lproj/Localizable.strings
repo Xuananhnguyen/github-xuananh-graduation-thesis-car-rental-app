@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  Car Rental App
+
+  Created by NGUYEN XUAN ANH on 05/07/2023.
+  
+*/
+
+"appName" = "Car Rental App";
+"signIn" = "Sign In";
+"email" = "Email";
+"password" = "Password";
+"myProfile" = "My Profile";
+"settings" = "Settings";
+"notification" = "Notification";
+"privacy" = "Privacy";
+"helpAndInfo" = "Help & Info";
+"profileSettings" = "Profile Settings";
+"setPassword" = "Set Password";
+"language" = "Language";
+"forgotPassword" = "Forgot password?";
+"checkAccount" = "Don't have accounts. Please sign up account";
+"login" = "Login";
+"notHaveAccount" = "Don’t Have an account yet?";
+"signUp" = "Sign Up";
+"emailOrPasswordEmpty" = "Email or Password empty";
+"emailOrPasswordInvalid" = "Email or Password invalid format";
+"resetPassword" = "Reset Password";
+"titleForgotPassword" = "Forgot Password";
