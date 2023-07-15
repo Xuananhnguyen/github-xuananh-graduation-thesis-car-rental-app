@@ -27,3 +27,4 @@
 "emailOrPasswordInvalid" = "Email or Password invalid format";
 "resetPassword" = "Reset Password";
 "titleForgotPassword" = "Forgot Password";
+"passwordResetLink" = "Password reset link sent! Check your email";

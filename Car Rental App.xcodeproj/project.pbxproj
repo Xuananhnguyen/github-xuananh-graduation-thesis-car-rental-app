@@ -79,6 +79,13 @@
 		F9F9601E2923ED0C00919CF9 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F9601D2923ED0C00919CF9 /* TextStyle.swift */; };
 		F9F960202924042200919CF9 /* CarBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F9601F2924042200919CF9 /* CarBoxView.swift */; };
 		F9F960222924043400919CF9 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F960212924043400919CF9 /* CarModel.swift */; };
+		F9FF9CEC2A5DC9EC006F95CC /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF9CEB2A5DC9EC006F95CC /* UserManager.swift */; };
+		F9FF9CEF2A5DCAA1006F95CC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F9FF9CEE2A5DCAA1006F95CC /* FirebaseAuth */; };
+		F9FF9CF12A5DCAA1006F95CC /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F9FF9CF02A5DCAA1006F95CC /* FirebaseAuthCombine-Community */; };
+		F9FF9CF32A5DCAA1006F95CC /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F9FF9CF22A5DCAA1006F95CC /* FirebaseDatabase */; };
+		F9FF9CF52A5DCAA1006F95CC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F9FF9CF42A5DCAA1006F95CC /* FirebaseFirestore */; };
+		F9FF9CF72A5DCAA1006F95CC /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F9FF9CF62A5DCAA1006F95CC /* FirebaseFirestoreCombine-Community */; };
+		F9FF9CF92A5DCAA1006F95CC /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F9FF9CF82A5DCAA1006F95CC /* FirebaseFirestoreSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,7 +95,7 @@
 		F91807042A5038FC0084F113 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		F91807062A5039090084F113 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		F91807082A5041FF0084F113 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
-		F932B4392A4842E200E6FDFB /* Car-Rental-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Car-Rental-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F932B4392A4842E200E6FDFB /* Car-Rental-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Car-Rental-App-Info.plist"; path = "Car Rental App/SupportFiles/Car-Rental-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F932B43B2A4843AC00E6FDFB /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		F932B43C2A4843AC00E6FDFB /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		F932B43D2A4843AC00E6FDFB /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -158,6 +165,7 @@
 		F9F9601D2923ED0C00919CF9 /* TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
 		F9F9601F2924042200919CF9 /* CarBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBoxView.swift; sourceTree = "<group>"; };
 		F9F960212924043400919CF9 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
+		F9FF9CEB2A5DC9EC006F95CC /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +174,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD1E351A11F934092E16761E /* Pods_Car_Rental_App.framework in Frameworks */,
+				F9FF9CF12A5DCAA1006F95CC /* FirebaseAuthCombine-Community in Frameworks */,
+				F9FF9CF32A5DCAA1006F95CC /* FirebaseDatabase in Frameworks */,
+				F9FF9CF92A5DCAA1006F95CC /* FirebaseFirestoreSwift in Frameworks */,
+				F9FF9CF72A5DCAA1006F95CC /* FirebaseFirestoreCombine-Community in Frameworks */,
+				F9FF9CF52A5DCAA1006F95CC /* FirebaseFirestore in Frameworks */,
+				F9FF9CEF2A5DCAA1006F95CC /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +206,8 @@
 		F90D9EFD29ABE7B100DED210 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				F9D37FB92A40CBB1002D6817 /* GoogleService-Info.plist */,
+				F932B4392A4842E200E6FDFB /* Car-Rental-App-Info.plist */,
 				F94B14242932943900AC41A1 /* View+App.swift */,
 				F9F9601D2923ED0C00919CF9 /* TextStyle.swift */,
 				F9F9600D2921585400919CF9 /* ImageName.swift */,
@@ -513,8 +529,6 @@
 			isa = PBXGroup;
 			children = (
 				F91807022A5034910084F113 /* AuthenticationManager */,
-				F932B4392A4842E200E6FDFB /* Car-Rental-App-Info.plist */,
-				F9D37FB92A40CBB1002D6817 /* GoogleService-Info.plist */,
 				F9770A5329B474A200596443 /* App */,
 				F9770A5D29B476C300596443 /* Core */,
 				F927225B29AB90050033066C /* Common */,
@@ -524,6 +538,7 @@
 				F9522864292A910500AFF79B /* Profile */,
 				F9F960092921568C00919CF9 /* Home */,
 				F9AB78E329196BA5005F4FF2 /* Login */,
+				F9FF9CEA2A5DC9C9006F95CC /* Firestore */,
 				F9F960142922977400919CF9 /* MockData */,
 				F9AB78D5291967E2005F4FF2 /* Car_Rental_AppApp.swift */,
 				F9AB78D7291967E2005F4FF2 /* ContentView.swift */,
@@ -630,6 +645,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F9FF9CEA2A5DC9C9006F95CC /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				F9FF9CEB2A5DC9EC006F95CC /* UserManager.swift */,
+			);
+			path = Firestore;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -649,6 +672,12 @@
 			);
 			name = "Car Rental App";
 			packageProductDependencies = (
+				F9FF9CEE2A5DCAA1006F95CC /* FirebaseAuth */,
+				F9FF9CF02A5DCAA1006F95CC /* FirebaseAuthCombine-Community */,
+				F9FF9CF22A5DCAA1006F95CC /* FirebaseDatabase */,
+				F9FF9CF42A5DCAA1006F95CC /* FirebaseFirestore */,
+				F9FF9CF62A5DCAA1006F95CC /* FirebaseFirestoreCombine-Community */,
+				F9FF9CF82A5DCAA1006F95CC /* FirebaseFirestoreSwift */,
 			);
 			productName = "Car Rental App";
 			productReference = F9AB78D2291967E2005F4FF2 /* Car Rental App.app */;
@@ -679,6 +708,7 @@
 			);
 			mainGroup = F9AB78C9291967E2005F4FF2;
 			packageReferences = (
+				F9FF9CED2A5DCAA1006F95CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = F9AB78D3291967E2005F4FF2 /* Products */;
 			projectDirPath = "";
@@ -773,6 +803,7 @@
 				F9F960182922987600919CF9 /* TypeOfCarModel.swift in Sources */,
 				F9522863292A861500AFF79B /* SearchView.swift in Sources */,
 				F9F960132922974D00919CF9 /* HomeViewModel.swift in Sources */,
+				F9FF9CEC2A5DC9EC006F95CC /* UserManager.swift in Sources */,
 				F9770A5F29B476DA00596443 /* Extension.swift in Sources */,
 				F99CB8EC29424BF900B6E38A /* PaymentScreen.swift in Sources */,
 				F9770A5729B474FA00596443 /* LoadingViewModel.swift in Sources */,
@@ -1044,6 +1075,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F9FF9CED2A5DCAA1006F95CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F9FF9CEE2A5DCAA1006F95CC /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9FF9CED2A5DCAA1006F95CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		F9FF9CF02A5DCAA1006F95CC /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9FF9CED2A5DCAA1006F95CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		F9FF9CF22A5DCAA1006F95CC /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9FF9CED2A5DCAA1006F95CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		F9FF9CF42A5DCAA1006F95CC /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9FF9CED2A5DCAA1006F95CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		F9FF9CF62A5DCAA1006F95CC /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9FF9CED2A5DCAA1006F95CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		F9FF9CF82A5DCAA1006F95CC /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9FF9CED2A5DCAA1006F95CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F9AB78CA291967E2005F4FF2 /* Project object */;
 }
