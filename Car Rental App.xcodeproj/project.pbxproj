@@ -95,7 +95,6 @@
 		F91807042A5038FC0084F113 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		F91807062A5039090084F113 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		F91807082A5041FF0084F113 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
-		F932B4392A4842E200E6FDFB /* Car-Rental-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Car-Rental-App-Info.plist"; path = "Car Rental App/SupportFiles/Car-Rental-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F932B43B2A4843AC00E6FDFB /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		F932B43C2A4843AC00E6FDFB /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		F932B43D2A4843AC00E6FDFB /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -207,7 +206,6 @@
 			isa = PBXGroup;
 			children = (
 				F9D37FB92A40CBB1002D6817 /* GoogleService-Info.plist */,
-				F932B4392A4842E200E6FDFB /* Car-Rental-App-Info.plist */,
 				F94B14242932943900AC41A1 /* View+App.swift */,
 				F9F9601D2923ED0C00919CF9 /* TextStyle.swift */,
 				F9F9600D2921585400919CF9 /* ImageName.swift */,
