@@ -65,7 +65,7 @@ struct SignInScreen: AppNavigator {
                                 } catch {
                                     print(error)
                                     if !error.localizedDescription.isEmpty {
-                                        let confirmDialog = ConfirmDialog(content: "checkAccount".localized)
+                                        let confirmDialog = ConfirmDialog(content: "emailOrPasswordInvalid".localized)
                                         Popup.presentPopup(alertView: confirmDialog)
                                     }
                                 }

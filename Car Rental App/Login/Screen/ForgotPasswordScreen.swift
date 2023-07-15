@@ -6,8 +6,9 @@
 //
 
 import SwiftUI
+import VNavigator
 
-struct ForgotPasswordScreen: View {
+struct ForgotPasswordScreen: AppNavigator {
     @StateObject var viewModel = ForgotPasswordViewModel()
     
     var body: some View {
@@ -27,7 +28,10 @@ struct ForgotPasswordScreen: View {
                         Task {
                             do {
                                 try await viewModel.resetPassword()
-                                let confirmDialog = ConfirmDialog(content: "Password reset link sent! Check your email")
+                                let confirmDialog = ConfirmDialog(content: "passwordResetLink".localized,
+                                                                  confirmAction: {
+                                    navigator.pop()
+                                })
                                 Popup.presentPopup(alertView: confirmDialog)
                                 print("Reset Password success. Check your email")
                             } catch {

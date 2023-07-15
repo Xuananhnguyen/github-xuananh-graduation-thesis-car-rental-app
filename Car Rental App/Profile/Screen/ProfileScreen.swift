@@ -23,10 +23,9 @@ struct ProfileScreen: AppNavigator {
                     Image(IMG_CAR)
                         .resizable()
                         .frame(width: 103, height: 101)
-                    Text(nameUser)
-                        .font(.system(size: 20, weight: .light))
-                        .foregroundColor(Color(GRAY_6B6B6B))
-                        .padding(.bottom, 50)
+                        Text(viewModel.user?.email ?? "")
+                            .textStyle(.ROBOTO_BOLD, size: 20)
+                            .foregroundColor(Color(GRAY_6B6B6B))
                     
                     VStack(spacing: 20){
                         ForEach(feature.indices, id: \.self) { index in
@@ -59,8 +58,10 @@ struct ProfileScreen: AppNavigator {
                             .cornerRadius(10)
                     })
                 }
+                .task {
+                    try? await viewModel.loadCurrentUser()
+                }
             }
-            
             .background(Color(WHITE_FFFFFF).ignoresSafeArea())
         })
     }

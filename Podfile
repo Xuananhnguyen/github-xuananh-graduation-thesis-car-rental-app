@@ -12,8 +12,5 @@ pod 'VNavigator'
 pod 'Alamofire'
 pod 'SwiftEntryKit', '2.0.0'
 pod 'SwiftyJSON', '~> 4.0'
-pod 'Firebase/Core'
-pod 'Firebase/Auth'
-pod 'Firebase/Database'
 
 end
