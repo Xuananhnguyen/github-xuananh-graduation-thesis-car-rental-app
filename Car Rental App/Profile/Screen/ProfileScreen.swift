@@ -23,7 +23,7 @@ struct ProfileScreen: AppNavigator {
                     Image(IMG_CAR)
                         .resizable()
                         .frame(width: 103, height: 101)
-                        Text(viewModel.user?.email ?? "")
+                        Text(viewModel.user?.fullName ?? "")
                             .textStyle(.ROBOTO_BOLD, size: 20)
                             .foregroundColor(Color(GRAY_6B6B6B))
                     
@@ -89,7 +89,10 @@ extension ProfileScreen {
     private func onPressFeature(feature: ProfileType) {
         switch feature {
         case .myProfile:
-            navigator.pushToView(view: MyProfileScreen())
+            navigator.pushToView(view: MyProfileScreen(fullname: viewModel.user?.fullName ?? "",
+                                                       email: viewModel.user?.email ?? "",
+                                                       phoneNumber: viewModel.user?.phoneNumber ?? "",
+                                                       address: viewModel.user?.address ?? ""))
         case .helpAndInfo:
             navigator.pushToView(view: AboutUsScreen())
         case .settings:

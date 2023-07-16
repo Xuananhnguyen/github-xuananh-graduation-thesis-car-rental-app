@@ -28,3 +28,9 @@
 "resetPassword" = "Reset Password";
 "titleForgotPassword" = "Forgot Password";
 "passwordResetLink" = "Password reset link sent! Check your email";
+"fullName" = "Full Name";
+"phoneNumber" = "Phone number";
+"address" = "Address";
+"confirmPassword" = "Confirm Password";
+"passwordAndConfirmPasswordNotMatch" = "Password and Confirm Password not match";
+"successfulAccountRegistration" = "Successful account registration";

@@ -13,7 +13,7 @@ final class ProfileViewModel: ObservableObject {
     
     func loadCurrentUser() async throws {
         let authDataResult = try AuthenticationManager.shared.getAuthenticateUser()
-        self.user = try await UserManager.shared.getUser(userId: authDataResult.email ?? "")
+        self.user = try await UserManager.shared.getUser(email: authDataResult.email ?? "")
     }
     
     func signOut() throws {

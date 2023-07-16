@@ -26,7 +26,7 @@ struct SignUpScreen: AppNavigator {
                     
                     VStack(alignment: .center, spacing: 0) {
                         VStack(alignment: .leading, spacing: 0){
-                            Text("Sign Up")
+                            Text("signUp".localized)
                                 .textStyle(.IMPRIMA_REGULAR, size: 50)
                                 .foregroundColor(Color(BLACK_000000))
                                 .padding(.bottom, 20)
@@ -39,13 +39,19 @@ struct SignUpScreen: AppNavigator {
                         .padding(.bottom, 60)
                         
                         VStack(spacing: 16){
-                            TextFieldView(title: "Email".uppercased(),
+                            TextFieldView(title: "\("fullName".localized):",
+                                          inputContent: $viewModel.fullName)
+                            
+                            TextFieldView(title: "\("email".localized):",
                                           inputContent: $viewModel.email)
                             
-                            SecureTextFieldView(title: "Password".uppercased(),
+                            TextFieldView(title: "\("phoneNumber".localized):",
+                                          inputContent: $viewModel.phoneNumber)
+                            
+                            SecureTextFieldView(title: "password".localized,
                                                 inputContent: $viewModel.password)
                             
-                            SecureTextFieldView(title: "Confirm Password".uppercased(),
+                            SecureTextFieldView(title: "confirmPassword".localized,
                                                 inputContent: $viewModel.confirmPassword)
                         }
                         .padding(.bottom, 30)
@@ -55,7 +61,7 @@ struct SignUpScreen: AppNavigator {
                         Button(action: {
                             if !viewModel.email.isEmpty || !viewModel.password.isEmpty || !viewModel.confirmPassword.isEmpty {
                                 if viewModel.password != viewModel.confirmPassword {
-                                    let confirmDialog = ConfirmDialog(content: "Password and Confirm Password not match")
+                                    let confirmDialog = ConfirmDialog(content: "passwordAndConfirmPasswordNotMatch".localized)
                                     Popup.presentPopup(alertView: confirmDialog)
                                 } else {
                                     signUp()
@@ -82,24 +88,15 @@ struct SignUpScreen: AppNavigator {
 
 
 extension SignUpScreen {
-    private func validate(email: String, password: String, confirmPassword: String) {
-        if email.isEmpty || password.isEmpty {
-            let confirmDialog = ConfirmDialog(content: "Email or Password empty")
-            Popup.presentPopup(alertView: confirmDialog)
-        } else if !email.validate(regex: REGEX.email) || !password.validate(regex: REGEX.password) {
-            let confirmDialog = ConfirmDialog(content: "Email or Password invalid format")
-            Popup.presentPopup(alertView: confirmDialog)
-        } else {
-            navigator.pushToView(view: HomeScreen())
-        }
-    }
-    
     private func signUp() {
         Task {
             do {
                 try await viewModel.signUp()
                 print("Sign Up Success")
-                navigator.pushToView(view: HomeScreen())
+                let confirmDialog = ConfirmDialog(content: "successfulAccountRegistration".localized) {
+                    navigator.pop()
+                }
+                Popup.presentPopup(alertView: confirmDialog)
             } catch {
                 print(error)
             }

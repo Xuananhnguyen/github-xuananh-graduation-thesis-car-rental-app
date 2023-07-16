@@ -9,6 +9,9 @@ import Foundation
 
 final class SignUpViewModel: ObservableObject {
     @Published var email: String = ""
+    @Published var fullName: String = ""
+    @Published var phoneNumber: String = ""
+    @Published var address: String = ""
     @Published var password: String = ""
     @Published var confirmPassword: String = ""
     
@@ -19,6 +22,10 @@ final class SignUpViewModel: ObservableObject {
         }
         
         let authDataResult = try await AuthenticationManager.shared.createUser(email: email, password: password)
-        try await UserManager.shared.createNewUser(auth: authDataResult, password: password)
+        try await UserManager.shared.createNewUser(auth: authDataResult,
+                                                   fullName: fullName,
+                                                   password: password,
+                                                   phoneNumber: phoneNumber,
+                                                   address: address)
     }
 }
