@@ -55,7 +55,7 @@ struct SignInScreen: AppNavigator {
                             Task {
                                 do {
                                     try await viewModel.signIn()
-                                    print("SignIn success")
+                                    print("SignInSuccess")
                                     navigator.pushToView(view: HomeScreen())
                                 } catch {
                                     print(error)
