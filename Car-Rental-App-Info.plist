@@ -4,15 +4,21 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Imprima-Regular.ttf</string>
-		<string>Inter-Bold.ttf</string>
-		<string>Inter-Medium.ttf</string>
-		<string>Inter-Regular.ttf</string>
-		<string>PTSans-Regular.ttf</string>
-		<string>PTSans-Bold.ttf</string>
+		<string>Roboto-Thin.ttf</string>
 		<string>Roboto-Regular.ttf</string>
 		<string>Roboto-Medium.ttf</string>
 		<string>Roboto-Bold.ttf</string>
+		<string>Roboto-Light.ttf</string>
+		<string>Roboto-Black.ttf</string>
 	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>GREEN_2B4C59</string>
+		<key>UIImageName</key>
+		<string>LanchScreenImage</string>
+		<key>UILaunchScreen</key>
+		<dict/>
+	</dict>
 </dict>
 </plist>

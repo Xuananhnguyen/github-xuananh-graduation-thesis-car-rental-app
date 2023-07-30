@@ -9,6 +9,7 @@ import SwiftUI
 import VNavigator
 
 struct MyProfileScreen: AppNavigator {
+    @StateObject var viewModel = MyProfileViewModel()
     @State var fullname: String = ""
     @State var email: String = ""
     @State var phoneNumber: String = ""
@@ -22,19 +23,16 @@ struct MyProfileScreen: AppNavigator {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.vertical, 10)
                 
-                TextFieldView(title: "Full Name:",
+                TextFieldView(title: "\("fullName".localized):",
                               inputContent: $fullname)
                 
-                TextFieldView(title: "Email:",
+                TextFieldView(title: "\("email".localized):",
                               inputContent: $email)
                 
-                TextFieldView(title: "Phone number:",
+                TextFieldView(title: "\("phoneNumber".localized):",
                               inputContent: $phoneNumber)
                 
-                TextFieldView(title: "Address:",
-                              inputContent: $address)
-                
-                TextFieldView(title: "Gender:",
+                TextFieldView(title: "\("address".localized):",
                               inputContent: $address)
                 
                 Spacer()
@@ -42,7 +40,7 @@ struct MyProfileScreen: AppNavigator {
                     
                 }, label: {
                     Text("Save Changes")
-                        .textStyle(.INTER_BOLD, size: 20)
+                        .textStyle(.ROBOTO_BOLD, size: 20)
                         .foregroundColor(Color(WHITE_FFFFFF))
                         .frame(maxWidth: .infinity)
                         .frame(height: 52)

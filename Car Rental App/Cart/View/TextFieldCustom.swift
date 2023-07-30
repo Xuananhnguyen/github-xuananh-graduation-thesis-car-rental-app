@@ -14,7 +14,7 @@ struct TextFieldCustom: View {
         VStack(spacing: 5){
             HStack {
                 Text(title)
-                    .textStyle(.PT_SANS_REGULAR, size: 13)
+                    .textStyle(.ROBOTO_REGULAR, size: 13)
                     .foregroundColor(Color(GRAY_838383))
                 
             }

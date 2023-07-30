@@ -13,7 +13,7 @@ struct TextFieldView: View {
     var fontSizeTitle: CGFloat = 16
     var fontSytle: TextStyle = .ROBOTO_MEDIUM
     var icon: String = ""
-    var lineColor: String = GRAY_E5E5E5
+    var lineColor: String = GREEN_2B4C59
     
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
@@ -26,8 +26,8 @@ struct TextFieldView: View {
                 .textStyle(fontSytle, size: 16)
                 .foregroundColor(Color(GRAY_A1A1A1))
             Divider()
-                .frame(height: 2)
-                .background(Color(lineColor))
+                .frame(height: 1)
+                .background(Color(lineColor).opacity(0.5))
             if !icon.isEmpty {
                 Image(icon)
                     .resizable()

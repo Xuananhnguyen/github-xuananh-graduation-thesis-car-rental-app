@@ -39,15 +39,15 @@ struct SecureTextFieldView: View {
                     Button(action: {
                         isShowPassword.toggle()
                     }, label: {
-                        Image(isShowPassword ? "IC_OPEN_EYE" : "IC_CLOSE_EYE")
+                        Image(isShowPassword ? IC_OPEN_EYE : IC_CLOSE_EYE)
                             .resizable()
                             .frame(width: 24, height: 24)
                     })
                 }
             }
             Divider()
-                .frame(height: 2)
-                .background(Color(GRAY_E5E5E5))
+                .frame(height: 1)
+                .background(Color(GREEN_2B4C59).opacity(0.5))
         }
     }
 }

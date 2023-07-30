@@ -8,59 +8,44 @@
 import SwiftUI
 
 enum TextStyle {
+    case ROBOTO_THIN
+    case ROBOTO_LIGHT
     case ROBOTO_REGULAR
     case ROBOTO_MEDIUM
     case ROBOTO_BOLD
-    case INTER_REGULAR
-    case INTER_MEDIUM
-    case INTER_BOLD
-    case PT_SANS_REGULAR
-    case PT_SANS_BOLD
-    case IMPRIMA_REGULAR
+    case ROBOTO_BLACK
     
     func font(size: CGFloat) -> Font {
         switch self {
+        case .ROBOTO_THIN:
+            return Font.custom("Roboto-Thin", size: size)
+        case .ROBOTO_LIGHT:
+            return Font.custom("Roboto-Light", size: size)
         case .ROBOTO_REGULAR:
             return Font.custom("Roboto-Regular", size: size)
         case .ROBOTO_MEDIUM:
             return Font.custom("Roboto-Medium", size: size)
         case .ROBOTO_BOLD:
             return Font.custom("Roboto-Bold", size: size)
-        case .INTER_REGULAR:
-            return Font.custom("Inter-Regular", size: size)
-        case .INTER_MEDIUM:
-            return Font.custom("Inter-Medium", size: size)
-        case .INTER_BOLD:
-            return Font.custom("Inter-Bold", size: size)
-        case .PT_SANS_REGULAR:
-            return Font.custom("PTSans-Regular", size: size)
-        case .PT_SANS_BOLD:
-            return Font.custom("PTSans-Bold", size: size)
-        case .IMPRIMA_REGULAR:
-            return Font.custom("Imprima-Regular", size: size)
+        case .ROBOTO_BLACK:
+            return Font.custom("Roboto-Black", size: size)
         }
     }
     
     func uiFont(size: CGFloat) -> UIFont {
         switch self {
+        case .ROBOTO_THIN:
+            return UIFont(name: "Roboto-Thin", size: size) ?? .systemFont(ofSize: size, weight: .regular)
+        case .ROBOTO_LIGHT:
+            return UIFont(name: "Roboto-Light", size: size) ?? .systemFont(ofSize: size, weight: .regular)
         case .ROBOTO_REGULAR:
             return UIFont(name: "Roboto-Regular", size: size) ?? .systemFont(ofSize: size, weight: .regular)
         case .ROBOTO_MEDIUM:
             return UIFont(name: "Roboto-Medium", size: size) ?? .systemFont(ofSize: size, weight: .medium)
         case .ROBOTO_BOLD:
             return UIFont(name: "Roboto-Bold", size: size) ?? .systemFont(ofSize: size, weight: .bold)
-        case .INTER_REGULAR:
-            return UIFont(name: "Inter-Regular", size: size) ?? .systemFont(ofSize: size, weight: .regular)
-        case .INTER_MEDIUM:
-            return UIFont(name: "Inter-Medium", size: size) ?? .systemFont(ofSize: size, weight: .medium)
-        case .INTER_BOLD:
-            return UIFont(name: "Inter-Bold", size: size) ?? .systemFont(ofSize: size, weight: .bold)
-        case .PT_SANS_REGULAR:
-            return UIFont(name: "PTSans-Regular", size: size) ?? .systemFont(ofSize: size, weight: .regular)
-        case .PT_SANS_BOLD:
-            return UIFont(name: "PTSans-Bold", size: size) ?? .systemFont(ofSize: size, weight: .bold)
-        case .IMPRIMA_REGULAR:
-            return UIFont(name:"Imprima-Regular", size: size) ?? .systemFont(ofSize: size, weight: .regular)
+        case .ROBOTO_BLACK:
+            return UIFont(name: "Roboto-Black", size: size) ?? .systemFont(ofSize: size, weight: .regular)
         }
     }
 }
