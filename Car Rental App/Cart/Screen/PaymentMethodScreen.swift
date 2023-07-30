@@ -28,7 +28,7 @@ struct PaymentMethodScreen: AppNavigator {
                     VStack {
                         HStack {
                             Text("Card Number:")
-                                .textStyle(.PT_SANS_REGULAR, size: 16)
+                                .textStyle(.ROBOTO_REGULAR, size: 16)
                                 .foregroundColor(Color(GRAY_838383))
                             Spacer()
                             TextField(cardNumber, text: $cardNumber)
@@ -46,7 +46,7 @@ struct PaymentMethodScreen: AppNavigator {
                     VStack {
                         HStack {
                             Text("Expiration Date:")
-                                .textStyle(.PT_SANS_REGULAR, size: 16)
+                                .textStyle(.ROBOTO_REGULAR, size: 16)
                                 .foregroundColor(Color(GRAY_838383))
                             Spacer()
                             TextField(expirationDate, text: $expirationDate)
@@ -64,7 +64,7 @@ struct PaymentMethodScreen: AppNavigator {
                     VStack {
                         HStack {
                             Text("CCV:")
-                                .textStyle(.PT_SANS_REGULAR, size: 16)
+                                .textStyle(.ROBOTO_REGULAR, size: 16)
                                 .foregroundColor(Color(GRAY_838383))
                             
                             TextField(ccv, text: $ccv)

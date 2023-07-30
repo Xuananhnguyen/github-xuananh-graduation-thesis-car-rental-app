@@ -28,4 +28,10 @@ final class SignUpViewModel: ObservableObject {
                                                    phoneNumber: phoneNumber,
                                                    address: address)
     }
+    
+    
+    
+    func disabledButton() -> Bool {
+        return email.isEmpty || password.isEmpty || fullName.isEmpty || phoneNumber.isEmpty || address.isEmpty || confirmPassword.isEmpty
+    }
 }

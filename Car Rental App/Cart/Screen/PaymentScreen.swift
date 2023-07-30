@@ -33,12 +33,12 @@ struct PaymentScreen: AppNavigator {
                     
                     HStack(spacing: 0){
                         Text("payment made".uppercased())
-                            .textStyle(.PT_SANS_REGULAR, size: 16)
+                            .textStyle(.ROBOTO_REGULAR, size: 16)
                             .foregroundColor(Color(GREEN_2B4C59))
                         Spacer()
                         
                         Text("$\(price)")
-                            .textStyle(.PT_SANS_REGULAR, size: 17)
+                            .textStyle(.ROBOTO_REGULAR, size: 17)
                             .foregroundColor(Color(GREEN_6AC649))
                     }
                     .padding(.bottom, 39)

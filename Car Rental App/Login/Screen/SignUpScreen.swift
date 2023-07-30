@@ -22,36 +22,29 @@ struct SignUpScreen: AppNavigator {
                         .resizable()
                         .frame(width: 150, height: 150)
                         .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.bottom, 50)
+                        .padding(.bottom, 20)
                     
                     VStack(alignment: .center, spacing: 0) {
-                        VStack(alignment: .leading, spacing: 0){
-                            Text("signUp".localized)
-                                .textStyle(.IMPRIMA_REGULAR, size: 50)
-                                .foregroundColor(Color(BLACK_000000))
-                                .padding(.bottom, 20)
-                            
-                            VLine()
-                                .background(Color(GREEN_2B4C59))
-                                .frame(width: 58, height: 4, alignment: .leading)
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.bottom, 60)
+                        Text("signUp".localized)
+                            .textStyle(.ROBOTO_REGULAR, size: 48)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(Color(GREEN_2B4C59))
+                            .padding(.bottom, 20)
                         
                         VStack(spacing: 16){
-                            TextFieldView(title: "\("fullName".localized):",
+                            TextFieldView(title: "\("fullName".localized)".uppercased(),
                                           inputContent: $viewModel.fullName)
                             
-                            TextFieldView(title: "\("email".localized):",
+                            TextFieldView(title: "\("email".localized)".uppercased(),
                                           inputContent: $viewModel.email)
                             
-                            TextFieldView(title: "\("phoneNumber".localized):",
+                            TextFieldView(title: "\("phoneNumber".localized)".uppercased(),
                                           inputContent: $viewModel.phoneNumber)
                             
-                            SecureTextFieldView(title: "password".localized,
+                            SecureTextFieldView(title: "password".localized.uppercased(),
                                                 inputContent: $viewModel.password)
                             
-                            SecureTextFieldView(title: "confirmPassword".localized,
+                            SecureTextFieldView(title: "confirmPassword".localized.uppercased(),
                                                 inputContent: $viewModel.confirmPassword)
                         }
                         .padding(.bottom, 30)
@@ -68,14 +61,16 @@ struct SignUpScreen: AppNavigator {
                                 }
                             }
                         }, label: {
-                            Text("Login".uppercased())
-                                .textStyle(.INTER_BOLD, size: 20)
+                            Text("signUp".localized)
+                                .textStyle(.ROBOTO_BOLD, size: 20)
                                 .foregroundColor(Color(WHITE_FFFFFF))
                                 .frame(maxWidth: .infinity)
                                 .frame(height: 52)
-                                .background(Color(GREEN_2B4C59))
+                                .background(Color(GREEN_2B4C59).opacity(viewModel.disabledButton() ? 0.5 : 1))
                                 .cornerRadius(10)
                         })
+                        .padding(.bottom, 50)
+                        .disabled(viewModel.disabledButton())
                     }
                     .padding(.horizontal, 24)
                 }

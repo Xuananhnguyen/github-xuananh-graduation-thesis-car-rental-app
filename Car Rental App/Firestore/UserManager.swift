@@ -56,8 +56,4 @@ final class UserManager {
                       address: address,
                       dateCreated: dateCreated)
     }
-    
-    func updateUser(email: String) async throws -> DBUser {
-        let snapshot = try await Firestore.firestore().collection("users").document(email).updateData(<#T##fields: [AnyHashable : Any]##[AnyHashable : Any]#>)
-    }
 }

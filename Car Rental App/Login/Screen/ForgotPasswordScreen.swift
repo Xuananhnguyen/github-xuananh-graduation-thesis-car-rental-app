@@ -44,7 +44,7 @@ struct ForgotPasswordScreen: AppNavigator {
                     UIApplication.shared.endEditing()
                 }, label: {
                     Text("resetPassword".localized.uppercased())
-                        .textStyle(.INTER_BOLD, size: 20)
+                        .textStyle(.ROBOTO_BOLD, size: 20)
                         .foregroundColor(Color(WHITE_FFFFFF))
                         .frame(maxWidth: .infinity)
                         .frame(height: 52)

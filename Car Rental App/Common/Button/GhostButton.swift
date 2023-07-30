@@ -10,23 +10,27 @@ import SwiftUI
 struct GhostButton: View {
     var onPress: () -> Void
     var title: String
+    var font: Font = TextStyle.ROBOTO_MEDIUM.font(size: 16)
     var isDisabled: Bool = false
+    var textColor: Color = Color(BLACK_000000)
+    var strokeColor: Color = Color(BLACK_000000)
+    var paddingVertical: CGFloat = 10
     var paddingHorizontal: CGFloat = 30
+    var lineWidth: CGFloat = 1
+    var cornerRadius: CGFloat = 50.0
     
     var body: some View {
         Button(action: {
             onPress()
         }, label: {
             Text(title)
-                .textStyle(.ROBOTO_MEDIUM, size: 16)
-                .foregroundColor(Color(BLACK_000000))
-                .lineLimit(1)
-                .minimumScaleFactor(0.8)
-                .padding(.vertical, 10)
+                .font(font)
+                .foregroundColor(textColor)
+                .padding(.vertical, paddingVertical)
                 .padding(.horizontal, paddingHorizontal)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 50.0)
-                    .stroke(Color(BLACK_000000), lineWidth: 1))
+                    RoundedRectangle(cornerRadius: cornerRadius)
+                    .stroke(strokeColor, lineWidth: lineWidth))
             }
         )
         .disabled(isDisabled)
