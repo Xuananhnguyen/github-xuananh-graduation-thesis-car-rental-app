@@ -42,6 +42,10 @@
 "unverifiedAccount" = "Tài khoản chưa được xác thực";
 "verifyLicense" = "Bạn cần xác thực GPLX và 1 số thông tin cá nhân khác để có thể đặt xe";
 "verifyNow" = "Xác thực ngay";
+"carRental" = "Thuê xe";
+"priceRental" = "Giá: ";
+"from" = "Từ - %@";
+"to" = "Đến - %@";
 "searchCar" = "Tìm kiếm xe theo nhu cầu của bạn";
 "findCar" = "Tìm xe ngay";
 "carRentalLocation" = "Địa điểm thuê xe";

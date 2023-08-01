@@ -9,29 +9,23 @@ import SwiftUI
 import VNavigator
 
 struct SettingScreen: AppNavigator {
-    var featureSetting: [SettingType] = [.profileSettings, .language, .setPassword]
+    var featureSetting: [SettingType] = [.profileSettings, .language, .setPassword, .carRental]
     
     var body: some View {
         BaseNavigationView(isHiddenBackButton: false,
+                           titleBackbutton: "Cài đặt",
                            builderContent: {
-            VStack {
-                Text("Settings")
-                    .textStyle(.ROBOTO_BOLD, size: 24)
-                    .foregroundColor(Color(BLACK_000000))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.vertical, 10)
-                
-                VStack(spacing: 20){
-                    ForEach(featureSetting.indices, id: \.self) { index in
-                        let item = featureSetting[index]
-                        ButtonProfile(nameFeature: item.nameSetting,
-                                      onPress: {
-                            onPressFeature(feature: item)
-                        })
-                    }
+            VStack(spacing: 20){
+                ForEach(featureSetting.indices, id: \.self) { index in
+                    let item = featureSetting[index]
+                    ButtonProfile(nameFeature: item.nameSetting,
+                                  onPress: {
+                        onPressFeature(feature: item)
+                    })
                 }
-                .padding(.bottom, 80)
+                Spacer()
             }
+            .padding(.bottom, 80)
             .background(Color(WHITE_FFFFFF).ignoresSafeArea())
         })
     }
@@ -71,6 +65,8 @@ extension SettingScreen {
             return
         case .setPassword:
             return
+        case .carRental:
+            navigator.pushToView(view: CarRentalScreen())
         }
     }
 

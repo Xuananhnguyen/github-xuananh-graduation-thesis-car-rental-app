@@ -49,6 +49,7 @@ enum SettingType: CaseIterable {
     case profileSettings
     case language
     case setPassword
+    case carRental
     
     var nameSetting: String {
         switch self {
@@ -58,6 +59,25 @@ enum SettingType: CaseIterable {
             return "language".localized
         case .setPassword:
             return "setPassword".localized
+        case .carRental:
+            return "carRental".localized
+        }
+    }
+}
+
+enum ColorStatus: String {
+    case done = "done"
+    case pending = "pending"
+    case cancel = "cancel"
+    
+    var retColor: String {
+        switch self {
+        case .done:
+            return DONE_09581A
+        case .pending:
+            return PENDING_E08112
+        case .cancel:
+            return RED_C64949
         }
     }
 }
