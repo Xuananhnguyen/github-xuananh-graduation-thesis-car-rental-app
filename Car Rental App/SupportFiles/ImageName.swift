@@ -38,6 +38,7 @@ let IC_MAIL = "ic_mail"
 let IC_PHONE_BLUE = "ic_phone_blue"
 let IC_LOCATION = "ic_location"
 let IC_SHOPPING_SUCCESS = "ic_shopping_success"
+let IC_MSG = "ic_msg"
 // MARK: - IMAGE
 let IMG_SALE = "img_sale"
 let CAR_BACKGROUND = "car_background"

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB0246372A795125005F9B74 /* CarRentalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0246362A795125005F9B74 /* CarRentalViewModel.swift */; };
+		CB02463A2A795168005F9B74 /* CarRentalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0246392A795168005F9B74 /* CarRentalResponse.swift */; };
+		CB6904BD2A76D894001598AE /* CarRentalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6904BC2A76D894001598AE /* CarRentalScreen.swift */; };
 		DD1E351A11F934092E16761E /* Pods_Car_Rental_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7846643308F87A1C46D41B86 /* Pods_Car_Rental_App.framework */; };
 		F91807052A5038FC0084F113 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91807042A5038FC0084F113 /* SignUpViewModel.swift */; };
 		F91807072A5039090084F113 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91807062A5039090084F113 /* SignInViewModel.swift */; };
@@ -90,6 +93,9 @@
 		37DBFAEC2236E9F5BF693046 /* Pods-Car Rental App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Car Rental App.debug.xcconfig"; path = "Target Support Files/Pods-Car Rental App/Pods-Car Rental App.debug.xcconfig"; sourceTree = "<group>"; };
 		57BACBFF04BA743502642835 /* Pods-Car Rental App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Car Rental App.release.xcconfig"; path = "Target Support Files/Pods-Car Rental App/Pods-Car Rental App.release.xcconfig"; sourceTree = "<group>"; };
 		7846643308F87A1C46D41B86 /* Pods_Car_Rental_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Car_Rental_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB0246362A795125005F9B74 /* CarRentalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalViewModel.swift; sourceTree = "<group>"; };
+		CB0246392A795168005F9B74 /* CarRentalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalResponse.swift; sourceTree = "<group>"; };
+		CB6904BC2A76D894001598AE /* CarRentalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalScreen.swift; sourceTree = "<group>"; };
 		F91807042A5038FC0084F113 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		F91807062A5039090084F113 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		F91807082A5041FF0084F113 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -190,6 +196,32 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CB0246352A795106005F9B74 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CB0246362A795125005F9B74 /* CarRentalViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CB0246382A795157005F9B74 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				CB0246392A795168005F9B74 /* CarRentalResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		CB6904BB2A76D85B001598AE /* CarRental */ = {
+			isa = PBXGroup;
+			children = (
+				CB0246382A795157005F9B74 /* Response */,
+				CB0246352A795106005F9B74 /* ViewModel */,
+				CB6904BC2A76D894001598AE /* CarRentalScreen.swift */,
+			);
+			path = CarRental;
+			sourceTree = "<group>";
+		};
 		EAA6BD865ABD0173A92593E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,13 +258,6 @@
 				F96D185E2A55DDDD0059D609 /* ForgotPasswordViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		F927225429A7DBCA0033066C /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 		F927225B29AB90050033066C /* Common */ = {
@@ -496,11 +521,11 @@
 		F9AB78D4291967E2005F4FF2 /* Car Rental App */ = {
 			isa = PBXGroup;
 			children = (
+				CB6904BB2A76D85B001598AE /* CarRental */,
 				F91807022A5034910084F113 /* AuthenticationManager */,
 				F9770A5329B474A200596443 /* App */,
 				F9770A5D29B476C300596443 /* Core */,
 				F927225B29AB90050033066C /* Common */,
-				F927225429A7DBCA0033066C /* Networking */,
 				F94B14282933173600AC41A1 /* NavigationBar */,
 				F94B14372936723B00AC41A1 /* Cart */,
 				F9522864292A910500AFF79B /* Profile */,
@@ -765,6 +790,7 @@
 				F99CB8EA2940FBA600B6E38A /* BackHeader.swift in Sources */,
 				F99CB8F22945D42100B6E38A /* CartViewModel.swift in Sources */,
 				F9F960222924043400919CF9 /* CarModel.swift in Sources */,
+				CB0246372A795125005F9B74 /* CarRentalViewModel.swift in Sources */,
 				F9F960182922987600919CF9 /* TypeOfCarModel.swift in Sources */,
 				F9522863292A861500AFF79B /* SearchView.swift in Sources */,
 				F9F960132922974D00919CF9 /* HomeViewModel.swift in Sources */,
@@ -778,6 +804,7 @@
 				F99CB8F62946325C00B6E38A /* TextFieldCustom.swift in Sources */,
 				F9CCA8902A63DFB200660663 /* MyProfileViewModel.swift in Sources */,
 				F9AB78D8291967E2005F4FF2 /* ContentView.swift in Sources */,
+				CB02463A2A795168005F9B74 /* CarRentalResponse.swift in Sources */,
 				F932B4582A489DA600E6FDFB /* SettingScreen.swift in Sources */,
 				F9770A8B29BE305800596443 /* PopupHandle.swift in Sources */,
 				F9D37FBC2A40D0B5002D6817 /* View+Extension.swift in Sources */,
@@ -792,6 +819,7 @@
 				F9770A9829BE371400596443 /* Line.swift in Sources */,
 				F9770A9B29BE38D100596443 /* Double+Extension.swift in Sources */,
 				F9AB78E9291AAFCC005F4FF2 /* SignInScreen.swift in Sources */,
+				CB6904BD2A76D894001598AE /* CarRentalScreen.swift in Sources */,
 				F91807072A5039090084F113 /* SignInViewModel.swift in Sources */,
 				F9522870292AA2F900AFF79B /* ButtonProfile.swift in Sources */,
 				F9770A8929BE2E0400596443 /* Constant.swift in Sources */,
