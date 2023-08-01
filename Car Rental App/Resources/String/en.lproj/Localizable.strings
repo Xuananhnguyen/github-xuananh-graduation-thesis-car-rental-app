@@ -42,3 +42,11 @@
 "unverifiedAccount" = "Tài khoản chưa được xác thực";
 "verifyLicense" = "Bạn cần xác thực GPLX và 1 số thông tin cá nhân khác để có thể đặt xe";
 "verifyNow" = "Xác thực ngay";
+"searchCar" = "Tìm kiếm xe theo nhu cầu của bạn";
+"findCar" = "Tìm xe ngay";
+"carRentalLocation" = "Địa điểm thuê xe";
+"voucher" = "Ưu đãi dành cho bạn";
+"rules" = "Điều khoản";
+"cancellation" = "Chính sách huỷ chuyến";
+"rulesTilte" = "Quý khách lưu ý một số quy định sau:\n- Không sử dụng xe thuê vào mục đích trái pháp luật.\n- Không sử dụng xe để cầm cố, thế chấp.\n- Không hút thuốc, ăn kẹo cao su và xả rác trong xe.\n- Không chở hàng quốc cấm, hàng dễ cháy nổ, hàng tươi sống hoặc có mùi trong xe.\n- Khi trả xe, quý khách vui lòng vệ sinh sạch sẽ hoặc gửi phụ thu thêm phí rửa xe, hút bụi nếu xe bị dơ bẩn (phí sẽ tuỳ thuộc vào mức độ bẩn của xe).\n- Tuân thủ tuyệt đối luật an toàn giao thông và sẽ phải chịu trách nhiệm về vi phạm giao thông, phạt nguội.. nếu có";
+"cancellationTilte" = "Theo chính sách huỷe chuyến, nếu khách thuê huỷ:\n- Trong vòng 15 phút sau khi đặt cọc thì được hoàn lại 100% tiền đã đặt cọc. \n- Hơn 7 ngày trước chuyến đi thì sẽ được hoàn lại 70% tiền đã đặt cọc. \n- Từ 7 ngày trở xuống trước chuyến đi thì sẽ không được hoàn lại tiền đã đặt cọc. \n\nKhách thuê có thể liên hệ Hotline 0366046334 (6:00 đến 22:00) hoặc nhắn tin vào Fanpage TIIRA để được hộ trợ sớm nhất";

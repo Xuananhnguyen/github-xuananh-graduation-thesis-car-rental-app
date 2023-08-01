@@ -43,6 +43,10 @@
 		F9770A9829BE371400596443 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9770A9729BE371400596443 /* Line.swift */; };
 		F9770A9B29BE38D100596443 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9770A9A29BE38D100596443 /* Double+Extension.swift */; };
 		F9770A9D29C0D81C00596443 /* CarDecriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9770A9C29C0D81C00596443 /* CarDecriptionView.swift */; };
+		F9780D9B2A780ED8007BC5CE /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9780D9A2A780ED8007BC5CE /* SearchBar.swift */; };
+		F9780D9D2A78143B007BC5CE /* ButtonAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9780D9C2A78143B007BC5CE /* ButtonAuth.swift */; };
+		F9847EE72A795BCB0065088C /* AttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9847EE62A795BCB0065088C /* AttributedString+Extension.swift */; };
+		F9847EE92A795E310065088C /* LabelCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9847EE82A795E310065088C /* LabelCustom.swift */; };
 		F99008982A76B69B0084A390 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F99008972A76B69B0084A390 /* Roboto-Light.ttf */; };
 		F990089A2A76B6AB0084A390 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F99008992A76B6AB0084A390 /* Roboto-Thin.ttf */; };
 		F990089C2A76B6B50084A390 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F990089B2A76B6B20084A390 /* Roboto-Black.ttf */; };
@@ -125,6 +129,10 @@
 		F9770A9729BE371400596443 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		F9770A9A29BE38D100596443 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		F9770A9C29C0D81C00596443 /* CarDecriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDecriptionView.swift; sourceTree = "<group>"; };
+		F9780D9A2A780ED8007BC5CE /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		F9780D9C2A78143B007BC5CE /* ButtonAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAuth.swift; sourceTree = "<group>"; };
+		F9847EE62A795BCB0065088C /* AttributedString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttributedString+Extension.swift"; sourceTree = "<group>"; };
+		F9847EE82A795E310065088C /* LabelCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCustom.swift; sourceTree = "<group>"; };
 		F99008972A76B69B0084A390 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		F99008992A76B6AB0084A390 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		F990089B2A76B6B20084A390 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
@@ -282,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				F932B4552A484DB600E6FDFB /* GhostButton.swift */,
+				F9780D9C2A78143B007BC5CE /* ButtonAuth.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -437,6 +446,7 @@
 		F9770A8E29BE333A00596443 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				F9847EE62A795BCB0065088C /* AttributedString+Extension.swift */,
 				F9770A8F29BE335B00596443 /* UIApplication+Extension.swift */,
 				F9770A9129BE34B500596443 /* DispatchQueue+Extension.swift */,
 			);
@@ -455,6 +465,7 @@
 			isa = PBXGroup;
 			children = (
 				F9770A9729BE371400596443 /* Line.swift */,
+				F9847EE82A795E310065088C /* LabelCustom.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -600,6 +611,7 @@
 				F9F9601F2924042200919CF9 /* CarBoxView.swift */,
 				F9522862292A861500AFF79B /* SearchView.swift */,
 				F9770A9C29C0D81C00596443 /* CarDecriptionView.swift */,
+				F9780D9A2A780ED8007BC5CE /* SearchBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -761,8 +773,10 @@
 				F9770A9D29C0D81C00596443 /* CarDecriptionView.swift in Sources */,
 				F97294152927E2C200E89C68 /* ViewMoreScreen.swift in Sources */,
 				F9770A8D29BE317700596443 /* AppDataManager.swift in Sources */,
+				F9847EE92A795E310065088C /* LabelCustom.swift in Sources */,
 				F9F9601029215F6000919CF9 /* ColorName.swift in Sources */,
 				F99CB8EA2940FBA600B6E38A /* BackHeader.swift in Sources */,
+				F9780D9D2A78143B007BC5CE /* ButtonAuth.swift in Sources */,
 				F99CB8F22945D42100B6E38A /* CartViewModel.swift in Sources */,
 				F9F960222924043400919CF9 /* CarModel.swift in Sources */,
 				F9F960182922987600919CF9 /* TypeOfCarModel.swift in Sources */,
@@ -772,6 +786,7 @@
 				F9770A5F29B476DA00596443 /* Extension.swift in Sources */,
 				F99CB8EC29424BF900B6E38A /* PaymentScreen.swift in Sources */,
 				F9770A5729B474FA00596443 /* LoadingViewModel.swift in Sources */,
+				F9780D9B2A780ED8007BC5CE /* SearchBar.swift in Sources */,
 				F952286E292A9FD600AFF79B /* Enum.swift in Sources */,
 				F9F9601C29229BB600919CF9 /* ButtonSelect.swift in Sources */,
 				F9F960202924042200919CF9 /* CarBoxView.swift in Sources */,
@@ -780,6 +795,7 @@
 				F9AB78D8291967E2005F4FF2 /* ContentView.swift in Sources */,
 				F932B4582A489DA600E6FDFB /* SettingScreen.swift in Sources */,
 				F9770A8B29BE305800596443 /* PopupHandle.swift in Sources */,
+				F9847EE72A795BCB0065088C /* AttributedString+Extension.swift in Sources */,
 				F9D37FBC2A40D0B5002D6817 /* View+Extension.swift in Sources */,
 				F94B143C2937D2BF00AC41A1 /* CartItem.swift in Sources */,
 				F9AB78EC291AB9CF005F4FF2 /* TextFieldView.swift in Sources */,

@@ -10,62 +10,22 @@ import VNavigator
 
 struct HomeScreen: AppNavigator {
     @StateObject var viewModel = HomeViewModel()
-    @State private var showSignInView: Bool = false
-    let columns = [GridItem(.flexible()),
-                    GridItem(.flexible())]
+    @State private var searchText: String = ""
     
     var body: some View {
         BaseNavigationView(isHiddenBackButton: false,
-                           backgroundColor: Color(WHITE_FFFFFF),
+                           backgroundColor: Color(GRAY_EEEEEE),
                            builderHeader: {
             topHeader
         }, builderContent: {
-            VStack(spacing: 0){
-                Image(IMG_SALE)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 357, height: 158, alignment: .center)
-                    .padding(.top, 10)
-                    .padding(.bottom, 30)
-
-                
-                ScrollView(.vertical, showsIndicators: false) {
-                    Text("Cars Available Near You")
-                        .font(.system(size: 20, weight: .light))
-                        .foregroundColor(Color(BLACK_000000))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.bottom, 4)
-                    
-                    Text("View more")
-                        .font(.system(size: 12, weight: .light))
-                        .foregroundColor(Color(RED_C64949))
-                        .frame(maxWidth: .infinity, alignment: .trailing)
-                        .onTapGesture {
-                            navigator.pushToView(view: ViewMoreScreen())
-                        }
-                    
-                    LazyVGrid(columns: columns, spacing: 30) {
-                        ForEach(viewModel.listCarPrefix.indices, id: \.self) { index in
-                            let item = viewModel.listCarPrefix[index]
-                            CarBoxView(name: item.nameCar ?? "",
-                                       priceDay: item.priceDay ?? "",
-                                       imageCar: item.image ?? "",
-                                       onPressCar: {
-                                navigator.pushToView(view: CarDetailScreen(nameCar: item.nameCar ?? "",
-                                                                           priceDay: item.priceDay ?? "",
-                                                                           imageCar: item.image ?? ""))
-                            })
-                        }
-                    }
-                    .padding(.top, 35)
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(spacing: 15){
+                    searchView
+                    voucherView
+                    rulesView
+                    cancellationView
                 }
-                .padding(.horizontal, 16)
-            }
-            .onAppear {
-//                let authUser = try? AuthenticationManager.shared.getAuthenticateUser()
-//                self.showSignInView = authUser == nil ? true : false
-                viewModel.listPrefixCar()
-            
+                .padding(.top, 15)
             }
         })
     }
@@ -74,36 +34,100 @@ struct HomeScreen: AppNavigator {
 extension HomeScreen {
     private var topHeader: some View {
         HStack(spacing: 0) {
+            Image(IMG_CAR)
+                .resizable()
+                .frame(width: 40, height: 40)
+                .clipShape(Circle())
+                .padding(.trailing, 13)
+            
+            Text("Nguyen Xuan Anh")
+                .textStyle(.ROBOTO_MEDIUM, size: 20)
+                .foregroundColor(Color(WHITE_FFFFFF))
+            
+            Spacer()
             Button(action: {
                 navigator.pushToView(view: ProfileScreen())
             }, label: {
                 Image(IC_THREE_LINE)
-                    .resizable()   
+                    .resizable()
+                    .renderingMode(.template)
                     .frame(width: 27, height: 17.5)
+                    .foregroundColor(Color(WHITE_FFFFFF))
             })
             .frame(width: 41, height: 35, alignment: .center)
-            Spacer()
         }
-        .padding(16)
-        .background(Color(WHITE_F6F6F6)).ignoresSafeArea(.all, edges: .bottom)
+        .padding(.horizontal, 16)
+        .padding(.bottom, 17)
+        .background(Color(GREEN_2B4C59)).ignoresSafeArea(.all, edges: .bottom)
     }
     
-    private var typeOfCarView: some View {
-        HStack(spacing: 21) {
-            ForEach(viewModel.listTypeCar.indices, id: \.self) { index in
-                let item = viewModel.listTypeCar[index]
-                HStack(spacing: 20) {
-                    ButtonSelect(name: item.name ?? "",
-                                 isSelected: item.isSeleted ?? false)
-                }
-            }
+    private var searchView: some View {
+        VStack(alignment: .leading, spacing: 15) {
+            Text("searchCar".localized)
+                .textStyle(.ROBOTO_MEDIUM, size: 18)
+                .foregroundColor(Color(GREEN_2B4C59))
+            
+            SearchBar(text: $searchText)
+            
+            ButtonAuth(title: "findCar".localized,
+                       onPress: {
+                navigator.pushToView(view: ViewMoreScreen())
+            })
         }
-        .padding(.top, 30)
-        .padding(.bottom, 30)
+        .padding(.vertical, 10)
+        .padding(.horizontal, 14)
+        .background(Color(WHITE_FFFFFF))
     }
-}
-struct HomeScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeScreen()
+    
+    private var voucherView: some View {
+        VStack(alignment: .leading, spacing: 15){
+            Text("voucher".localized)
+                .textStyle(.ROBOTO_MEDIUM, size: 16)
+                .foregroundColor(Color(GREEN_2B4C59))
+            Image(IMG_SALE)
+                .resizable()
+                .frame(width: 357, height: 158, alignment: .center)
+        }
+        .padding(.vertical, 8)
+        .padding(.horizontal, 14)
+        .background(Color(WHITE_FFFFFF))
+    }
+    
+    private var rulesView: some View {
+        VStack(alignment: .leading, spacing: 15){
+            Text("rules".localized)
+                .textStyle(.ROBOTO_MEDIUM, size: 16)
+                .foregroundColor(Color(GREEN_2B4C59))
+            LabelCustom(attributedText: makeContent(text: "rulesTilte".localized),
+                        maxWidth: UIScreen.main.bounds.width - 32)
+        }
+        .padding(.vertical, 8)
+        .padding(.horizontal, 14)
+        .background(Color(WHITE_FFFFFF))
+    }
+    
+    private var cancellationView: some View {
+        VStack(alignment: .leading, spacing: 15){
+            Text("cancellation".localized)
+                .textStyle(.ROBOTO_MEDIUM, size: 16)
+                .foregroundColor(Color(GREEN_2B4C59))
+            LabelCustom(attributedText: makeContent(text: "cancellationTilte".localized),
+                        maxWidth: UIScreen.main.bounds.width - 32)
+        }
+        .padding(.vertical, 8)
+        .padding(.horizontal, 14)
+        .background(Color(WHITE_FFFFFF))
+    }
+    
+    private func makeContent(text: String) -> NSMutableAttributedString {
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineSpacing = 2
+        paragraph.alignment = .justified
+        let attString = AttributedStringBuilder(string: text)
+            .addFont(TextStyle.ROBOTO_REGULAR.uiFont(size: 14), forSubString: text)
+            .addColor(UIColor(Color(BLACK_000000)), forSubString: text)
+            .addParagrapStyle(paragraph, forSubString: text)
+            .build()
+        return attString
     }
 }
