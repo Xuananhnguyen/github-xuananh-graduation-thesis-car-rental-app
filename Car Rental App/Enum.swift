@@ -10,9 +10,8 @@ import Foundation
 enum ProfileType: CaseIterable {
     case myProfile
     case settings
-    case notification
-    case privacy
     case helpAndInfo
+    case carRental
     
     var name: String {
         switch self {
@@ -20,12 +19,10 @@ enum ProfileType: CaseIterable {
             return "myProfile".localized
         case .settings:
             return "settings".localized
-        case .notification:
-            return "notification".localized
-        case .privacy:
-            return "privacy".localized
         case .helpAndInfo:
             return "helpAndInfo".localized
+        case .carRental:
+            return "carRentalNoti".localized
         }
     }
     
@@ -35,32 +32,24 @@ enum ProfileType: CaseIterable {
             return IC_MY_PROFILE
         case .settings:
             return IC_SETTINGS
-        case .notification:
-            return IC_BELL
-        case .privacy:
-            return IC_KEY
         case .helpAndInfo:
             return IC_HELP_INFO
+        case .carRental:
+            return IC_BELL
         }
     }
 }
 
 enum SettingType: CaseIterable {
-    case profileSettings
     case language
     case setPassword
-    case carRental
     
     var nameSetting: String {
         switch self {
-        case .profileSettings:
-            return "profileSettings".localized
         case .language:
             return "language".localized
         case .setPassword:
             return "setPassword".localized
-        case .carRental:
-            return "carRental".localized
         }
     }
 }

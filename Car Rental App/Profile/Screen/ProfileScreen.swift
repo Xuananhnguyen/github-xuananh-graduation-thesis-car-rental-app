@@ -12,55 +12,56 @@ import VNavigator
 struct ProfileScreen: AppNavigator {
     @StateObject var viewModel = ProfileViewModel()
     @State var nameUser: String = "User Demo"
-    var feature: [ProfileType] = [.myProfile, .settings, .helpAndInfo, .notification, .privacy]
+    var feature: [ProfileType] = [.myProfile, .settings, .helpAndInfo, .carRental]
     
     var body: some View {
         BaseNavigationView(isHiddenBackButton: false, builderHeader: {
             header
         }, builderContent: {
             VStack {
-                ScrollView(.vertical, showsIndicators: false){
-                    Image(IMG_CAR)
-                        .resizable()
-                        .frame(width: 103, height: 101)
-                        Text(viewModel.user?.fullName ?? "")
-                            .textStyle(.ROBOTO_BOLD, size: 20)
-                            .foregroundColor(Color(GRAY_6B6B6B))
-                    
-                    VStack(spacing: 20){
-                        ForEach(feature.indices, id: \.self) { index in
-                            let item = feature[index]
-                            ButtonProfile(image: item.icon,
-                                          nameFeature: item.name,
-                                          onPress: {
-                                onPressFeature(feature: item)
-                            })
+                Image(IMG_CAR)
+                    .resizable()
+                    .frame(width: 103, height: 101)
+                    .padding(.bottom, 10)
+                
+                Text(viewModel.user?.fullName ?? "")
+                    .textStyle(.ROBOTO_BOLD, size: 20)
+                    .foregroundColor(Color(GRAY_6B6B6B))
+                
+                VStack(spacing: 20){
+                    ForEach(feature.indices, id: \.self) { index in
+                        let item = feature[index]
+                        ButtonProfile(image: item.icon,
+                                      nameFeature: item.name,
+                                      onPress: {
+                            onPressFeature(feature: item)
+                        })
+                    }
+                }
+                Spacer()
+                
+                Button(action: {
+                    Task {
+                        do {
+                            try viewModel.signOut()
+                            print("Logout success")
+                            navigator.popToRootView()
+                        } catch {
+                            print(error)
                         }
                     }
-                    .padding(.bottom, 80)
-                    
-                    Button(action: {
-                        Task {
-                            do {
-                                try viewModel.signOut()
-                                print("Logout success")
-                                navigator.popToRootView()
-                            } catch {
-                                print(error)
-                            }
-                        }
-                    }, label: {
-                        Text("Log Out")
-                            .font(.system(size: 20, weight: .bold))
-                            .foregroundColor(Color(WHITE_FFFFFF))
-                            .frame(width: 349, height: 52)
-                            .background(Color(GREEN_2B4C59))
-                            .cornerRadius(10)
-                    })
-                }
-                .task {
-                    try? await viewModel.loadCurrentUser()
-                }
+                }, label: {
+                    Text("logOut")
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundColor(Color(WHITE_FFFFFF))
+                        .frame(width: 349, height: 52)
+                        .background(Color(GREEN_2B4C59))
+                        .cornerRadius(10)
+                })
+                .padding(.bottom, 20)
+            }
+            .task {
+                try? await viewModel.loadCurrentUser()
             }
             .background(Color(WHITE_FFFFFF).ignoresSafeArea())
         })
@@ -97,8 +98,8 @@ extension ProfileScreen {
             navigator.pushToView(view: AboutUsScreen())
         case .settings:
             navigator.pushToView(view: SettingScreen())
-        case .notification, .privacy:
-            return Popup.presentPopup(alertView: ConfirmDialog(content: "Comming Soon"))
+        case .carRental:
+            navigator.pushToView(view: CarRentalScreen())
         }
     }
 }

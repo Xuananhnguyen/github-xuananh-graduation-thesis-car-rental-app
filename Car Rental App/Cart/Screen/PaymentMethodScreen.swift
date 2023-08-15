@@ -97,7 +97,6 @@ struct PaymentMethodScreen: AppNavigator {
             }
             
             Button(action: {
-                navigator.pushToView(view: PaymentScreen())
             }, label: {
                 Text("Pay")
                     .font(.system(size: 20, weight: .bold))

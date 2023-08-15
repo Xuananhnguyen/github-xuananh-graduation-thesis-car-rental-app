@@ -26,6 +26,8 @@ struct HomeScreen: AppNavigator {
                     cancellationView
                 }
                 .padding(.top, 15)
+                .background(Color(GRAY_EEEEEE))
+                .ignoresSafeArea(.all)
             }
         })
     }
@@ -70,6 +72,7 @@ extension HomeScreen {
             SearchBar(text: $searchText)
             
             ButtonAuth(title: "findCar".localized,
+                       isDisabled: searchText.isEmpty,
                        onPress: {
                 navigator.pushToView(view: ViewMoreScreen())
             })
