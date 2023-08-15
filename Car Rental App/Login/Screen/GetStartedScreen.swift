@@ -44,32 +44,29 @@ struct GetStartedScreen: AppNavigator {
                     Spacer()
                     
                     HStack(spacing: 14){
-                        GhostButton(onPress: {
-                            navigator.pushToView(view: SignInScreen())
-                        },
-                                    title: "login".localized,
+                        GhostButton(title: "login".localized,
                                     font: TextStyle.ROBOTO_BOLD.font(size: 20),
                                     textColor: Color(WHITE_FFFFFF),
                                     strokeColor: Color(WHITE_FFFFFF),
                                     paddingVertical: 10,
                                     paddingHorizontal: 18,
                                     lineWidth: 2,
-                                    cornerRadius: 10.0
-                        )
-                        .background(Color(GREEN_2B4C59))
+                                    cornerRadius: 10.0,
+                                    onPress: {
+                                        navigator.pushToView(view: SignInScreen())
+                                    })
                         
-                        GhostButton(onPress: {
-                            navigator.pushToView(view: SignUpScreen())
-                        },
-                                    title: "signUp".localized,
+                        GhostButton(title: "signUp".localized,
                                     font: TextStyle.ROBOTO_BOLD.font(size: 20),
                                     textColor: Color(WHITE_FFFFFF),
                                     strokeColor: Color(GREEN_2B4C59),
                                     paddingVertical: 12,
                                     paddingHorizontal: 33,
                                     lineWidth: 2,
-                                    cornerRadius: 10.0
-                        )
+                                    cornerRadius: 10.0,
+                                    onPress: {
+                                        navigator.pushToView(view: SignUpScreen())
+                                    })
                     }
                     .padding(.bottom, 20)
                 }

@@ -11,11 +11,13 @@ struct BackHeader: View {
     var backIcon: String = IC_ARROW_LEFT
     var featureIcon: String = IC_THREE_DOT
     var backgroundColor: Color = Color(WHITE_FFFFFF)
+    var title: String = ""
+    var textStyleTitle: Font = TextStyle.ROBOTO_MEDIUM.font(size: 20)
     var onPressBack: (() -> Void)?
     var onPressFeature: (() -> Void)?
 
     var body: some View {
-        HStack(spacing: 0){
+        HStack(spacing: 16){
             if !backIcon.isEmpty {
                 Image(IC_ARROW_LEFT)
                     .resizable()
@@ -26,18 +28,14 @@ struct BackHeader: View {
                         onPressBack?()
                     }
             }
-            Spacer()
             
-            if featureIcon.isEmpty {
-                Image(IC_THREE_DOT)
-                    .resizable()
-                    .renderingMode(.template)
+            if !title.isEmpty {
+                Text(title)
+                    .font(textStyleTitle)
                     .foregroundColor(Color(GREEN_2B4C59))
-                    .frame(width: 30, height: 32)
-                    .onTapGesture {
-                        onPressFeature?()
-                    }
             }
+            
+            Spacer()
         }
         .padding(.vertical, 6)
         .padding(.leading, 16)

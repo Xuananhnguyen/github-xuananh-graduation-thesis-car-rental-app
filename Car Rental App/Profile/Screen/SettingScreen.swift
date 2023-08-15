@@ -9,11 +9,11 @@ import SwiftUI
 import VNavigator
 
 struct SettingScreen: AppNavigator {
-    var featureSetting: [SettingType] = [.profileSettings, .language, .setPassword, .carRental]
+    var featureSetting: [SettingType] = [.language, .setPassword]
     
     var body: some View {
         BaseNavigationView(isHiddenBackButton: false,
-                           titleBackbutton: "Cài đặt",
+                           titleBackbutton: "settings",
                            builderContent: {
             VStack(spacing: 20){
                 ForEach(featureSetting.indices, id: \.self) { index in
@@ -59,14 +59,10 @@ extension SettingScreen {
     
     private func onPressFeature(feature: SettingType) {
         switch feature {
-        case .profileSettings:
-            return
         case .language:
             return
         case .setPassword:
             return
-        case .carRental:
-            navigator.pushToView(view: CarRentalScreen())
         }
     }
 

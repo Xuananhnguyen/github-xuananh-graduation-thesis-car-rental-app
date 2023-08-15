@@ -57,3 +57,5 @@ let IMG_CREDIT_CARD = "img_credit_card"
 let IMG_BRO = "bro"
 let IMG_CAR = "img_car"
 let IMG_CAR_BACKGROUND = "car_background"
+let CAR_IMG = "car_img";
+let IC_LOCATION_BLACK = "ic_location_black";

@@ -40,28 +40,24 @@ struct BaseNavigationView<CustomHeader: View, Content: View>: View {
         .navigationBarTitle("")
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
-        .background(backGroundColor.ignoresSafeArea())
+        .background(backGroundColor)
+        .ignoresSafeArea(.all, edges: .bottom)
     }
     
     var renderDefaultHeader: some View {
-        ZStack {
-            HStack(spacing: 0) {
-                BackHeader(
-                    backgroundColor: navigatorBarBackgroundColor,
-                    onPressBack: {
-                        if let onPressback = onPressBack {
-                            onPressback()
-                        } else {
-                            navigator.pop()
-                        }
+        HStack(spacing: 0) {
+            BackHeader(
+                backgroundColor: navigatorBarBackgroundColor,
+                title: title,
+                textStyleTitle: textStyleTitle,
+                onPressBack: {
+                    if let onPressback = onPressBack {
+                        onPressback()
+                    } else {
+                        navigator.pop()
                     }
-                )
-            }
-            if !title.isEmpty {
-                Text(title)
-                    .font(textStyleTitle)
-                    .foregroundColor(Color(GREEN_2B4C59))
-            }
+                }
+            )
         }
     }
 }
