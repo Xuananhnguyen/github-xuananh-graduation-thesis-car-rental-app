@@ -67,8 +67,10 @@ extension CarRentalScreen {
     // MARK: Make body
     func makeListCarRental() -> some View {
         ScrollView(showsIndicators: false) {
-            ForEach(viewModel.carRentalData, id: \.self) { item in
-                itemCarRentalView(statusType: item.statusType ?? "", imageCar: item.imageCar ?? "", status: item.status ?? "", titleCar: item.titleCar ?? "", price: item.price ?? "", dateFrom: item.dateFrom ?? "", dateTo: item.dateTo ?? "")
+            VStack(spacing: 0){
+                ForEach(viewModel.carRentalData, id: \.self) { item in
+                    itemCarRentalView(statusType: item.statusType ?? "", imageCar: item.imageCar ?? "", status: item.status ?? "", titleCar: item.titleCar ?? "", price: item.price ?? "", dateFrom: item.dateFrom ?? "", dateTo: item.dateTo ?? "")
+                }
             }
         }
     }

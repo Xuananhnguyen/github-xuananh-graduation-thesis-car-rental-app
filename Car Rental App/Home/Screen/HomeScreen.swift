@@ -25,9 +25,7 @@ struct HomeScreen: AppNavigator {
                     rulesView
                     cancellationView
                 }
-                .padding(.top, 15)
-                .background(Color(GRAY_EEEEEE))
-                .ignoresSafeArea(.all)
+                .padding(.vertical, 16)
             }
         })
     }
