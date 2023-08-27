@@ -17,4 +17,18 @@ extension String {
         let localizedText = NSLocalizedString(self, comment: "")
         return localizedText.isEmpty ? self : localizedText
     }
+    
+    func convertDateString(fromFormat originalFormat: String, toFormat newFormat: String) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_us")
+        dateFormatter.dateFormat = originalFormat
+        dateFormatter.timeZone = TimeZone.current
+        
+        guard let date = dateFormatter.date(from: self) else {
+            return nil
+        }
+        
+        dateFormatter.dateFormat = newFormat
+        return dateFormatter.string(from: date)
+    }
 }

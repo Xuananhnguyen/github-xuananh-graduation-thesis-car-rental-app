@@ -30,8 +30,7 @@ struct ViewMoreScreen: AppNavigator {
                     }
                     .padding(16)
                 }
-                .background(Color(GRAY_EEEEEE))
-                .ignoresSafeArea(.all)
+                .background(Color(GRAY_EEEEEE).ignoresSafeArea(.all))
             })
     }
 }

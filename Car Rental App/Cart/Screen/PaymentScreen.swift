@@ -43,7 +43,9 @@ struct SuccessScreen: AppNavigator {
                            onPress: {
                     navigator.popToView(HomeScreen.self)
                 })
-            }.padding(.horizontal, 16)
+            }
+            .padding(.horizontal, 16)
+            .background(Color(GRAY_EEEEEE).ignoresSafeArea(.all))
         }
     }
 }

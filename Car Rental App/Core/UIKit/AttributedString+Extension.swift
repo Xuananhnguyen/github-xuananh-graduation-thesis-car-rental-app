@@ -2,7 +2,7 @@
 //  AttributedString+Extension.swift
 //  Pmobile3
 //
-//  Created by ECO0527_HOANGNM on 13/07/2021.
+//  Created by NGUYEN XUAN ANH on 18/11/2022.
 //
 
 import UIKit

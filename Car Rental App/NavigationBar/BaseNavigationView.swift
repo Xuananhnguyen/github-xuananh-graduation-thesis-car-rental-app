@@ -40,8 +40,7 @@ struct BaseNavigationView<CustomHeader: View, Content: View>: View {
         .navigationBarTitle("")
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
-        .background(backGroundColor)
-        .ignoresSafeArea(.all, edges: .bottom)
+        .background(backGroundColor.ignoresSafeArea(.all))
     }
     
     var renderDefaultHeader: some View {
