@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1FF7845A820E5CBA9C998A0 /* Pods_Car_Rental_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 672D5B76425892564F9927AD /* Pods_Car_Rental_App.framework */; };
 		CB0246372A795125005F9B74 /* CarRentalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0246362A795125005F9B74 /* CarRentalViewModel.swift */; };
 		CB02463A2A795168005F9B74 /* CarRentalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0246392A795168005F9B74 /* CarRentalResponse.swift */; };
 		CB6904BD2A76D894001598AE /* CarRentalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6904BC2A76D894001598AE /* CarRentalScreen.swift */; };
-		DD1E351A11F934092E16761E /* Pods_Car_Rental_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7846643308F87A1C46D41B86 /* Pods_Car_Rental_App.framework */; };
 		F91807052A5038FC0084F113 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91807042A5038FC0084F113 /* SignUpViewModel.swift */; };
 		F91807072A5039090084F113 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91807062A5039090084F113 /* SignInViewModel.swift */; };
 		F91807092A5041FF0084F113 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91807082A5041FF0084F113 /* AuthenticationManager.swift */; };
 		F91E43132A89375500898074 /* CarPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E43122A89375500898074 /* CarPreviewView.swift */; };
+		F91F64F12ABB7B3000CD0ADF /* CLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F64F02ABB7B3000CD0ADF /* CLLocationManager.swift */; };
 		F92D4D632A9B90BA00F33AFF /* CarRentalConfirmationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92D4D622A9B90BA00F33AFF /* CarRentalConfirmationScreen.swift */; };
 		F92D4D652A9BA38F00F33AFF /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92D4D642A9BA38F00F33AFF /* Date+Extension.swift */; };
 		F932B43E2A4843AC00E6FDFB /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F932B43B2A4843AC00E6FDFB /* Roboto-Regular.ttf */; };
@@ -99,16 +100,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		37DBFAEC2236E9F5BF693046 /* Pods-Car Rental App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Car Rental App.debug.xcconfig"; path = "Target Support Files/Pods-Car Rental App/Pods-Car Rental App.debug.xcconfig"; sourceTree = "<group>"; };
-		57BACBFF04BA743502642835 /* Pods-Car Rental App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Car Rental App.release.xcconfig"; path = "Target Support Files/Pods-Car Rental App/Pods-Car Rental App.release.xcconfig"; sourceTree = "<group>"; };
-		7846643308F87A1C46D41B86 /* Pods_Car_Rental_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Car_Rental_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		672D5B76425892564F9927AD /* Pods_Car_Rental_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Car_Rental_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DB082E3A563617B5D64AE02 /* Pods-Car Rental App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Car Rental App.release.xcconfig"; path = "Target Support Files/Pods-Car Rental App/Pods-Car Rental App.release.xcconfig"; sourceTree = "<group>"; };
 		CB0246362A795125005F9B74 /* CarRentalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalViewModel.swift; sourceTree = "<group>"; };
 		CB0246392A795168005F9B74 /* CarRentalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalResponse.swift; sourceTree = "<group>"; };
 		CB6904BC2A76D894001598AE /* CarRentalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalScreen.swift; sourceTree = "<group>"; };
+		D1540025C6E9C1E8C8C7705E /* Pods-Car Rental App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Car Rental App.debug.xcconfig"; path = "Target Support Files/Pods-Car Rental App/Pods-Car Rental App.debug.xcconfig"; sourceTree = "<group>"; };
 		F91807042A5038FC0084F113 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		F91807062A5039090084F113 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		F91807082A5041FF0084F113 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		F91E43122A89375500898074 /* CarPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPreviewView.swift; sourceTree = "<group>"; };
+		F91F64F02ABB7B3000CD0ADF /* CLLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationManager.swift; sourceTree = "<group>"; };
 		F92D4D622A9B90BA00F33AFF /* CarRentalConfirmationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalConfirmationScreen.swift; sourceTree = "<group>"; };
 		F92D4D642A9BA38F00F33AFF /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		F932B43B2A4843AC00E6FDFB /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -192,13 +194,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD1E351A11F934092E16761E /* Pods_Car_Rental_App.framework in Frameworks */,
 				F9FF9CF12A5DCAA1006F95CC /* FirebaseAuthCombine-Community in Frameworks */,
 				F9FF9CF32A5DCAA1006F95CC /* FirebaseDatabase in Frameworks */,
 				F9FF9CF92A5DCAA1006F95CC /* FirebaseFirestoreSwift in Frameworks */,
 				F9FF9CF72A5DCAA1006F95CC /* FirebaseFirestoreCombine-Community in Frameworks */,
 				F9FF9CF52A5DCAA1006F95CC /* FirebaseFirestore in Frameworks */,
 				F9FF9CEF2A5DCAA1006F95CC /* FirebaseAuth in Frameworks */,
+				B1FF7845A820E5CBA9C998A0 /* Pods_Car_Rental_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,8 +210,8 @@
 		8C4357FCD442A2B7223A65F1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				37DBFAEC2236E9F5BF693046 /* Pods-Car Rental App.debug.xcconfig */,
-				57BACBFF04BA743502642835 /* Pods-Car Rental App.release.xcconfig */,
+				D1540025C6E9C1E8C8C7705E /* Pods-Car Rental App.debug.xcconfig */,
+				7DB082E3A563617B5D64AE02 /* Pods-Car Rental App.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -240,10 +242,10 @@
 			path = CarRental;
 			sourceTree = "<group>";
 		};
-		EAA6BD865ABD0173A92593E5 /* Frameworks */ = {
+		E814B860D843B76E262D425E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7846643308F87A1C46D41B86 /* Pods_Car_Rental_App.framework */,
+				672D5B76425892564F9927AD /* Pods_Car_Rental_App.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -276,6 +278,14 @@
 				F96D185E2A55DDDD0059D609 /* ForgotPasswordViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F91F64EF2ABB7B1800CD0ADF /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				F91F64F02ABB7B3000CD0ADF /* CLLocationManager.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		F927225B29AB90050033066C /* Common */ = {
@@ -529,7 +539,7 @@
 				F9AB78D4291967E2005F4FF2 /* Car Rental App */,
 				F9AB78D3291967E2005F4FF2 /* Products */,
 				8C4357FCD442A2B7223A65F1 /* Pods */,
-				EAA6BD865ABD0173A92593E5 /* Frameworks */,
+				E814B860D843B76E262D425E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -544,6 +554,7 @@
 		F9AB78D4291967E2005F4FF2 /* Car Rental App */ = {
 			isa = PBXGroup;
 			children = (
+				F91F64EF2ABB7B1800CD0ADF /* Location */,
 				CB6904BB2A76D85B001598AE /* CarRental */,
 				F91807022A5034910084F113 /* AuthenticationManager */,
 				F9770A5329B474A200596443 /* App */,
@@ -680,11 +691,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9AB78E0291967E3005F4FF2 /* Build configuration list for PBXNativeTarget "Car Rental App" */;
 			buildPhases = (
-				B90BBAA2E6FFA6C68974ED77 /* [CP] Check Pods Manifest.lock */,
+				132FB8CFE5CE4CEC7C205C81 /* [CP] Check Pods Manifest.lock */,
 				F9AB78CE291967E2005F4FF2 /* Sources */,
 				F9AB78CF291967E2005F4FF2 /* Frameworks */,
 				F9AB78D0291967E2005F4FF2 /* Resources */,
-				84AF2BBF9F98FF88B0175756 /* [CP] Embed Pods Frameworks */,
+				550C31DD61CA4BCC3870A2E2 /* [CP] Embed Pods Frameworks */,
+				8EB033029E7FABECAD78CAAA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -760,24 +772,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		84AF2BBF9F98FF88B0175756 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Car Rental App/Pods-Car Rental App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Car Rental App/Pods-Car Rental App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Car Rental App/Pods-Car Rental App-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B90BBAA2E6FFA6C68974ED77 /* [CP] Check Pods Manifest.lock */ = {
+		132FB8CFE5CE4CEC7C205C81 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -797,6 +792,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		550C31DD61CA4BCC3870A2E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Car Rental App/Pods-Car Rental App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Car Rental App/Pods-Car Rental App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Car Rental App/Pods-Car Rental App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EB033029E7FABECAD78CAAA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Car Rental App/Pods-Car Rental App-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Car Rental App/Pods-Car Rental App-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Car Rental App/Pods-Car Rental App-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -859,6 +888,7 @@
 				F9770A8929BE2E0400596443 /* Constant.swift in Sources */,
 				F9F9600B292156DE00919CF9 /* HomeScreen.swift in Sources */,
 				F9AB78D6291967E2005F4FF2 /* Car_Rental_AppApp.swift in Sources */,
+				F91F64F12ABB7B3000CD0ADF /* CLLocationManager.swift in Sources */,
 				F92D4D652A9BA38F00F33AFF /* Date+Extension.swift in Sources */,
 				F99CB8F8294647BF00B6E38A /* PurchaseScreen.swift in Sources */,
 				F91807092A5041FF0084F113 /* AuthenticationManager.swift in Sources */,
@@ -1011,7 +1041,7 @@
 		};
 		F9AB78E1291967E3005F4FF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37DBFAEC2236E9F5BF693046 /* Pods-Car Rental App.debug.xcconfig */;
+			baseConfigurationReference = D1540025C6E9C1E8C8C7705E /* Pods-Car Rental App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1024,6 +1054,8 @@
 				INFOPLIST_FILE = "Car-Rental-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = TIIRA;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1047,7 +1079,7 @@
 		};
 		F9AB78E2291967E3005F4FF2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57BACBFF04BA743502642835 /* Pods-Car Rental App.release.xcconfig */;
+			baseConfigurationReference = 7DB082E3A563617B5D64AE02 /* Pods-Car Rental App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1060,6 +1092,8 @@
 				INFOPLIST_FILE = "Car-Rental-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = TIIRA;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
