@@ -38,6 +38,7 @@ struct BottomSheet<Content: View>: AppNavigator {
                 }
             }
         }
+        .expanded(alignment: .bottom)
         .background(
             Color.clear
                 .ignoresSafeArea()
