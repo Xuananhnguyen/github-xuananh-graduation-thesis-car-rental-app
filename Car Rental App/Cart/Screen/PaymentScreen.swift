@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import VNavigator
 
 struct SuccessScreen: AppNavigator {
     @StateObject var viewModel = SuccessViewModel()

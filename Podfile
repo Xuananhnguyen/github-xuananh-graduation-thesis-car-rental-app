@@ -9,11 +9,8 @@ target 'Car Rental App' do
 
   # Pods for Car Rental App
 
-pod 'VNavigator'
 pod 'Alamofire'
 pod 'SwiftEntryKit', '2.0.0'
 pod 'SwiftyJSON', '~> 4.0'
-pod 'GoogleMaps'
-pod 'GooglePlaces'
 
 end

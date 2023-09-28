@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import VNavigator
 
 struct SettingScreen: AppNavigator {
     var featureSetting: [SettingType] = [.language, .setPassword]

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import VNavigator
 
 struct CarDetailScreen: AppNavigator {
     var imageCar: String = CAR_IMG

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import VNavigator
 
 struct ForgotPasswordScreen: AppNavigator {
     @StateObject var viewModel = ForgotPasswordViewModel()

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import VNavigator
+
 
 struct CarRentalScreen: AppNavigator {
     @ObservedObject var viewModel = CarRentalViewModel()

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import VNavigator
 
 @MainActor
 struct ProfileScreen: AppNavigator {

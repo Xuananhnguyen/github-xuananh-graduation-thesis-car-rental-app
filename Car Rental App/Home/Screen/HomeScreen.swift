@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import VNavigator
 
 struct HomeScreen: AppNavigator {
     @StateObject var viewModel = HomeViewModel()

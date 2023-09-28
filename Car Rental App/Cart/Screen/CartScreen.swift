@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import VNavigator
 
 struct CartScreen: AppNavigator {
     @State var viewModel = CartViewModel()

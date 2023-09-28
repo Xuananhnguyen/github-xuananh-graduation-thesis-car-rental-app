@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import VNavigator
 
 struct MyProfileScreen: AppNavigator {
     @StateObject var viewModel = MyProfileViewModel()

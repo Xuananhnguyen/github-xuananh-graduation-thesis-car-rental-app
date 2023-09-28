@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import VNavigator
 
 struct GetStartedScreen: AppNavigator {
     var clickGetStarted: (() -> Void)?

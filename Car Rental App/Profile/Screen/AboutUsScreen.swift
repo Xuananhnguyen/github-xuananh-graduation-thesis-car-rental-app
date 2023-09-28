@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import VNavigator
 
 struct AboutUsScreen: AppNavigator {
     let listIcon: [String] = [IC_PHONE_BLUE, IC_MAIL, IC_LOCATION]

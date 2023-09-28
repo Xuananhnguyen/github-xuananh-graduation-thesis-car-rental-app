@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import VNavigator
 
 struct PaymentMethodScreen: AppNavigator {
     @State var isrememerThisInfo: Bool = true
