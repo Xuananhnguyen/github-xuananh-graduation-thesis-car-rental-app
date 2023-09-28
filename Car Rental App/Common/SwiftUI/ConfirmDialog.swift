@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import VNavigator
+
 
 struct ConfirmDialog: AppNavigator {
     var title: String = ""

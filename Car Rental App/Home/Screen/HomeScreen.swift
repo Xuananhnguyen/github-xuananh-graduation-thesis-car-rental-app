@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import VNavigator
 
 struct HomeScreen: AppNavigator {
     @StateObject var viewModel = HomeViewModel()
@@ -25,7 +24,7 @@ struct HomeScreen: AppNavigator {
                     rulesView
                     cancellationView
                 }
-                .padding(.top, 15)
+                .padding(.vertical, 16)
             }
         })
     }
@@ -70,6 +69,7 @@ extension HomeScreen {
             SearchBar(text: $searchText)
             
             ButtonAuth(title: "findCar".localized,
+                       isDisabled: searchText.isEmpty,
                        onPress: {
                 navigator.pushToView(view: ViewMoreScreen())
             })

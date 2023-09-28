@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import VNavigator
 import FirebaseAuth
 import FirebaseDatabase
 

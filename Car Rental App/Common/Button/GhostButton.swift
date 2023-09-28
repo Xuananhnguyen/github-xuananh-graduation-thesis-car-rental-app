@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct GhostButton: View {
-    var onPress: () -> Void
     var title: String
     var font: Font = TextStyle.ROBOTO_MEDIUM.font(size: 16)
     var isDisabled: Bool = false
@@ -18,6 +17,7 @@ struct GhostButton: View {
     var paddingHorizontal: CGFloat = 30
     var lineWidth: CGFloat = 1
     var cornerRadius: CGFloat = 50.0
+    var onPress: () -> Void
     
     var body: some View {
         Button(action: {

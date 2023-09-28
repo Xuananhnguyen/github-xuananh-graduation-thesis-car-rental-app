@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import VNavigator
 
 struct ViewMoreScreen: AppNavigator {
     @StateObject var viewModel = HomeViewModel()
@@ -17,63 +16,28 @@ struct ViewMoreScreen: AppNavigator {
     var body: some View {
         BaseNavigationView(
             isHiddenBackButton: false,
-            builderHeader: {
-                headerRender
-            }, builderContent: {
+            title: "titleSearchCar".localized,
+            backgroundColor: Color(GRAY_EEEEEE),
+            builderContent: {
                 ScrollView(.vertical, showsIndicators: false){
-                    VStack {
-                        title
-                        
-                        LazyVGrid(columns: columns, spacing: 30) {
-                            ForEach(viewModel.listCar.indices, id: \.self) { index in
-                                let item = viewModel.listCar[index]
-                                CarBoxView(name: item.nameCar ?? "",
-                                           priceDay: item.priceDay ?? "",
-                                           imageCar: item.image ?? "", onPressCar: {
-                                    navigator.pushToView(view: CarDetailScreen(nameCar: item.nameCar ?? "",
-                                                                               priceDay: item.priceDay ?? "",
-                                                                               imageCar: item.image ?? ""))
-                                })
+                    VStack(spacing: 16) {
+                        ForEach(0...5, id: \.self) { _ in
+                            CarPreviewView {
+                                navigator.pushToView(view: CarDetailScreen())
                             }
                         }
-                        .padding(.top, 35)
                     }
+                    .padding(16)
                 }
-                .padding(.horizontal, 16)
+                .background(Color(GRAY_EEEEEE).ignoresSafeArea(.all))
             })
     }
 }
 
 extension ViewMoreScreen {
-    private var headerRender: some View {
-        HStack(spacing: 0){
-            Image(IC_ARROW_LEFT)
-                .resizable()
-                .renderingMode(.template)
-                .foregroundColor(Color(GREEN_2B4C59))
-                .frame(width: 13, height: 21)
-                .onTapGesture {
-                    navigator.pop()
-                }
-            Spacer()
-            
-            SearchView(inputSearch: $search)
+    private var EmptyView: some View {
+        VStack {
+            Text("noResult".localized)
         }
-        .padding(16)
-    }
-    
-    private var title: some View {
-        VStack(alignment: .leading, spacing: 11){
-            Text("TRENDING")
-                .font(.system(size: 12, weight: .regular))
-                .foregroundColor(Color(GREEN_2B4C59))
-            
-            Text("Cars")
-                .font(.system(size: 15, weight: .regular))
-                .foregroundColor(Color(BLUE_95BCCC))
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.top, 40)
-        .padding(.horizontal, 24)
     }
 }

@@ -19,6 +19,7 @@ struct BaseNavigationView<CustomHeader: View, Content: View>: View {
     private var navigatorBarBackgroundColor: Color = Color(WHITE_FFFFFF)
     private var paddingBottom: CGFloat = 2
     private var textStyleTitle: Font = TextStyle.ROBOTO_MEDIUM.font(size: 20)
+    private var rightIcon: String = ""
     
     var body: some View {
         VStack(spacing: 0) {
@@ -33,32 +34,29 @@ struct BaseNavigationView<CustomHeader: View, Content: View>: View {
                 }
             }
             builderContent
+            Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .navigationBarTitle("")
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
-        .background(backGroundColor.ignoresSafeArea())
+        .background(backGroundColor.ignoresSafeArea(.all))
     }
     
     var renderDefaultHeader: some View {
-        ZStack {
-            HStack(spacing: 0) {
-                BackHeader(
-                    backgroundColor: navigatorBarBackgroundColor,
-                    onPressBack: {
-                        if let onPressback = onPressBack {
-                            onPressback()
-                        } else {
-                            navigator.pop()
-                        }
+        HStack(spacing: 0) {
+            BackHeader(
+                backgroundColor: navigatorBarBackgroundColor,
+                title: title,
+                textStyleTitle: textStyleTitle,
+                onPressBack: {
+                    if let onPressback = onPressBack {
+                        onPressback()
+                    } else {
+                        navigator.pop()
                     }
-                )
-            }
-            if !title.isEmpty {
-                Text(title)
-                    .font(textStyleTitle)
-                    .foregroundColor(Color(GREEN_2B4C59))
-            }
+                }
+            )
         }
     }
 }
@@ -73,6 +71,7 @@ extension BaseNavigationView {
         navigatorBarBackgroundColor: Color = Color(WHITE_FFFFFF),
         paddingBottom: CGFloat = 2,
         textStyleTitle: Font = TextStyle.ROBOTO_MEDIUM.font(size: 20),
+        rightIcon: String = "",
         @ViewBuilder builderHeader: () -> CustomHeader,
         @ViewBuilder builderContent: () -> Content
     ) {
@@ -86,6 +85,7 @@ extension BaseNavigationView {
         self.textStyleTitle = textStyleTitle
         self.builderContent = builderContent()
         self.builderHeader = builderHeader()
+        self.rightIcon = rightIcon
     }
 }
 
@@ -98,6 +98,7 @@ extension BaseNavigationView where CustomHeader == EmptyView {
         backgroundColor: Color = Color(WHITE_FFFFFF),
         navigatorBarBackgroundColor: Color = Color(WHITE_FFFFFF),
         paddingBottom: CGFloat = 2,
+        rightIcon: String = "",
         textStyleTitle: Font = TextStyle.ROBOTO_MEDIUM.font(size: 20),
         @ViewBuilder builderContent: () -> Content
     ) {
@@ -110,6 +111,7 @@ extension BaseNavigationView where CustomHeader == EmptyView {
             navigatorBarBackgroundColor: navigatorBarBackgroundColor,
             paddingBottom: paddingBottom,
             textStyleTitle: textStyleTitle,
+            rightIcon: rightIcon,
             builderHeader: { EmptyView() },
             builderContent: builderContent
         )

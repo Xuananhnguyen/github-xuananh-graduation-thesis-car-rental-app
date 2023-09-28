@@ -9,7 +9,4 @@ import Foundation
 
 class CartViewModel: ObservableObject {
     @Published var cartList: [CartModel] = listCart
-    
-    
-    
     }

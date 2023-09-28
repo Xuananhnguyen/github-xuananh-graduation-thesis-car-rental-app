@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import VNavigator
 
 struct CartScreen: AppNavigator {
     @State var viewModel = CartViewModel()
@@ -15,7 +14,6 @@ struct CartScreen: AppNavigator {
             header
         }, builderContent: {
             VStack(alignment: .leading, spacing: 0){
-                
                 Text("My Chart")
                     .textStyle(.ROBOTO_REGULAR, size: 20)
                     .foregroundColor(Color(BLACK_000000))

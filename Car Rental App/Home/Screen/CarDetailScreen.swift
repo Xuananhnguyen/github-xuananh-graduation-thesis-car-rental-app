@@ -6,134 +6,233 @@
 //
 
 import SwiftUI
-import VNavigator
 
 struct CarDetailScreen: AppNavigator {
-    @State var nameCar: String = "Range Rover"
-    @State var brandCar: String = "Range Rover"
-    @State var decription: String = "Range Rover"
-    @State var priceDay: String = "200,000"
-    @State var imageCar: String = IMG_RANGE_ROVER_BIG
-    @State var quality: Int = 1
+    var imageCar: String = CAR_IMG
+    var nameCar: String = "MITSUBISHI XPANDER 2021"
+    var address: String = "Hà Đông, Hà Nội"
+    var price: String = "950,000"
+    @State var startDate: Date?
+    @State var endDate: Date?
     
     var body: some View {
         BaseNavigationView(
             isHiddenBackButton: false,
-            builderHeader: {
-                headerRender
-            }, builderContent: {
-                VStack(spacing: 0){
+            title: nameCar,
+            backgroundColor: Color(GRAY_EEEEEE),
+            builderContent: {
+                VStack(alignment: .leading, spacing: 0){
                     ScrollView(.vertical, showsIndicators: false){
-                        Image(imageCar)
-                            .scaledToFit()
-                            .frame(width: 300, height: 256, alignment: .center)
-                            .padding(.top, 75)
-                        
-                        HStack(spacing: 1){
-                            VStack(alignment: .leading, spacing: 0){
-                                Text("Name: \(nameCar)")
-                                    .font(.custom("Roboto", size: 16))
-                                    .foregroundColor(Color(BLACK_000000))
-                                
-                                Text("Brand: \(brandCar)")
-                                    .font(.custom("Roboto", size: 16))
-                                    .foregroundColor(Color(BLACK_000000))
-                                
-                                Text("Decription: \(decription)")
-                                    .font(.custom("Roboto", size: 16))
-                                    .foregroundColor(Color(BLACK_000000))
-                            }
-                            Spacer()
-                            Text("Price: \(priceDay)VND/Day")
-                                .font(.custom("PT Sans", size: 12))
-                                .foregroundColor(Color(RED_C64949))
+                        VStack(alignment: .leading, spacing: 17){
+                            carTitleView
+                            timeRentalView
+                            deliveryLocationPayCar
+                            limitNumberKm
+                            collateralView
+                            vehicleDeliveryDocuments
+                            descriptionView
+                            bookNow
                         }
-                        .padding(.top, 26)
-                        .padding(.bottom, 40)
-                        carDecription
                     }
-                    
-                    bookNow
                 }
-                .padding(.horizontal, 16)
-                .background(Color(WHITE_FFFFFF).ignoresSafeArea(.all, edges: .bottom))
-            })
+            }
+        )
     }
 }
 
 
 extension CarDetailScreen {
-    private var headerRender: some View {
-        HStack(spacing: 0){
-            Image(IC_ARROW_LEFT)
-                .resizable()
-                .renderingMode(.template)
-                .foregroundColor(Color(GREEN_2B4C59))
-                .frame(width: 13, height: 21)
-                .onTapGesture {
-                    navigator.pop()
-                }
-            
-            Spacer()
-            
-            Image(IC_THREE_DOT)
-                .resizable()
-                .renderingMode(.template)
-                .foregroundColor(Color(GREEN_2B4C59))
-                .frame(width: 30, height: 32)
-                .onTapGesture {}
-        }
-        .padding(.top, 25)
-        .padding(.horizontal, 16)
-    }
-    
-    private var carDecription: some View {
-        ScrollView(.horizontal, showsIndicators: false){
-            HStack(spacing: 15){
-                VStack(spacing: 8){
-                    Text("Brand")
-                        .font(.custom("PT Sans", size: 12))
-                        .foregroundColor(Color(BLUE_95BCCC))
-                        .bold()
-                    Text("Automatic")
-                        .font(.custom("PT Sans", size: 12))
-                        .foregroundColor(Color(BLACK_000000))
-                }
-                .padding(EdgeInsets(top: 14, leading: 49, bottom: 33, trailing: 49))
-                .frame(width: 155, height: 89, alignment: .center)
-                .background(Color(WHITE_F6F6F6))
-                .cornerRadius(3)
-                
-                VStack(spacing: 8){
-                    Text("Speed")
-                        .font(.custom("PT Sans", size: 12))
-                        .foregroundColor(Color(BLUE_95BCCC))
-                    Text("200kmph")
-                        .font(.custom("PT Sans", size: 12))
-                        .foregroundColor(Color(BLACK_000000))
-                }
-                .padding(EdgeInsets(top: 14, leading: 49, bottom: 33, trailing: 49))
-                .frame(width: 155, height: 89, alignment: .center)
-                .background(Color(WHITE_F6F6F6))
-                .cornerRadius(3)
-            }
-        }
-    }
-    
     private var bookNow: some View {
         HStack(spacing: 0){
             Button(action: {
-                navigator.pushToView(view: PaymentMethodScreen())
+                navigator.pushToView(view: CarRentalConfirmationScreen(startDate: startDate?.toString() ?? "", endDate: endDate?.toString() ?? ""))
             }, label: {
-                Text("BOOK NOW")
-                    .font(.system(size: 20, weight: .regular))
+                Text("bookNow".localized)
+                    .textStyle(.ROBOTO_BOLD, size: 20)
                     .foregroundColor(Color(WHITE_FFFFFF))
-                    .frame(height: 52)
+                    .frame(height: 50)
                     .frame(maxWidth: .infinity)
-                    .background(Color(BLACK_000000))
+                    .background(Color(((startDate?.toString().isEmpty) == nil) || ((endDate?.toString().isEmpty) == nil) ? GRAY_A1A1A1 : GREEN_2B4C59))
                     .cornerRadius(10)
             })
         }
-        .padding(.top, 33)
+        .padding(.horizontal, 16)
+        .padding(.top, 5)
+        .disabled(((startDate?.toString().isEmpty) == nil) || ((endDate?.toString().isEmpty) == nil))
+    }
+    
+    private var carTitleView: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Image(imageCar)
+                .resizable()
+                .frame(height: 170)
+                .padding(.vertical, 15)
+            VStack(alignment: .leading, spacing: 10){
+                Text(nameCar.uppercased())
+                    .textStyle(.ROBOTO_MEDIUM, size: 18)
+                Text("\("rentCost".localized) : \(price) \("vndDay".localized)")
+                    .textStyle(.ROBOTO_MEDIUM, size: 16)
+            }
+            .foregroundColor(Color(GREEN_2B4C59))
+            .padding(EdgeInsets(top: 15, leading: 16, bottom: 13, trailing: 16))
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(WHITE_FFFFFF))
+    }
+    
+    private var timeRentalView: some View {
+        VStack(alignment: .leading, spacing: 0){
+            Text("rentalPeriod".localized)
+                .textStyle(.ROBOTO_MEDIUM, size: 18)
+                .foregroundColor(Color(GREEN_2B4C59))
+                .padding(.bottom, 16)
+            DatePickerTextField(placeholder: "startDay".localized,
+                                date: $startDate)
+                .textStyle(.ROBOTO_REGULAR, size: 16)
+                .padding(.horizontal, 16)
+                .foregroundColor(Color(GREEN_2B4C59))
+                .frame(height: 44)
+                .background(Color(WHITE_F0F0F0))
+                .cornerRadius(10)
+                .padding(.bottom, 18)
+            DatePickerTextField(placeholder: "endDay".localized,
+                                date: $endDate,
+                                onCommit: {
+                if let endDate = endDate, let startDate = startDate {
+                    let comparisonResult = startDate.compare(endDate)
+                    if comparisonResult == .orderedDescending {
+                        let confirmDialog = ConfirmDialog(content: "startDateExceedsEndDate".localized) {
+                            self.startDate = Date()
+                        }
+                        Popup.presentPopup(alertView: confirmDialog)
+                    }
+                }
+            })
+                .textStyle(.ROBOTO_REGULAR, size: 16)
+                .padding(.horizontal, 16)
+                .foregroundColor(Color(GREEN_2B4C59))
+                .frame(height: 44)
+                .background(Color(WHITE_F0F0F0))
+                .cornerRadius(10)
+        }
+        .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(WHITE_FFFFFF))
+    }
+    
+    private var deliveryLocationPayCar: some View {
+        VStack(alignment: .leading, spacing: 8){
+            Text("deliveryAndReturnLocations".localized)
+                .textStyle(.ROBOTO_MEDIUM, size: 16)
+                .foregroundColor(Color(GREEN_2B4C59))
+            HStack(spacing: 6){
+                Image(IC_LOCATION_BLACK)
+                    .resizable()
+                    .frame(width: 11.5, height: 17.5)
+                Text(address)
+                    .textStyle(.ROBOTO_REGULAR, size: 13)
+                    .foregroundColor(Color(GREEN_2B4C59))
+            }
+        }
+        .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(WHITE_FFFFFF))
+    }
+    
+    private var limitNumberKm: some View {
+        VStack(alignment: .leading, spacing: 8){
+            HStack(spacing: 0){
+                Text("limitOfDay".localized)
+                    .textStyle(.ROBOTO_MEDIUM, size: 16)
+                    .foregroundColor(Color(GREEN_2B4C59))
+                Spacer()
+                Text("340 km/Ngày")
+                    .textStyle(.ROBOTO_REGULAR, size: 16)
+                    .foregroundColor(Color(GREEN_2B4C59))
+            }
+            
+            Text("Phí: 3.000 VND mỗi km vượt giới hạn")
+                .textStyle(.ROBOTO_REGULAR, size: 16)
+                .foregroundColor(Color(GREEN_2B4C59))
+        }
+        .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(WHITE_FFFFFF))
+    }
+    
+    private var vehicleDeliveryDocuments: some View {
+        VStack(alignment: .leading, spacing: 12){
+            Text("deliveryPapers".localized)
+                .textStyle(.ROBOTO_MEDIUM, size: 16)
+                .foregroundColor(Color(GREEN_2B4C59))
+            HStack(spacing: 14){
+                Image(IC_DRIVER_CARD)
+                    .resizable()
+                    .frame(width: 20, height: 15)
+                Text("citizenId".localized)
+                    .textStyle(.ROBOTO_REGULAR, size: 16)
+                    .foregroundColor(Color(GREEN_2B4C59))
+            }
+            
+            HStack(spacing: 14){
+                Image(IC_DRIVER_CARD)
+                    .resizable()
+                    .frame(width: 20, height: 15)
+                Text("driverLicense".localized)
+                    .textStyle(.ROBOTO_REGULAR, size: 16)
+                    .foregroundColor(Color(GREEN_2B4C59))
+            }
+            
+            HStack(spacing: 14){
+                Image(IC_DRIVER_CARD)
+                    .resizable()
+                    .frame(width: 20, height: 15)
+                Text("householdPassport".localized)
+                    .textStyle(.ROBOTO_REGULAR, size: 16)
+                    .foregroundColor(Color(GREEN_2B4C59))
+            }
+        }
+        .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(WHITE_FFFFFF))
+    }
+    
+    private var descriptionView: some View {
+        VStack(alignment: .leading, spacing: 5){
+            Text("description".localized)
+                .textStyle(.ROBOTO_MEDIUM, size: 16)
+                .foregroundColor(Color(GREEN_2B4C59))
+            LabelCustom(attributedText: makeContent(text: "descriptionContent".localized),
+                        maxWidth: UIScreen.main.bounds.width - 32)
+        }
+        .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(WHITE_FFFFFF))
+    }
+    
+    private var collateralView: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Text("collateral".localized)
+                .textStyle(.ROBOTO_MEDIUM, size: 16)
+                .foregroundColor(Color(GREEN_2B4C59))
+            LabelCustom(attributedText: makeContent(text: "collateralContent".localized),
+                        maxWidth: UIScreen.main.bounds.width - 32)
+        }
+        .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(WHITE_FFFFFF))
+        .padding(.bottom, 16)
+    }
+    
+    private func makeContent(text: String) -> NSMutableAttributedString {
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineSpacing = 2
+        paragraph.alignment = .justified
+        let attString = AttributedStringBuilder(string: text)
+            .addFont(TextStyle.ROBOTO_REGULAR.uiFont(size: 14), forSubString: text)
+            .addColor(UIColor(Color(BLACK_000000)), forSubString: text)
+            .addParagrapStyle(paragraph, forSubString: text)
+            .build()
+        return attString
     }
 }

@@ -1,6 +1,0 @@
-framework module VNavigator {
-  umbrella header "VNavigator-umbrella.h"
-
-  export *
-  module * { export * }
-}

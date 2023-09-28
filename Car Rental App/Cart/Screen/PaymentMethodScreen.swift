@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import VNavigator
 
 struct PaymentMethodScreen: AppNavigator {
     @State var isrememerThisInfo: Bool = true
@@ -97,7 +96,6 @@ struct PaymentMethodScreen: AppNavigator {
             }
             
             Button(action: {
-                navigator.pushToView(view: PaymentScreen())
             }, label: {
                 Text("Pay")
                     .font(.system(size: 20, weight: .bold))

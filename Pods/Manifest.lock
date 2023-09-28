@@ -1,28 +1,24 @@
 PODS:
-  - Alamofire (5.7.1)
+  - Alamofire (5.8.0)
   - SwiftEntryKit (2.0.0)
   - SwiftyJSON (4.3.0)
-  - VNavigator (0.4.0)
 
 DEPENDENCIES:
   - Alamofire
   - SwiftEntryKit (= 2.0.0)
   - SwiftyJSON (~> 4.0)
-  - VNavigator
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - SwiftEntryKit
     - SwiftyJSON
-    - VNavigator
 
 SPEC CHECKSUMS:
-  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  Alamofire: 0e92e751b3e9e66d7982db43919d01f313b8eb91
   SwiftEntryKit: 61b5fa36f34a97dd8013e48a7345bc4c4720be9a
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
-  VNavigator: ee92f0c92e5a997f4cda8796e910fe6c5488c14f
 
-PODFILE CHECKSUM: 49defc22e6c760f8240d1d0bfab7543b68f0b7c0
+PODFILE CHECKSUM: 476c0abe73523cc78ca96251300abfe348f7ef10
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1

@@ -38,6 +38,7 @@ let IC_MAIL = "ic_mail"
 let IC_PHONE_BLUE = "ic_phone_blue"
 let IC_LOCATION = "ic_location"
 let IC_SHOPPING_SUCCESS = "ic_shopping_success"
+let IC_MSG = "ic_msg"
 let IC_CANCEL = "ic_cancel"
 // MARK: - IMAGE
 let IMG_SALE = "img_sale"
@@ -56,3 +57,6 @@ let IMG_CREDIT_CARD = "img_credit_card"
 let IMG_BRO = "bro"
 let IMG_CAR = "img_car"
 let IMG_CAR_BACKGROUND = "car_background"
+let CAR_IMG = "car_img";
+let IC_LOCATION_BLACK = "ic_location_black";
+let IC_DRIVER_CARD = "ic_driver_car";
