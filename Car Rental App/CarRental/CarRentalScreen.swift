@@ -40,26 +40,6 @@ extension CarRentalScreen {
                 .textStyle(.ROBOTO_BOLD, size: 23)
                 .foregroundColor(Color(BLACK_000000))
             Spacer()
-            
-            Image(IC_MSG)
-                .resizable()
-                .renderingMode(.template)
-                .foregroundColor(Color(BLACK_000000))
-                .frame(width: 42, height: 42)
-                .overlay(alignment: .topTrailing) {
-                    ZStack {
-                        Circle()
-                            .frame(width: 20, height: 20)
-                            .foregroundColor(Color(RED_C64949))
-                        let number = (numberNoti > 9) ? "9+" : "\(numberNoti)"
-                        Text(number)
-                            .font(.system(size: 12))
-                            .foregroundColor(Color(WHITE_FFFFFF))
-                    }
-                }
-                .onTapGesture {
-                    // tap on message
-                }
         }
         .padding(.horizontal, 16)
     }
@@ -94,7 +74,6 @@ extension CarRentalScreen {
                 Image(imageCar ?? "")
                     .resizable()
                     .frame(width: 57, height: 57)
-                    .background(Color.red)
                     .cornerRadius(8)
                 VStack(alignment: .leading, spacing: 8) {
                     Text(titleCar ?? "")
@@ -133,7 +112,7 @@ extension CarRentalScreen {
             .padding(.bottom, 8)
         }
         .padding(8)
-        .background(Color.white)
+        .background(Color(WHITE_FFFFFF))
         .cornerRadius(16)
         .shadow(radius: 8, y: 8)
         .padding(8)
