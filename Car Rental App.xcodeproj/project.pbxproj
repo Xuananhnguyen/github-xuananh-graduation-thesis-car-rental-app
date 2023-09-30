@@ -58,6 +58,7 @@
 		F97BCFD32AC5E15D00E2996E /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97BCFD22AC5E15D00E2996E /* NavigationManager.swift */; };
 		F9847EE72A795BCB0065088C /* AttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9847EE62A795BCB0065088C /* AttributedString+Extension.swift */; };
 		F9847EE92A795E310065088C /* LabelCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9847EE82A795E310065088C /* LabelCustom.swift */; };
+		F98875142AC812E700BF7D6D /* AdminHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98875132AC812E700BF7D6D /* AdminHomeScreen.swift */; };
 		F99008982A76B69B0084A390 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F99008972A76B69B0084A390 /* Roboto-Light.ttf */; };
 		F990089A2A76B6AB0084A390 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F99008992A76B6AB0084A390 /* Roboto-Thin.ttf */; };
 		F990089C2A76B6B50084A390 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F990089B2A76B6B20084A390 /* Roboto-Black.ttf */; };
@@ -155,6 +156,7 @@
 		F97BCFD22AC5E15D00E2996E /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		F9847EE62A795BCB0065088C /* AttributedString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttributedString+Extension.swift"; sourceTree = "<group>"; };
 		F9847EE82A795E310065088C /* LabelCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCustom.swift; sourceTree = "<group>"; };
+		F98875132AC812E700BF7D6D /* AdminHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeScreen.swift; sourceTree = "<group>"; };
 		F99008972A76B69B0084A390 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		F99008992A76B6AB0084A390 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		F990089B2A76B6B20084A390 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
@@ -533,6 +535,26 @@
 			path = Navigator;
 			sourceTree = "<group>";
 		};
+		F98875102AC8124B00BF7D6D /* User */ = {
+			isa = PBXGroup;
+			children = (
+				F9AB78E329196BA5005F4FF2 /* Login */,
+				F9F960092921568C00919CF9 /* Home */,
+				F9522864292A910500AFF79B /* Profile */,
+				CB6904BB2A76D85B001598AE /* CarRental */,
+				F94B14372936723B00AC41A1 /* Cart */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		F98875112AC8129F00BF7D6D /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				F98875132AC812E700BF7D6D /* AdminHomeScreen.swift */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
 		F99CB8EF2945D3F100B6E38A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,16 +593,12 @@
 		F9AB78D4291967E2005F4FF2 /* Car Rental App */ = {
 			isa = PBXGroup;
 			children = (
-				F91807022A5034910084F113 /* AuthenticationManager */,
 				F9770A5329B474A200596443 /* App */,
+				F98875112AC8129F00BF7D6D /* Admin */,
+				F98875102AC8124B00BF7D6D /* User */,
 				F9770A5D29B476C300596443 /* Core */,
 				F927225B29AB90050033066C /* Common */,
 				F94B14282933173600AC41A1 /* NavigationBar */,
-				F94B14372936723B00AC41A1 /* Cart */,
-				CB6904BB2A76D85B001598AE /* CarRental */,
-				F9522864292A910500AFF79B /* Profile */,
-				F9F960092921568C00919CF9 /* Home */,
-				F9AB78E329196BA5005F4FF2 /* Login */,
 				F9FF9CEA2A5DC9C9006F95CC /* Firestore */,
 				F9F960142922977400919CF9 /* MockData */,
 				F932B4412A4843F100E6FDFB /* Resources */,
@@ -693,6 +711,7 @@
 		F9FF9CEA2A5DC9C9006F95CC /* Firestore */ = {
 			isa = PBXGroup;
 			children = (
+				F91807022A5034910084F113 /* AuthenticationManager */,
 				F9FF9CEB2A5DC9EC006F95CC /* UserManager.swift */,
 			);
 			path = Firestore;
@@ -853,6 +872,7 @@
 				F9FF9CEC2A5DC9EC006F95CC /* UserManager.swift in Sources */,
 				F9770A5F29B476DA00596443 /* Extension.swift in Sources */,
 				F99CB8EC29424BF900B6E38A /* PaymentScreen.swift in Sources */,
+				F98875142AC812E700BF7D6D /* AdminHomeScreen.swift in Sources */,
 				F9770A5729B474FA00596443 /* LoadingViewModel.swift in Sources */,
 				F9780D9B2A780ED8007BC5CE /* SearchBar.swift in Sources */,
 				F93F85DB2A7AB86F009EFADA /* SuccessViewModel.swift in Sources */,
