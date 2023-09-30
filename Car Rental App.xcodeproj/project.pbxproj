@@ -59,6 +59,9 @@
 		F9847EE72A795BCB0065088C /* AttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9847EE62A795BCB0065088C /* AttributedString+Extension.swift */; };
 		F9847EE92A795E310065088C /* LabelCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9847EE82A795E310065088C /* LabelCustom.swift */; };
 		F98875142AC812E700BF7D6D /* AdminHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98875132AC812E700BF7D6D /* AdminHomeScreen.swift */; };
+		F98875162AC8152800BF7D6D /* CarRentalDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98875152AC8152800BF7D6D /* CarRentalDetailScreen.swift */; };
+		F98875182AC815A000BF7D6D /* CarRentailDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98875172AC815A000BF7D6D /* CarRentailDetailViewModel.swift */; };
+		F988751A2AC815FB00BF7D6D /* CarRentailDetailRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98875192AC815FB00BF7D6D /* CarRentailDetailRespone.swift */; };
 		F99008982A76B69B0084A390 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F99008972A76B69B0084A390 /* Roboto-Light.ttf */; };
 		F990089A2A76B6AB0084A390 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F99008992A76B6AB0084A390 /* Roboto-Thin.ttf */; };
 		F990089C2A76B6B50084A390 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F990089B2A76B6B20084A390 /* Roboto-Black.ttf */; };
@@ -157,6 +160,9 @@
 		F9847EE62A795BCB0065088C /* AttributedString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttributedString+Extension.swift"; sourceTree = "<group>"; };
 		F9847EE82A795E310065088C /* LabelCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCustom.swift; sourceTree = "<group>"; };
 		F98875132AC812E700BF7D6D /* AdminHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeScreen.swift; sourceTree = "<group>"; };
+		F98875152AC8152800BF7D6D /* CarRentalDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalDetailScreen.swift; sourceTree = "<group>"; };
+		F98875172AC815A000BF7D6D /* CarRentailDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentailDetailViewModel.swift; sourceTree = "<group>"; };
+		F98875192AC815FB00BF7D6D /* CarRentailDetailRespone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentailDetailRespone.swift; sourceTree = "<group>"; };
 		F99008972A76B69B0084A390 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		F99008992A76B6AB0084A390 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		F990089B2A76B6B20084A390 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
@@ -226,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				CB0246362A795125005F9B74 /* CarRentalViewModel.swift */,
+				F98875172AC815A000BF7D6D /* CarRentailDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -234,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				CB0246392A795168005F9B74 /* CarRentalResponse.swift */,
+				F98875192AC815FB00BF7D6D /* CarRentailDetailRespone.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -244,6 +252,7 @@
 				CB0246382A795157005F9B74 /* Response */,
 				CB0246352A795106005F9B74 /* ViewModel */,
 				CB6904BC2A76D894001598AE /* CarRentalScreen.swift */,
+				F98875152AC8152800BF7D6D /* CarRentalDetailScreen.swift */,
 			);
 			path = CarRental;
 			sourceTree = "<group>";
@@ -873,11 +882,13 @@
 				F9770A5F29B476DA00596443 /* Extension.swift in Sources */,
 				F99CB8EC29424BF900B6E38A /* PaymentScreen.swift in Sources */,
 				F98875142AC812E700BF7D6D /* AdminHomeScreen.swift in Sources */,
+				F988751A2AC815FB00BF7D6D /* CarRentailDetailRespone.swift in Sources */,
 				F9770A5729B474FA00596443 /* LoadingViewModel.swift in Sources */,
 				F9780D9B2A780ED8007BC5CE /* SearchBar.swift in Sources */,
 				F93F85DB2A7AB86F009EFADA /* SuccessViewModel.swift in Sources */,
 				F952286E292A9FD600AFF79B /* Enum.swift in Sources */,
 				F9F9601C29229BB600919CF9 /* ButtonSelect.swift in Sources */,
+				F98875182AC815A000BF7D6D /* CarRentailDetailViewModel.swift in Sources */,
 				F9F960202924042200919CF9 /* CarBoxView.swift in Sources */,
 				F99CB8F62946325C00B6E38A /* TextFieldCustom.swift in Sources */,
 				F97BCFD32AC5E15D00E2996E /* NavigationManager.swift in Sources */,
@@ -920,6 +931,7 @@
 				F96D185F2A55DDDD0059D609 /* ForgotPasswordViewModel.swift in Sources */,
 				F9AB78EE291AC680005F4FF2 /* SecureTextFieldView.swift in Sources */,
 				F97BCFD12AC5E12C00E2996E /* AppNavigator.swift in Sources */,
+				F98875162AC8152800BF7D6D /* CarRentalDetailScreen.swift in Sources */,
 				F92D4D632A9B90BA00F33AFF /* CarRentalConfirmationScreen.swift in Sources */,
 				F94B143A2936734200AC41A1 /* CartScreen.swift in Sources */,
 				F9F9601A292298EC00919CF9 /* HomeDataMock.swift in Sources */,

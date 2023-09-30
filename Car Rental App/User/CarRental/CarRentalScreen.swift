@@ -13,9 +13,9 @@ struct CarRentalScreen: AppNavigator {
     var colorStatus: ColorStatus = .cancel
     var body: some View {
         BaseNavigationView {
-            headerCarRentalView(numberNoti: 10)
+            headerCarRentalView
         } builderContent: {
-            makeListCarRental()
+            makeListCarRental
         }
         .onAppear {
             viewModel.getListCarRental()
@@ -25,7 +25,7 @@ struct CarRentalScreen: AppNavigator {
 
 extension CarRentalScreen {
     // MARK: Make Header
-    func headerCarRentalView(numberNoti: Int = 0) -> some View {
+    var headerCarRentalView: some View {
         HStack {
             Image(IC_ARROW_LEFT)
                 .resizable()
@@ -35,7 +35,6 @@ extension CarRentalScreen {
                 .onTapGesture {
                     navigator.pop()
                 }
-            
             Text("settings".localized)
                 .textStyle(.ROBOTO_BOLD, size: 23)
                 .foregroundColor(Color(BLACK_000000))
@@ -45,7 +44,7 @@ extension CarRentalScreen {
     }
     
     // MARK: Make body
-    func makeListCarRental() -> some View {
+    var makeListCarRental: some View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 0){
                 ForEach(viewModel.carRentalData, id: \.self) { item in
@@ -117,11 +116,5 @@ extension CarRentalScreen {
         .shadow(radius: 8, y: 8)
         .padding(8)
         .padding(.top, 8)
-    }
-}
-
-struct CarRentalScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        CarRentalScreen()
     }
 }
