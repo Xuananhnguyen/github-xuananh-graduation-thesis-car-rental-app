@@ -51,18 +51,8 @@ struct SignInScreen: AppNavigator {
                     Button(action: {
                         UIApplication.shared.endEditing()
                         viewModel.validate() {
-                            Task {
-                                do {
-                                    try await viewModel.signIn()
-                                    print("SignIn success")
-                                    navigator.pushToView(view: HomeScreen())
-                                } catch {
-                                    print(error)
-                                    if !error.localizedDescription.isEmpty {
-                                        let confirmDialog = ConfirmDialog(content: "emailOrPasswordInvalid".localized)
-                                        Popup.presentPopup(alertView: confirmDialog)
-                                    }
-                                }
+                            viewModel.login {
+                                navigator.pushToView(view: HomeScreen())
                             }
                         }
                     }, label: {

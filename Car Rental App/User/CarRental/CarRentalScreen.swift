@@ -2,7 +2,7 @@
 //  CarRentalScreen.swift
 //  Car Rental App
 //
-//  Created by Chiến Lê on 31/07/2023.
+//  Created by NGUYEN XUAN ANH on 31/07/2023.
 //
 
 import SwiftUI

@@ -11,15 +11,24 @@ final class SignInViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
     
-    func signIn() async throws {
-        guard !email.isEmpty, !password.isEmpty else {
-            print("No email or password found")
-            return
+    func login(completions: (() -> Void)? = nil) {
+        LoadingViewModel.share.onShowProgress(isShow: true)
+        AuthServices.shared.login(email: email, password: password) { response in
+            if response.code == 200 {
+                completions?()
+            } else {
+                LoadingViewModel.share.onShowProgress(isShow: false)
+                let confirmDialog = ConfirmDialog(content: response.message ?? "")
+                Popup.presentPopup(alertView: confirmDialog)
+            }
+        } failBlock: { error in
+            LoadingViewModel.share.onShowProgress(isShow: false)
+            let confirmDialog = ConfirmDialog(content: error.localizedDescription)
+            Popup.presentPopup(alertView: confirmDialog)
         }
-        
-        try await AuthenticationManager.shared.signInUser(email: email, password: password)
+
     }
-    
+
     func validate(completion: (() -> Void)? = nil) {
         if !email.validate(regex: REGEX.email) || !password.validate(regex: REGEX.password) {
             let confirmDialog = ConfirmDialog(content: "emailOrPasswordInvalid".localized)
