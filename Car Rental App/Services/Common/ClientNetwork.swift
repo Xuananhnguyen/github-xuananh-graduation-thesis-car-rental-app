@@ -9,14 +9,13 @@ import Foundation
 import Alamofire
 
 protocol CarRentalAppResponse: Codable {
-    var code: Int? { get }
     var message: String? { get }
-    
+    var code: Int? { get }
 }
 
 struct CarRentalBaseResponse: CarRentalAppResponse {
-    var code: Int?
     var message: String?
+    var code: Int?
 }
 
 class ClientNetwork: ObservableObject {
@@ -35,7 +34,7 @@ class ClientNetwork: ObservableObject {
         endPoint: String,
         parsingType: T.Type,
         httpMethod: HTTPMethod,
-        encoding: URLEncoding = URLEncoding(arrayEncoding: .noBrackets),
+        encoding: URLEncoding = URLEncoding.default,
         successBlock: @escaping(T) -> Void,
         failBlock: @escaping(BaseError) -> Void
     ) {
@@ -93,7 +92,7 @@ extension ClientNetwork {
         endPoint: String,
         parsingType: T.Type,
         httpMethod: HTTPMethod,
-        encoding: URLEncoding = URLEncoding(arrayEncoding: .noBrackets),
+        encoding: URLEncoding = URLEncoding.default,
         successBlock: @escaping (T) -> Void,
         failBlock: @escaping (BaseError) -> Void) {
             

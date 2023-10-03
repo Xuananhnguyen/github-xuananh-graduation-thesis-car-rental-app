@@ -15,6 +15,7 @@ final class SignInViewModel: ObservableObject {
         LoadingViewModel.share.onShowProgress(isShow: true)
         AuthServices.shared.login(email: email, password: password) { response in
             if response.code == 200 {
+                LoadingViewModel.share.onShowProgress(isShow: false)
                 completions?()
             } else {
                 LoadingViewModel.share.onShowProgress(isShow: false)

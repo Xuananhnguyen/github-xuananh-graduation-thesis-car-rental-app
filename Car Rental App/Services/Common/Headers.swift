@@ -17,7 +17,7 @@ func getHeaders(encryptedPin: String = "", isWithoutAuthorization: Bool = false,
     }
     
     let headers: HTTPHeaders = [
-        "Content-Type" : "application/json",
+        "Content-Type" : "application/x-www-form-urlencoded",
         "deviceId": deviceID,
     ]
 
