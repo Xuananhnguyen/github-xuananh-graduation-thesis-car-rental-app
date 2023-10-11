@@ -11,11 +11,7 @@ import SwiftEntryKit
 
 struct PopupHelper {
     static func presentPopup<AlertView: View>(alertView: AlertView, isDismissWhenTapOverlay: Bool = true, isExpired: Bool = false) {
-//        if AppDataManager.shared.isRequestExpired {
-//            return
-//        }
-//
-//        AppDataManager.shared.isRequestExpired = isExpired
+
 
         DispatchQueue.mainAsync {
             let viewController = UIHostingController(rootView: alertView)

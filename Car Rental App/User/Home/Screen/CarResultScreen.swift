@@ -1,5 +1,5 @@
 //
-//  ViewMoreScreen.swift
+//  CarResultScreen.swift
 //  Car Rental App
 //
 //  Created by NGUYEN XUAN ANH on 18/11/2022.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct ViewMoreScreen: AppNavigator {
-    @StateObject var viewModel = HomeViewModel()
+struct CarResultScreen: AppNavigator {
+    @StateObject var viewModel = CarResultViewModel()
     @State var search: String = ""
-    let columns = [GridItem(.flexible()),
-                    GridItem(.flexible())]
+    var startDay: Date?
+    var endDay: Date?
     
     var body: some View {
         BaseNavigationView(
@@ -31,10 +31,13 @@ struct ViewMoreScreen: AppNavigator {
                 }
                 .background(Color(GRAY_EEEEEE).ignoresSafeArea(.all))
             })
+        .onAppear {
+            viewModel.carResult(startDay: startDay, endDay: endDay)
+        }
     }
 }
 
-extension ViewMoreScreen {
+extension CarResultScreen {
     private var EmptyView: some View {
         VStack {
             Text("noResult".localized)

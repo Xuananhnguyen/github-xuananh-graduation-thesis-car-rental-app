@@ -11,7 +11,8 @@ import SwiftyJSON
 
 class AppDataManager: ObservableObject {
     static let shared = AppDataManager()
-    var isRequestExpired: Bool = false
+    
+    var authenticate: DataLoginModel?
 }
 
 

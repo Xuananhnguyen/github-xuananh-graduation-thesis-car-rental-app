@@ -11,10 +11,10 @@ final class SignInViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
     
-    func login(completions: (() -> Void)? = nil) {
+    func signIn(completions: (() -> Void)? = nil) {
         LoadingViewModel.share.onShowProgress(isShow: true)
-        AuthServices.shared.login(email: email, password: password) { response in
-            if response.code == 200 {
+        AuthServices.shared.signIn(email: email, password: password) { response in
+            if response.code == 1 {
                 LoadingViewModel.share.onShowProgress(isShow: false)
                 completions?()
             } else {
@@ -27,7 +27,6 @@ final class SignInViewModel: ObservableObject {
             let confirmDialog = ConfirmDialog(content: error.localizedDescription)
             Popup.presentPopup(alertView: confirmDialog)
         }
-
     }
 
     func validate(completion: (() -> Void)? = nil) {

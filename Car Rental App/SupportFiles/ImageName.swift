@@ -60,3 +60,4 @@ let IMG_CAR_BACKGROUND = "car_background"
 let CAR_IMG = "car_img";
 let IC_LOCATION_BLACK = "ic_location_black";
 let IC_DRIVER_CARD = "ic_driver_car";
+let IC_SUCCESS = "ic_success";

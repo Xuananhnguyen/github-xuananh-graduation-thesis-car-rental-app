@@ -9,8 +9,8 @@ import SwiftUI
 
 struct HomeScreen: AppNavigator {
     @StateObject var viewModel = HomeViewModel()
-    @State private var searchText: String = ""
-    
+    @State var startDay: Date?
+    @State var endDay: Date?
     var body: some View {
         BaseNavigationView(isHiddenBackButton: false,
                            backgroundColor: Color(GRAY_EEEEEE),
@@ -39,7 +39,7 @@ extension HomeScreen {
                 .clipShape(Circle())
                 .padding(.trailing, 13)
             
-            Text("Nguyen Xuan Anh")
+            Text("User name")
                 .textStyle(.ROBOTO_MEDIUM, size: 20)
                 .foregroundColor(Color(WHITE_FFFFFF))
             
@@ -58,25 +58,6 @@ extension HomeScreen {
         .padding(.horizontal, 16)
         .padding(.bottom, 17)
         .background(Color(GREEN_2B4C59)).ignoresSafeArea(.all, edges: .bottom)
-    }
-    
-    private var searchView: some View {
-        VStack(alignment: .leading, spacing: 15) {
-            Text("searchCar".localized)
-                .textStyle(.ROBOTO_MEDIUM, size: 18)
-                .foregroundColor(Color(GREEN_2B4C59))
-            
-            SearchBar(text: $searchText)
-            
-            ButtonAuth(title: "findCar".localized,
-                       isDisabled: searchText.isEmpty,
-                       onPress: {
-                navigator.pushToView(view: ViewMoreScreen())
-            })
-        }
-        .padding(.vertical, 10)
-        .padding(.horizontal, 14)
-        .background(Color(WHITE_FFFFFF))
     }
     
     private var voucherView: some View {
@@ -129,5 +110,50 @@ extension HomeScreen {
             .addParagrapStyle(paragraph, forSubString: text)
             .build()
         return attString
+    }
+    
+    private var searchView: some View {
+        VStack(alignment: .leading, spacing: 16){
+            Text("rentalPeriod".localized)
+                .textStyle(.ROBOTO_MEDIUM, size: 18)
+                .foregroundColor(Color(GREEN_2B4C59))
+                .padding(.bottom, 16)
+            DatePickerTextField(placeholder: "startDay".localized,
+                                date: $startDay)
+                .textStyle(.ROBOTO_REGULAR, size: 16)
+                .padding(.horizontal, 16)
+                .foregroundColor(Color(GREEN_2B4C59))
+                .frame(height: 44)
+                .background(Color(WHITE_F0F0F0))
+                .cornerRadius(10)
+            
+            DatePickerTextField(placeholder: "endDay".localized,
+                                date: $endDay,
+                                onCommit: {
+                if let endDate = endDay, let startDate = startDay {
+                    let comparisonResult = startDate.compare(endDate)
+                    if comparisonResult == .orderedDescending {
+                        let confirmDialog = ConfirmDialog(content: "startDateExceedsEndDate".localized) {
+                            self.startDay = Date()
+                        }
+                        Popup.presentPopup(alertView: confirmDialog)
+                    }
+                }
+            })
+                .textStyle(.ROBOTO_REGULAR, size: 16)
+                .padding(.horizontal, 16)
+                .foregroundColor(Color(GREEN_2B4C59))
+                .frame(height: 44)
+                .background(Color(WHITE_F0F0F0))
+                .cornerRadius(10)
+            
+            ButtonAuth(title: "findCar".localized,
+                       onPress: {
+                navigator.pushToView(view: CarResultScreen(startDay: startDay, endDay: endDay))
+            })
+        }
+        .padding(EdgeInsets(top: 10, leading: 14, bottom: 10, trailing: 14))
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(WHITE_FFFFFF))
     }
 }

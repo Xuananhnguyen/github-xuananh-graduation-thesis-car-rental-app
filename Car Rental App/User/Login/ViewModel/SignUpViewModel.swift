@@ -11,27 +11,44 @@ final class SignUpViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var fullName: String = ""
     @Published var phoneNumber: String = ""
-    @Published var address: String = ""
     @Published var password: String = ""
     @Published var confirmPassword: String = ""
     
-    func signUp() async throws {
-        guard !email.isEmpty, !password.isEmpty else {
-            print("No email or password found")
-            return
+    func signUp() {
+        LoadingViewModel.share.onShowProgress(isShow: true)
+        AuthServices.shared.signUp(fullName: fullName,
+                                   email: email,
+                                   password: password,
+                                   phoneNumber: phoneNumber) { response in
+            if response.code == 1 {
+                LoadingViewModel.share.onShowProgress(isShow: false)
+                AppViewModel.shared.showToast {
+                    StatusToast(status: response.message?.removingPercentEncoding ?? "")
+                }
+            } else {
+                LoadingViewModel.share.onShowProgress(isShow: false)
+                let confirmDialog = ConfirmDialog(content: response.message?.removingPercentEncoding ?? "")
+                Popup.presentPopup(alertView: confirmDialog)
+            }
+        } failBlock: { error in
+            LoadingViewModel.share.onShowProgress(isShow: false)
+            let confirmDialog = ConfirmDialog(content: error.localizedDescription)
+            Popup.presentPopup(alertView: confirmDialog)
         }
-        
-        let authDataResult = try await AuthenticationManager.shared.createUser(email: email, password: password)
-        try await UserManager.shared.createNewUser(auth: authDataResult,
-                                                   fullName: fullName,
-                                                   password: password,
-                                                   phoneNumber: phoneNumber,
-                                                   address: address)
     }
     
     
     
     func disabledButton() -> Bool {
-        return email.isEmpty || password.isEmpty || fullName.isEmpty || phoneNumber.isEmpty || address.isEmpty || confirmPassword.isEmpty
+        return email.isEmpty || password.isEmpty || fullName.isEmpty || phoneNumber.isEmpty || confirmPassword.isEmpty
+    }
+    
+    func validate(completion: (() -> Void)? = nil) {
+        if !email.validate(regex: REGEX.email) || !password.validate(regex: REGEX.password) {
+            let confirmDialog = ConfirmDialog(content: "emailOrPasswordInvalid".localized)
+            Popup.presentPopup(alertView: confirmDialog)
+        } else {
+            completion?()
+        }
     }
 }

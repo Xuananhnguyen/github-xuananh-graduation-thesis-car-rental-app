@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 import UIKit
 
-func getHeaders(encryptedPin: String = "", isWithoutAuthorization: Bool = false, isUsingAppVersion: Bool = false) -> HTTPHeaders {
+func getHeaders() -> HTTPHeaders {
     let deviceID = KeyChain.load(key: KEY_CHAIN.DEVICE_ID)?.dataToString() ?? ""
     if deviceID.isEmpty {
         let deviceID = UIDevice.current.identifierForVendor!.uuidString
@@ -18,7 +18,7 @@ func getHeaders(encryptedPin: String = "", isWithoutAuthorization: Bool = false,
     
     let headers: HTTPHeaders = [
         "Content-Type" : "application/x-www-form-urlencoded",
-        "deviceId": deviceID,
+        "deviceId": deviceID
     ]
 
     return headers

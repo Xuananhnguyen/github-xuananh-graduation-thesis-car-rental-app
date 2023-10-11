@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct RegisterRespone: CarRentalAppResponse {
+    var message: String?
+    var code: Int?
+}

@@ -51,7 +51,7 @@ struct SignInScreen: AppNavigator {
                     Button(action: {
                         UIApplication.shared.endEditing()
                         viewModel.validate() {
-                            viewModel.login {
+                            viewModel.signIn {
                                 navigator.pushToView(view: HomeScreen())
                             }
                         }

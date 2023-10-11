@@ -1,24 +1,24 @@
 //
-//  ForgotPasswordViewModel.swift
+//  ResetPasswordViewModel.swift
 //  Car Rental App
 //
-//  Created by NGUYEN XUAN ANH on 06/07/2023.
+//  Created by NGUYEN XUAN ANH on 12/10/2023.
 //
 
 import Foundation
 
-class ForgotPasswordViewModel: ObservableObject {
-    @Published var email: String = ""
-    @Published var phoneNumber: String = ""
-    @Published var userID: Int = 0
+class ResetPasswordViewModel: ObservableObject {
+    @Published var newPassword: String = ""
+    @Published var confirmPassword: String = ""
     
-    func forgotPassword(completions: (() -> Void)? = nil) {
+    func resetPassword(userID: Int, completions: (() -> Void)? = nil) {
         LoadingViewModel.share.onShowProgress(isShow: true)
-        AuthServices.shared.forgotPassword(email: email,
-                                           phoneNumber: phoneNumber) { response in
+        AuthServices.shared.resetPassword(userID: userID, newPassword: newPassword) { response in
             if response.code == 1 {
                 LoadingViewModel.share.onShowProgress(isShow: false)
-                self.userID = response.userId ?? 0
+                AppViewModel.shared.showToast {
+                    StatusToast(status: response.message?.removingPercentEncoding ?? "")
+                }
                 completions?()
             } else {
                 LoadingViewModel.share.onShowProgress(isShow: false)
@@ -32,9 +32,9 @@ class ForgotPasswordViewModel: ObservableObject {
         }
     }
     
-    func validateEmail(completion: (() -> Void)? = nil) {
-        if !email.validate(regex: REGEX.email) {
-            let confirmDialog = ConfirmDialog(content: "emailOrPasswordInvalid".localized)
+    func validatePassword(completion: (() -> Void)? = nil) {
+        if !newPassword.validate(regex: REGEX.password) {
+            let confirmDialog = ConfirmDialog(content: "passwordInvalid".localized)
             Popup.presentPopup(alertView: confirmDialog)
         } else {
             completion?()

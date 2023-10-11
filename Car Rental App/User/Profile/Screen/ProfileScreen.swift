@@ -23,7 +23,7 @@ struct ProfileScreen: AppNavigator {
                     .frame(width: 103, height: 101)
                     .padding(.bottom, 10)
                 
-                Text(viewModel.user?.fullName ?? "")
+                Text("Demo")
                     .textStyle(.ROBOTO_BOLD, size: 20)
                     .foregroundColor(Color(GRAY_6B6B6B))
                 
@@ -40,15 +40,15 @@ struct ProfileScreen: AppNavigator {
                 Spacer()
                 
                 Button(action: {
-                    Task {
-                        do {
-                            try viewModel.signOut()
-                            print("Logout success")
+//                    Task {
+//                        do {
+//                            try viewModel.signOut()
+//                            print("Logout success")
                             navigator.popToRootView()
-                        } catch {
-                            print(error)
-                        }
-                    }
+//                        } catch {
+//                            print(error)
+//                        }
+//                    }
                 }, label: {
                     Text("logOut")
                         .font(.system(size: 20, weight: .bold))
@@ -58,9 +58,6 @@ struct ProfileScreen: AppNavigator {
                         .cornerRadius(10)
                 })
                 .padding(.bottom, 20)
-            }
-            .task {
-                try? await viewModel.loadCurrentUser()
             }
             .background(Color(WHITE_FFFFFF).ignoresSafeArea())
         })
@@ -89,10 +86,10 @@ extension ProfileScreen {
     private func onPressFeature(feature: ProfileType) {
         switch feature {
         case .myProfile:
-            navigator.pushToView(view: MyProfileScreen(fullname: viewModel.user?.fullName ?? "",
-                                                       email: viewModel.user?.email ?? "",
-                                                       phoneNumber: viewModel.user?.phoneNumber ?? "",
-                                                       address: viewModel.user?.address ?? ""))
+            navigator.pushToView(view: MyProfileScreen(fullname: "",
+                                                       email: "",
+                                                       phoneNumber: "",
+                                                       address: ""))
         case .helpAndInfo:
             navigator.pushToView(view: AboutUsScreen())
         case .settings:

@@ -29,7 +29,7 @@
 "emailOrPasswordEmpty" = "Email hoặc Mật khẩu trống";
 "emailOrPasswordInvalid" = "Định dạng email hoặc mật khẩu không hợp lệ";
 "resetPassword" = "Đặt lại mật khẩu";
-"titleForgotPassword" = "Quên mật khẩu";
+"titleForgotPassword" = "Cung cấp thông tin";
 "passwordResetLink" = "Đã gửi liên kết đặt lại mật khẩu! Kiểm tra hộp thư điện tử của bạn";
 "fullName" = "Họ và tên";
 "phoneNumber" = "số điện thoại";
@@ -87,3 +87,7 @@
 "totalPrice" = "Tổng cộng";
 "payTheCarOwnerAtTheEnd" = "Thanh toán cho chủ xe khi kết thúc";
 "totalPile" = "Tổng cọc";
+"newPassword" = "Mật khẩu mới";
+"getPassword" = "Lấy lại mật khẩu";
+"passwordInvalid" = "Định dạng mật khẩu không hợp lệ";
+"resetPasswordTitle" = "Nhập mật khẩu mới";

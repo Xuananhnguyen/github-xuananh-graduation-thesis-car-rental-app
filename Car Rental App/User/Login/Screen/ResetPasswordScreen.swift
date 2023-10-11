@@ -1,39 +1,42 @@
 //
-//  ForgotPasswordScreen.swift
+//  ResetPasswordScreen.swift
 //  Car Rental App
 //
-//  Created by NGUYEN XUAN ANH on 11/03/2023.
+//  Created by NGUYEN XUAN ANH on 11/10/2023.
 //
 
 import SwiftUI
 
-struct ForgotPasswordScreen: AppNavigator {
-    @StateObject var viewModel = ForgotPasswordViewModel()
+struct ResetPasswordScreen: AppNavigator {
+    @StateObject var viewModel = ResetPasswordViewModel()
+    var userID: Int?
     
     var body: some View {
         BaseNavigationView(isHiddenBackButton: false) {
             VStack(alignment: .leading, spacing: 0){
-                Text("titleForgotPassword".localized)
+                Text("resetPasswordTitle".localized)
                     .textStyle(.ROBOTO_BOLD, size: 25)
                     .foregroundColor(Color(BLACK_000000))
                     .padding(.vertical, 20)
                     
-                TextFieldView(title: "email".localized.uppercased(),
-                              inputContent: $viewModel.email)
+                SecureTextFieldView(title: "newPassword".localized.uppercased(),
+                                    inputContent: $viewModel.newPassword)
                 .padding(.bottom, 16)
-                TextFieldView(title: "phoneNumber".localized.uppercased(),
-                              inputContent: $viewModel.phoneNumber)
+                SecureTextFieldView(title: "confirmPassword".localized.uppercased(),
+                                    inputContent: $viewModel.confirmPassword)
                 .padding(.bottom, 28)
                 
                 Button(action: {
-                    viewModel.validateEmail {
-                        viewModel.forgotPassword {
-                            navigator.pushToView(view: ResetPasswordScreen(userID: viewModel.userID))
+                    viewModel.validatePassword {
+                        if let userID = userID {
+                            viewModel.resetPassword(userID: userID) {
+                                navigator.popToView(SignInScreen.self)
+                            }
                         }
                     }
                     UIApplication.shared.endEditing()
                 }, label: {
-                    Text("getPassword".localized)
+                    Text("resetPassword".localized)
                         .textStyle(.ROBOTO_BOLD, size: 20)
                         .foregroundColor(Color(WHITE_FFFFFF))
                         .frame(maxWidth: .infinity)
@@ -46,5 +49,11 @@ struct ForgotPasswordScreen: AppNavigator {
             .padding(.horizontal, 24)
             .background(Color(WHITE_FFFFFF).ignoresSafeArea())
         }
+    }
+}
+
+struct ResetPassword_Previews: PreviewProvider {
+    static var previews: some View {
+        ResetPasswordScreen()
     }
 }

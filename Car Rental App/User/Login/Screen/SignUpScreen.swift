@@ -51,12 +51,12 @@ struct SignUpScreen: AppNavigator {
                         Spacer()
                         
                         Button(action: {
-                            if !viewModel.email.isEmpty || !viewModel.password.isEmpty || !viewModel.confirmPassword.isEmpty {
+                            viewModel.validate {
                                 if viewModel.password != viewModel.confirmPassword {
                                     let confirmDialog = ConfirmDialog(content: "passwordAndConfirmPasswordNotMatch".localized)
                                     Popup.presentPopup(alertView: confirmDialog)
                                 } else {
-                                    signUp()
+                                    viewModel.signUp()
                                 }
                             }
                         }, label: {
@@ -75,24 +75,6 @@ struct SignUpScreen: AppNavigator {
                 }
                 .background(Color(WHITE_FFFFFF).ignoresSafeArea())
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-            }
-        }
-    }
-}
-
-
-extension SignUpScreen {
-    private func signUp() {
-        Task {
-            do {
-                try await viewModel.signUp()
-                print("Sign Up Success")
-                let confirmDialog = ConfirmDialog(content: "successfulAccountRegistration".localized) {
-                    navigator.pop()
-                }
-                Popup.presentPopup(alertView: confirmDialog)
-            } catch {
-                print(error)
             }
         }
     }

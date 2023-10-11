@@ -7,14 +7,12 @@
 
 import Foundation
 
-// MARK: - Welcome
 struct LoginResponse: CarRentalAppResponse {
     var message: String?
     var code: Int?
     let data: DataLoginModel?
 }
 
-// MARK: - DataClass
 struct DataLoginModel: Codable {
     let userId: Int?
     let name, email, phoneNumber: String?

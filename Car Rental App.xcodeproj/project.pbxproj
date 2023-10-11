@@ -35,7 +35,7 @@
 		F9522870292AA2F900AFF79B /* ButtonProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952286F292AA2F900AFF79B /* ButtonProfile.swift */; };
 		F96D18572A55D38B0059D609 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F96D18592A55D38B0059D609 /* Localizable.strings */; };
 		F96D185F2A55DDDD0059D609 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96D185E2A55DDDD0059D609 /* ForgotPasswordViewModel.swift */; };
-		F97294152927E2C200E89C68 /* ViewMoreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97294142927E2C200E89C68 /* ViewMoreScreen.swift */; };
+		F97294152927E2C200E89C68 /* CarResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97294142927E2C200E89C68 /* CarResultScreen.swift */; };
 		F97294172927E2E200E89C68 /* CarDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97294162927E2E200E89C68 /* CarDetailScreen.swift */; };
 		F9770A5729B474FA00596443 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9770A5629B474FA00596443 /* LoadingViewModel.swift */; };
 		F9770A5C29B4762500596443 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9770A5B29B4762500596443 /* LoadingView.swift */; };
@@ -99,6 +99,16 @@
 		F9AB78EC291AB9CF005F4FF2 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB78EB291AB9CF005F4FF2 /* TextFieldView.swift */; };
 		F9AB78EE291AC680005F4FF2 /* SecureTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB78ED291AC680005F4FF2 /* SecureTextFieldView.swift */; };
 		F9CCA8902A63DFB200660663 /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CCA88F2A63DFB200660663 /* MyProfileViewModel.swift */; };
+		F9CCFF9B2AD6F603003F33EC /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CCFF9A2AD6F603003F33EC /* AppViewModel.swift */; };
+		F9CCFFA02AD6F880003F33EC /* StatusToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CCFF9F2AD6F880003F33EC /* StatusToast.swift */; };
+		F9CCFFA22AD6F89E003F33EC /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CCFFA12AD6F89E003F33EC /* ToastView.swift */; };
+		F9CCFFA42AD70957003F33EC /* ForgotPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CCFFA32AD70957003F33EC /* ForgotPasswordResponse.swift */; };
+		F9CCFFA62AD70AFF003F33EC /* ResetPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CCFFA52AD70AFF003F33EC /* ResetPasswordScreen.swift */; };
+		F9CCFFA82AD70CC6003F33EC /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CCFFA72AD70CC6003F33EC /* ResetPasswordViewModel.swift */; };
+		F9CCFFAA2AD70E0E003F33EC /* ResetPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CCFFA92AD70E0E003F33EC /* ResetPasswordResponse.swift */; };
+		F9CCFFAD2AD718EE003F33EC /* CarRentailServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CCFFAC2AD718EE003F33EC /* CarRentailServices.swift */; };
+		F9CCFFAF2AD719E3003F33EC /* SearchCarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CCFFAE2AD719E3003F33EC /* SearchCarResponse.swift */; };
+		F9CCFFB32AD7234F003F33EC /* CarResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CCFFB22AD7234F003F33EC /* CarResultViewModel.swift */; };
 		F9D37FBA2A40CBB1002D6817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9D37FB92A40CBB1002D6817 /* GoogleService-Info.plist */; };
 		F9D37FBC2A40D0B5002D6817 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D37FBB2A40D0B5002D6817 /* View+Extension.swift */; };
 		F9F960082921492B00919CF9 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F960072921492B00919CF9 /* SignUpScreen.swift */; };
@@ -152,7 +162,7 @@
 		F952286F292AA2F900AFF79B /* ButtonProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonProfile.swift; sourceTree = "<group>"; };
 		F96D18582A55D38B0059D609 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F96D185E2A55DDDD0059D609 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
-		F97294142927E2C200E89C68 /* ViewMoreScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMoreScreen.swift; sourceTree = "<group>"; };
+		F97294142927E2C200E89C68 /* CarResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarResultScreen.swift; sourceTree = "<group>"; };
 		F97294162927E2E200E89C68 /* CarDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailScreen.swift; sourceTree = "<group>"; };
 		F9770A5629B474FA00596443 /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
 		F9770A5B29B4762500596443 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -217,6 +227,16 @@
 		F9AB78EB291AB9CF005F4FF2 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		F9AB78ED291AC680005F4FF2 /* SecureTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextFieldView.swift; sourceTree = "<group>"; };
 		F9CCA88F2A63DFB200660663 /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
+		F9CCFF9A2AD6F603003F33EC /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		F9CCFF9F2AD6F880003F33EC /* StatusToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusToast.swift; sourceTree = "<group>"; };
+		F9CCFFA12AD6F89E003F33EC /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		F9CCFFA32AD70957003F33EC /* ForgotPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResponse.swift; sourceTree = "<group>"; };
+		F9CCFFA52AD70AFF003F33EC /* ResetPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordScreen.swift; sourceTree = "<group>"; };
+		F9CCFFA72AD70CC6003F33EC /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
+		F9CCFFA92AD70E0E003F33EC /* ResetPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordResponse.swift; sourceTree = "<group>"; };
+		F9CCFFAC2AD718EE003F33EC /* CarRentailServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentailServices.swift; sourceTree = "<group>"; };
+		F9CCFFAE2AD719E3003F33EC /* SearchCarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCarResponse.swift; sourceTree = "<group>"; };
+		F9CCFFB22AD7234F003F33EC /* CarResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarResultViewModel.swift; sourceTree = "<group>"; };
 		F9D37FB92A40CBB1002D6817 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F9D37FBB2A40D0B5002D6817 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		F9F960072921492B00919CF9 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
@@ -323,6 +343,7 @@
 				F91807042A5038FC0084F113 /* SignUpViewModel.swift */,
 				F91807062A5039090084F113 /* SignInViewModel.swift */,
 				F96D185E2A55DDDD0059D609 /* ForgotPasswordViewModel.swift */,
+				F9CCFFA72AD70CC6003F33EC /* ResetPasswordViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -330,6 +351,7 @@
 		F927225B29AB90050033066C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F9CCFF9E2AD6F862003F33EC /* Toast */,
 				F932B4542A484DA300E6FDFB /* Button */,
 				F9770A9329BE361500596443 /* SwiftUI */,
 				F9770A8729BE2DD500596443 /* Constants */,
@@ -492,6 +514,7 @@
 				F9AB78D5291967E2005F4FF2 /* CarRentalApp.swift */,
 				F9770A5629B474FA00596443 /* LoadingViewModel.swift */,
 				F9770A8C29BE317700596443 /* AppDataManager.swift */,
+				F9CCFF9A2AD6F603003F33EC /* AppViewModel.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -602,6 +625,8 @@
 		F99AA8732ACB2E250063EA6E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F99AA8972ACB38630063EA6E /* AuthServices */,
+				F9CCFFAB2AD718BD003F33EC /* CarRentailServices */,
 				F99AA87B2ACB2EB70063EA6E /* Response */,
 				F99AA87A2ACB2E960063EA6E /* Common */,
 			);
@@ -627,8 +652,8 @@
 		F99AA87B2ACB2EB70063EA6E /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				F99AA87C2ACB2F900063EA6E /* RegisterResponse.swift */,
-				F99AA87E2ACB2FB30063EA6E /* LoginResponse.swift */,
+				F9CCFFB12AD71A03003F33EC /* CarRental */,
+				F9CCFFB02AD719EC003F33EC /* Auth */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -723,7 +748,6 @@
 		F9AB78E329196BA5005F4FF2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				F99AA8972ACB38630063EA6E /* AuthServices */,
 				F91807032A50385A0084F113 /* ViewModel */,
 				F9AB78EA291AB9B0005F4FF2 /* View */,
 				F9AB78E429196BB3005F4FF2 /* Screen */,
@@ -738,6 +762,7 @@
 				F9AB78E629196C17005F4FF2 /* GetStartedScreen.swift */,
 				F9AB78E8291AAFCC005F4FF2 /* SignInScreen.swift */,
 				F9770A8229BC3ABA00596443 /* ForgotPasswordScreen.swift */,
+				F9CCFFA52AD70AFF003F33EC /* ResetPasswordScreen.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -749,6 +774,42 @@
 				F9AB78ED291AC680005F4FF2 /* SecureTextFieldView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F9CCFF9E2AD6F862003F33EC /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				F9CCFF9F2AD6F880003F33EC /* StatusToast.swift */,
+				F9CCFFA12AD6F89E003F33EC /* ToastView.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		F9CCFFAB2AD718BD003F33EC /* CarRentailServices */ = {
+			isa = PBXGroup;
+			children = (
+				F9CCFFAC2AD718EE003F33EC /* CarRentailServices.swift */,
+			);
+			path = CarRentailServices;
+			sourceTree = "<group>";
+		};
+		F9CCFFB02AD719EC003F33EC /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				F9CCFFA92AD70E0E003F33EC /* ResetPasswordResponse.swift */,
+				F9CCFFA32AD70957003F33EC /* ForgotPasswordResponse.swift */,
+				F99AA87E2ACB2FB30063EA6E /* LoginResponse.swift */,
+				F99AA87C2ACB2F900063EA6E /* RegisterResponse.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		F9CCFFB12AD71A03003F33EC /* CarRental */ = {
+			isa = PBXGroup;
+			children = (
+				F9CCFFAE2AD719E3003F33EC /* SearchCarResponse.swift */,
+			);
+			path = CarRental;
 			sourceTree = "<group>";
 		};
 		F9F960092921568C00919CF9 /* Home */ = {
@@ -766,7 +827,7 @@
 			isa = PBXGroup;
 			children = (
 				F9F9600A292156DE00919CF9 /* HomeScreen.swift */,
-				F97294142927E2C200E89C68 /* ViewMoreScreen.swift */,
+				F97294142927E2C200E89C68 /* CarResultScreen.swift */,
 				F97294162927E2E200E89C68 /* CarDetailScreen.swift */,
 				F92D4D622A9B90BA00F33AFF /* CarRentalConfirmationScreen.swift */,
 				F92843DE2AC57B1200208322 /* TestBottomSheet.swift */,
@@ -778,6 +839,7 @@
 			isa = PBXGroup;
 			children = (
 				F9F960122922974D00919CF9 /* HomeViewModel.swift */,
+				F9CCFFB22AD7234F003F33EC /* CarResultViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -955,15 +1017,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9CCFFA82AD70CC6003F33EC /* ResetPasswordViewModel.swift in Sources */,
 				F99CB8F42945D43000B6E38A /* CartModel.swift in Sources */,
 				F9F9601E2923ED0C00919CF9 /* TextStyle.swift in Sources */,
 				F9A89618293920B4005BB896 /* AboutUsScreen.swift in Sources */,
 				F9522868292A93BB00AFF79B /* ProfileScreen.swift in Sources */,
 				F92843DF2AC57B1200208322 /* TestBottomSheet.swift in Sources */,
+				F9CCFFAD2AD718EE003F33EC /* CarRentailServices.swift in Sources */,
 				F99AA8842ACB31AD0063EA6E /* Enum+Client.swift in Sources */,
 				F99AA8792ACB2E880063EA6E /* ClientNetwork.swift in Sources */,
 				F9770A9D29C0D81C00596443 /* CarDecriptionView.swift in Sources */,
-				F97294152927E2C200E89C68 /* ViewMoreScreen.swift in Sources */,
+				F97294152927E2C200E89C68 /* CarResultScreen.swift in Sources */,
 				F9770A8D29BE317700596443 /* AppDataManager.swift in Sources */,
 				F9847EE92A795E310065088C /* LabelCustom.swift in Sources */,
 				F9F9601029215F6000919CF9 /* ColorName.swift in Sources */,
@@ -981,13 +1045,16 @@
 				F9FF9CEC2A5DC9EC006F95CC /* UserManager.swift in Sources */,
 				F9770A5F29B476DA00596443 /* Extension.swift in Sources */,
 				F99CB8EC29424BF900B6E38A /* PaymentScreen.swift in Sources */,
+				F9CCFF9B2AD6F603003F33EC /* AppViewModel.swift in Sources */,
 				F98875142AC812E700BF7D6D /* AdminHomeScreen.swift in Sources */,
+				F9CCFFA02AD6F880003F33EC /* StatusToast.swift in Sources */,
 				F988751A2AC815FB00BF7D6D /* CarRentailDetailRespone.swift in Sources */,
 				F99AA8962ACB367A0063EA6E /* Data+Extension.swift in Sources */,
 				F99AA87D2ACB2F900063EA6E /* RegisterResponse.swift in Sources */,
 				F9770A5729B474FA00596443 /* LoadingViewModel.swift in Sources */,
 				F9780D9B2A780ED8007BC5CE /* SearchBar.swift in Sources */,
 				F93F85DB2A7AB86F009EFADA /* SuccessViewModel.swift in Sources */,
+				F9CCFFAF2AD719E3003F33EC /* SearchCarResponse.swift in Sources */,
 				F952286E292A9FD600AFF79B /* Enum.swift in Sources */,
 				F9F9601C29229BB600919CF9 /* ButtonSelect.swift in Sources */,
 				F98875182AC815A000BF7D6D /* CarRentailDetailViewModel.swift in Sources */,
@@ -997,12 +1064,14 @@
 				F99CB8F62946325C00B6E38A /* TextFieldCustom.swift in Sources */,
 				F97BCFD32AC5E15D00E2996E /* NavigationManager.swift in Sources */,
 				F9CCA8902A63DFB200660663 /* MyProfileViewModel.swift in Sources */,
+				F9CCFFAA2AD70E0E003F33EC /* ResetPasswordResponse.swift in Sources */,
 				CB02463A2A795168005F9B74 /* CarRentalResponse.swift in Sources */,
 				F932B4582A489DA600E6FDFB /* SettingScreen.swift in Sources */,
 				F9770A8B29BE305800596443 /* PopupHandle.swift in Sources */,
 				F99AA88D2ACB339D0063EA6E /* PopupHelper.swift in Sources */,
 				F9847EE72A795BCB0065088C /* AttributedString+Extension.swift in Sources */,
 				F99AA8772ACB2E6B0063EA6E /* Headers.swift in Sources */,
+				F9CCFFA22AD6F89E003F33EC /* ToastView.swift in Sources */,
 				F99AA8942ACB36440063EA6E /* KeyChain.swift in Sources */,
 				F9D37FBC2A40D0B5002D6817 /* View+Extension.swift in Sources */,
 				F94B143C2937D2BF00AC41A1 /* CartItem.swift in Sources */,
@@ -1015,6 +1084,7 @@
 				F99CB8EE2945CF8000B6E38A /* PaymentMethodScreen.swift in Sources */,
 				F99CB8E82940FB7100B6E38A /* BaseNavigationView.swift in Sources */,
 				F97BCFCC2AC5C47F00E2996E /* BottomSheet.swift in Sources */,
+				F9CCFFB32AD7234F003F33EC /* CarResultViewModel.swift in Sources */,
 				F99AA88C2ACB339D0063EA6E /* BaseAlertBuilder.swift in Sources */,
 				F99AA8902ACB34F90063EA6E /* UserDefaultCustom.swift in Sources */,
 				F9770A9829BE371400596443 /* Line.swift in Sources */,
@@ -1024,6 +1094,7 @@
 				F91E43132A89375500898074 /* CarPreviewView.swift in Sources */,
 				F91807072A5039090084F113 /* SignInViewModel.swift in Sources */,
 				F9522870292AA2F900AFF79B /* ButtonProfile.swift in Sources */,
+				F9CCFFA62AD70AFF003F33EC /* ResetPasswordScreen.swift in Sources */,
 				F9770A8929BE2E0400596443 /* Constant.swift in Sources */,
 				F9F9600B292156DE00919CF9 /* HomeScreen.swift in Sources */,
 				F9AB78D6291967E2005F4FF2 /* CarRentalApp.swift in Sources */,
@@ -1050,6 +1121,7 @@
 				F932B4562A484DB600E6FDFB /* GhostButton.swift in Sources */,
 				F97294172927E2E200E89C68 /* CarDetailScreen.swift in Sources */,
 				F9770A8329BC3ABA00596443 /* ForgotPasswordScreen.swift in Sources */,
+				F9CCFFA42AD70957003F33EC /* ForgotPasswordResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
