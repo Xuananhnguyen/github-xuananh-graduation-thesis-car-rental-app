@@ -10,10 +10,19 @@ import Foundation
 class CarResultViewModel: ObservableObject {
     @Published var listCarResult: [CarResultModel] = []
     
-    func carResult(startDay: Date?, endDay: Date?) {
+    func carResult(startDay: Date,
+                   endDay: Date,
+                   brandID: String,
+                   color: String,
+                   year: String,
+                   categoryID: String) {
         LoadingViewModel.share.onShowProgress(isShow: true)
-        CarRentailServices.shared.searchCar(startDay: formatDateToString(startDay ?? Date()),
-                                            endDay: formatDateToString(endDay ?? Date())) { response in
+        CarRentailServices.shared.searchCar(startDay: formatDateToString(startDay),
+                                            endDay: formatDateToString(endDay),
+                                            brandID: brandID,
+                                            color: color,
+                                            year: year,
+                                            categoryID: categoryID) { response in
             if response.code == 1 {
                 LoadingViewModel.share.onShowProgress(isShow: false)
                 self.listCarResult = response.data ?? []

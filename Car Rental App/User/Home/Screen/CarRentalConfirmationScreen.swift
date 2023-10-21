@@ -6,16 +6,17 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct CarRentalConfirmationScreen: AppNavigator {
-    var imageCar: String = CAR_IMG
-    var nameCar: String = "MITSUBISHI XPANDER 2021"
-    var address: String = "Hà Đông, Hà Nội"
-    var price: String = "950,000"
-    var startDate: String = ""
-    var endDate: String = ""
-    var days: Int = 1
-    var totalPrice: String = "950,000"
+    @StateObject var viewModel = CarRentalSubmitViewModel()
+    @State private var invoiceCode: Int = 0
+    var carModel: CarModel
+    var startDay: Date
+    var endDay: Date
+    var days: Int
+    var vehicleID: Int
+    
     var body: some View {
         BaseNavigationView(
             isHiddenBackButton: false,
@@ -38,24 +39,54 @@ struct CarRentalConfirmationScreen: AppNavigator {
                 }
             }
         )
+        .onAppear {
+            invoiceCode = Int(viewModel.generateRandomNumber()) ?? 0
+        }
     }
 }
 
 extension CarRentalConfirmationScreen {
     private var carTitleView: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Image(imageCar)
-                .resizable()
-                .frame(height: 170)
-                .padding(.vertical, 15)
-            VStack(alignment: .leading, spacing: 10){
-                Text(nameCar.uppercased())
-                    .textStyle(.ROBOTO_MEDIUM, size: 18)
-                Text("\("rentCost".localized) : \(price) \("vndDay".localized)")
-                    .textStyle(.ROBOTO_MEDIUM, size: 16)
+        VStack(alignment: .leading, spacing: 0){
+            if let img = URL(string: carModel.imageUrl ?? "") {
+                WebImage(url: img)
+                    .resizable()
+                    .frame(height: 200)
+                    .padding(.bottom, 15)
             }
-            .foregroundColor(Color(GREEN_2B4C59))
-            .padding(EdgeInsets(top: 15, leading: 16, bottom: 13, trailing: 16))
+            
+            VStack(alignment: .leading, spacing: 10){
+                Divider()
+                    .frame(height: 1)
+                    .background(Color(GREEN_2B4C59))
+                
+                Text(carModel.vehicleName?.uppercased() ?? "")
+                    .textStyle(.ROBOTO_MEDIUM, size: 18)
+                
+                Text("Giao xe tận nơi")
+                    .textStyle(.ROBOTO_MEDIUM, size: 13)
+                    .foregroundColor(Color(GREEN_2B4C59))
+                    .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                    .frame(height: 22)
+                    .background(Color(GRAY_EEEEEE))
+                    .cornerRadius(3)
+                
+                Text("Loại xe: \(carModel.categoryName ?? "")")
+                    .textStyle(.ROBOTO_REGULAR, size: 14)
+                
+                Text("Hãng xe: \(carModel.brandName ?? "")")
+                    .textStyle(.ROBOTO_REGULAR, size: 14)
+                
+                HStack(spacing: 0){
+                    Text("Màu xe: \(carModel.color ?? "")")
+                        .textStyle(.ROBOTO_REGULAR, size: 14)
+                    Spacer()
+                    Text("Giá thuê: \(carModel.rentalPricePerDay ?? 0) VND/ngày")
+                        .textStyle(.ROBOTO_MEDIUM, size: 14)
+                }
+            }
+            .foregroundColor(Color(BLACK_000000))
+            .padding(EdgeInsets(top: 10, leading: 13, bottom: 10, trailing: 16))
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color(WHITE_FFFFFF))
@@ -67,23 +98,42 @@ extension CarRentalConfirmationScreen {
                 .textStyle(.ROBOTO_MEDIUM, size: 18)
                 .foregroundColor(Color(GREEN_2B4C59))
                 .padding(.bottom, 16)
-            Text(startDate)
+            Text("\(startDay.toString())")
                 .textStyle(.ROBOTO_REGULAR, size: 16)
                 .padding(.horizontal, 16)
                 .foregroundColor(Color(GREEN_2B4C59))
-                .frame(height: 44)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(height: 44)
                 .background(Color(WHITE_F0F0F0))
                 .cornerRadius(10)
                 .padding(.bottom, 18)
-            Text(endDate)
+            Text("\(endDay.toString())")
                 .textStyle(.ROBOTO_REGULAR, size: 16)
                 .padding(.horizontal, 16)
                 .foregroundColor(Color(GREEN_2B4C59))
-                .frame(height: 44)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(height: 44)
                 .background(Color(WHITE_F0F0F0))
                 .cornerRadius(10)
+        }
+        .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(WHITE_FFFFFF))
+    }
+    
+    private var deliveryLocationPayCar: some View {
+        VStack(alignment: .leading, spacing: 8){
+            Text("deliveryAndReturnLocations".localized)
+                .textStyle(.ROBOTO_MEDIUM, size: 16)
+                .foregroundColor(Color(GREEN_2B4C59))
+            HStack(spacing: 6){
+                Image(IC_LOCATION_BLACK)
+                    .resizable()
+                    .frame(width: 11.5, height: 17.5)
+                Text("")
+                    .textStyle(.ROBOTO_REGULAR, size: 13)
+                    .foregroundColor(Color(GREEN_2B4C59))
+            }
         }
         .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -97,7 +147,7 @@ extension CarRentalConfirmationScreen {
                     .textStyle(.ROBOTO_MEDIUM, size: 16)
                     .foregroundColor(Color(GREEN_2B4C59))
                 Spacer()
-                Text("340 km/Ngày")
+                Text("\(carModel.limitedKmPerDay ?? 0) km/Ngày")
                     .textStyle(.ROBOTO_REGULAR, size: 16)
                     .foregroundColor(Color(GREEN_2B4C59))
             }
@@ -110,6 +160,7 @@ extension CarRentalConfirmationScreen {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color(WHITE_FFFFFF))
     }
+
     
     private var vehicleDeliveryDocuments: some View {
         VStack(alignment: .leading, spacing: 12){
@@ -153,7 +204,7 @@ extension CarRentalConfirmationScreen {
             Text("description".localized)
                 .textStyle(.ROBOTO_MEDIUM, size: 16)
                 .foregroundColor(Color(GREEN_2B4C59))
-            LabelCustom(attributedText: makeContent(text: "descriptionContent".localized),
+            LabelCustom(attributedText: makeContent(text: carModel.description ?? ""),
                         maxWidth: UIScreen.main.bounds.width - 32)
         }
         .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
@@ -166,7 +217,7 @@ extension CarRentalConfirmationScreen {
             Text("collateral".localized)
                 .textStyle(.ROBOTO_MEDIUM, size: 16)
                 .foregroundColor(Color(GREEN_2B4C59))
-            LabelCustom(attributedText: makeContent(text: "collateralContent".localized),
+            LabelCustom(attributedText: makeContent(text: carModel.collateral ?? ""),
                         maxWidth: UIScreen.main.bounds.width - 32)
         }
         .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
@@ -197,7 +248,7 @@ extension CarRentalConfirmationScreen {
                     .textStyle(.ROBOTO_REGULAR, size: 13)
                     .foregroundColor(Color(GREEN_2B4C59))
                 Spacer()
-                Text(price)
+                Text(" \(carModel.rentalPricePerDay ?? 0) ")
                     .textStyle(.ROBOTO_REGULAR, size: 13)
                     .foregroundColor(Color(GREEN_2B4C59))
             }
@@ -211,7 +262,7 @@ extension CarRentalConfirmationScreen {
                     .textStyle(.ROBOTO_REGULAR, size: 13)
                     .foregroundColor(Color(GREEN_2B4C59))
                 Spacer()
-                Text("\(price) x \(days) ngày")
+                Text(" \(carModel.rentalPricePerDay ?? 0) x \(days) ngày")
                     .textStyle(.ROBOTO_REGULAR, size: 13)
                     .foregroundColor(Color(GREEN_2B4C59))
             }
@@ -225,7 +276,7 @@ extension CarRentalConfirmationScreen {
                     .textStyle(.ROBOTO_REGULAR, size: 13)
                     .foregroundColor(Color(GREEN_2B4C59))
                 Spacer()
-                Text(totalPrice)
+                Text("\(calculatorTotalPrice())")
                     .textStyle(.ROBOTO_REGULAR, size: 13)
                     .foregroundColor(Color(GREEN_2B4C59))
             }
@@ -235,7 +286,7 @@ extension CarRentalConfirmationScreen {
                     .textStyle(.ROBOTO_REGULAR, size: 13)
                     .foregroundColor(Color(GREEN_2B4C59))
                 Spacer()
-                Text(totalPrice)
+                Text(" \(calculatorTotalPile())")
                     .textStyle(.ROBOTO_REGULAR, size: 13)
                     .foregroundColor(Color(GREEN_2B4C59))
             }
@@ -245,7 +296,8 @@ extension CarRentalConfirmationScreen {
                     .textStyle(.ROBOTO_REGULAR, size: 13)
                     .foregroundColor(Color(GREEN_2B4C59))
                 Spacer()
-                Text(totalPrice)
+                let payTheCarOwnerAtTheEnd = calculatorTotalPrice() - calculatorTotalPile()
+                Text("\(payTheCarOwnerAtTheEnd)")
                     .textStyle(.ROBOTO_REGULAR, size: 13)
                     .foregroundColor(Color(GREEN_2B4C59))
             }
@@ -262,13 +314,21 @@ extension CarRentalConfirmationScreen {
                 Text("totalPrice".localized)
                     .textStyle(.ROBOTO_REGULAR, size: 20)
                     .foregroundColor(Color(GREEN_2B4C59))
-                Text("\(price) đ")
+                Text("\(calculatorTotalPrice()) đ")
                     .textStyle(.ROBOTO_MEDIUM, size: 20)
                     .foregroundColor(Color(GREEN_2B4C59))
             }
             Spacer()
             Button(action: {
-                navigator.pushToView(view: SuccessScreen())
+                                          viewModel.submitCarRental(vehicleID: vehicleID,
+                                          startDay: startDay.toString(),
+                                          endDay: endDay.toString(),
+                                          numberOfRentalDays: days,
+                                          totalAmount: calculatorTotalPrice(),
+                                          note: "",
+                                          invoiceCode: invoiceCode) {
+                    navigator.pushToView(view: SuccessScreen())
+                }
             }, label: {
                 Text("carRental".localized)
                     .textStyle(.ROBOTO_BOLD, size: 20)
@@ -283,5 +343,13 @@ extension CarRentalConfirmationScreen {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color(WHITE_FFFFFF))
         .padding(.bottom, 16)
+    }
+    
+    func calculatorTotalPrice() -> Int {
+        return (carModel.rentalPricePerDay ?? 0) * days
+    }
+    
+    func calculatorTotalPile() -> Int {
+        return Int(Double(calculatorTotalPrice()) * 0.3)
     }
 }

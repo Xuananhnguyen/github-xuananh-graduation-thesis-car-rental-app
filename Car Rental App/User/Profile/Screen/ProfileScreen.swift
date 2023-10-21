@@ -10,7 +10,6 @@ import SwiftUI
 @MainActor
 struct ProfileScreen: AppNavigator {
     @StateObject var viewModel = ProfileViewModel()
-    @State var nameUser: String = "User Demo"
     var feature: [ProfileType] = [.myProfile, .settings, .helpAndInfo, .carRental]
     
     var body: some View {
@@ -18,15 +17,6 @@ struct ProfileScreen: AppNavigator {
             header
         }, builderContent: {
             VStack {
-                Image(IMG_CAR)
-                    .resizable()
-                    .frame(width: 103, height: 101)
-                    .padding(.bottom, 10)
-                
-                Text("Demo")
-                    .textStyle(.ROBOTO_BOLD, size: 20)
-                    .foregroundColor(Color(GRAY_6B6B6B))
-                
                 VStack(spacing: 20){
                     ForEach(feature.indices, id: \.self) { index in
                         let item = feature[index]
@@ -40,17 +30,11 @@ struct ProfileScreen: AppNavigator {
                 Spacer()
                 
                 Button(action: {
-//                    Task {
-//                        do {
-//                            try viewModel.signOut()
-//                            print("Logout success")
-                            navigator.popToRootView()
-//                        } catch {
-//                            print(error)
-//                        }
-//                    }
+                    AppViewModel.shared.handleLogout {
+                        navigator.popToRootView()
+                    }
                 }, label: {
-                    Text("logOut")
+                    Text("logOut".localized)
                         .font(.system(size: 20, weight: .bold))
                         .foregroundColor(Color(WHITE_FFFFFF))
                         .frame(width: 349, height: 52)

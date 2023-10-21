@@ -9,9 +9,12 @@ import SwiftUI
 
 struct CarResultScreen: AppNavigator {
     @StateObject var viewModel = CarResultViewModel()
-    @State var search: String = ""
     var startDay: Date?
     var endDay: Date?
+    var brandID: String?
+    var color: String?
+    var year: String?
+    var categoryID: String?
     
     var body: some View {
         BaseNavigationView(
@@ -21,9 +24,16 @@ struct CarResultScreen: AppNavigator {
             builderContent: {
                 ScrollView(.vertical, showsIndicators: false){
                     VStack(spacing: 16) {
-                        ForEach(0...5, id: \.self) { _ in
-                            CarPreviewView {
-                                navigator.pushToView(view: CarDetailScreen())
+                        ForEach(viewModel.listCarResult, id: \.self) { item in
+                            CarPreviewView(imageCar: item.imageUrl ?? "",
+                                           nameCar: item.vehicleName ?? "",
+                                           price: item.rentalPricePerDay ?? 0,
+                                           color: item.color ?? "",
+                                           brand: item.brandName ?? "",
+                                           category: item.categoryName ?? "") {
+                                navigator.pushToView(view: CarDetailScreen(vehicleID: item.vehicleId ?? 0,
+                                                                           startDay: startDay ?? Date(),
+                                                                           endDay: endDay ?? Date()))
                             }
                         }
                     }
@@ -32,7 +42,12 @@ struct CarResultScreen: AppNavigator {
                 .background(Color(GRAY_EEEEEE).ignoresSafeArea(.all))
             })
         .onAppear {
-            viewModel.carResult(startDay: startDay, endDay: endDay)
+            viewModel.carResult(startDay: startDay ?? Date(),
+                                endDay: endDay ?? Date(),
+                                brandID: brandID ?? "",
+                                color: color ?? "",
+                                year: year ?? "",
+                                categoryID: categoryID ?? "")
         }
     }
 }

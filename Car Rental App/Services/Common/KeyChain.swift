@@ -76,3 +76,7 @@ extension KeyChain {
         return KeyChain.load(key: KEY_CHAIN.DEVICE_ID)?.dataToString() ?? ""
     }
 }
+
+struct KEY {
+    static let AUTHENTICATE = "AUTHENTICATE\(Configs.APP_INDENTIFIER)"
+}

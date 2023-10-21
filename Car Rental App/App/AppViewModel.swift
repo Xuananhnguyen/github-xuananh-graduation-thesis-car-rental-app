@@ -31,4 +31,9 @@ class AppViewModel: ObservableObject {
             }
         }
     }
+    
+    func handleLogout(completion: (() -> Void)? = nil) {
+        AppDataManager.shared.authenticate = nil
+        completion?()
+    }
 }

@@ -13,17 +13,13 @@ struct SearchCarResponse: CarRentalAppResponse {
     var data: [CarResultModel]?
 }
 
-struct CarResultModel: Codable {
+struct CarResultModel: Codable, Hashable {
     var vehicleId: Int?
     var vehicleName: String?
     var brandName: String?
     var categoryName: String?
     var year: Int?
     var color: String?
-    var registrationNumber: String?
     var rentalPricePerDay: Int?
-    var limitedKmPerDay: Int?
-    var collateral: String?
-    var description: String?
     var imageUrl: String?
 }

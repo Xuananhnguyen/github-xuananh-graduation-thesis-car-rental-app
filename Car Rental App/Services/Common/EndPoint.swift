@@ -18,9 +18,29 @@ struct AuthEndPoint {
 
 struct CarRentalEndPoint {
     static let searchCar = "/search_car.php"
+    static let carDetail = "/car_detail.php"
+    static let carRentalSubmit = "/car_rental_submit.php"
+}
+
+struct ReservationEndPoint {
+    static let getUserCarReservation = "/get_user_car_rental.php"
+    static let userReservationDetail = "/user_reservation_detail.php"
+}
+
+struct ProfileEndPoint {
+    static let userProfile = "/user_profile.php"
+    static let updateProfile = "/update_profile.php"
+    static let getUserLicense = "/get_user_license.php"
+    static let updateLicense = "/update_user_license.php"
 }
 
 // MARK: API FOR ADMIN
 struct AdminEndPoint {
     static let getAllUser = "/get_all_user.php"
+    static let getAllReservation = "/get_all_reservation.php"
+    static let getAllCar = "/get_all_car.php"
+    static let getAllReview = "/get_all_review.php"
+    static let verifiedUser = "/verified_user.php"
+    static let approveReservation = "/approve_reservation.php"
+    static let adminReservationDetail = "/admin_reservation_detail.php"
 }

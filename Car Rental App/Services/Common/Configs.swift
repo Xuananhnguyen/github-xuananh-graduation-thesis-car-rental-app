@@ -9,5 +9,5 @@ import Foundation
 
 struct Configs {
     static let BASE_URL = "https://xuananhnguyen36.click/api"
-    static let APP_INDENTIFIER: String = Bundle.main.bundleIdentifier ?? "TIIRA"
+    static let APP_INDENTIFIER: String = Bundle.main.bundleIdentifier ?? "xanh.Car-Rental-App"
 }

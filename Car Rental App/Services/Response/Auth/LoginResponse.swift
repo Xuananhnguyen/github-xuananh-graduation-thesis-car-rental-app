@@ -18,4 +18,6 @@ struct DataLoginModel: Codable {
     let name, email, phoneNumber: String?
     let address, idCard, license: String?
     let role: Int?
+    let verified: Int?
+    let drivingLicense, statusAccount: String?
 }

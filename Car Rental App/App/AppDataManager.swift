@@ -12,7 +12,13 @@ import SwiftyJSON
 class AppDataManager: ObservableObject {
     static let shared = AppDataManager()
     
-    var authenticate: DataLoginModel?
+    var authenticate: DataLoginModel? {
+        get {
+            UserDefaultCustom.getObject(DataLoginModel.self, key: KEY.AUTHENTICATE) ?? nil
+        } set {
+            UserDefaultCustom.saveObject(newValue, key: KEY.AUTHENTICATE)
+        }
+    }
 }
 
 

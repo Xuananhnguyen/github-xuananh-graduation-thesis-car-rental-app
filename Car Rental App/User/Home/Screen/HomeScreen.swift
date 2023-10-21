@@ -39,7 +39,7 @@ extension HomeScreen {
                 .clipShape(Circle())
                 .padding(.trailing, 13)
             
-            Text("User name")
+            Text(AppDataManager.shared.authenticate?.name ?? "EmptyName")
                 .textStyle(.ROBOTO_MEDIUM, size: 20)
                 .foregroundColor(Color(WHITE_FFFFFF))
             
