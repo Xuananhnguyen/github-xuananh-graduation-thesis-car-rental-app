@@ -1,23 +1,19 @@
 //
-//  MyProfileViewModel.swift
+//  LisenceViewModel.swift
 //  Car Rental App
 //
-//  Created by NGUYEN XUAN ANH on 16/07/2023.
+//  Created by NGUYEN XUAN ANH on 23/10/2023.
 //
 
 import Foundation
 
-class MyProfileViewModel: ObservableObject {
+class LisenceViewModel: ObservableObject {
     
-    func updateProfile(name: String,
-                       email: String,
-                       phoneNumber: String,
-                       address: String) {
+    func updateLicense(idCard: String,
+                       drivingLicense: String) {
         LoadingViewModel.share.onShowProgress(isShow: true)
-        ProfileServices.shared.updateProfile(name: name,
-                                             email: email,
-                                             phoneNumber: phoneNumber,
-                                             address: address) { response in
+        ProfileServices.shared.updateLicense(idCard: idCard,
+                                             drivingLicense: drivingLicense) { response in
             if response.code == 1 {
                 LoadingViewModel.share.onShowProgress(isShow: false)
                 let confirmDialog = ConfirmDialog(content: response.message?.removingPercentEncoding ?? "")

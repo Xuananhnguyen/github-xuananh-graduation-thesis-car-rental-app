@@ -10,7 +10,7 @@ import SwiftUI
 @MainActor
 struct ProfileScreen: AppNavigator {
     @StateObject var viewModel = ProfileViewModel()
-    var feature: [ProfileType] = [.myProfile, .settings, .helpAndInfo, .carRental]
+    var feature: [ProfileType] = [.myProfile, .license, .carRental, .settings, .helpAndInfo]
     
     var body: some View {
         BaseNavigationView(isHiddenBackButton: false, builderHeader: {
@@ -18,15 +18,14 @@ struct ProfileScreen: AppNavigator {
         }, builderContent: {
             VStack {
                 VStack(spacing: 20){
-                    ForEach(feature.indices, id: \.self) { index in
-                        let item = feature[index]
-                        ButtonProfile(image: item.icon,
-                                      nameFeature: item.name,
+                    ForEach(feature, id: \.self) { item in
+                        ButtonProfile(nameFeature: item.name,
                                       onPress: {
                             onPressFeature(feature: item)
                         })
                     }
                 }
+                .padding(.top, 10)
                 Spacer()
                 
                 Button(action: {
@@ -35,7 +34,7 @@ struct ProfileScreen: AppNavigator {
                     }
                 }, label: {
                     Text("logOut".localized)
-                        .font(.system(size: 20, weight: .bold))
+                        .textStyle(.ROBOTO_BOLD, size: 20)
                         .foregroundColor(Color(WHITE_FFFFFF))
                         .frame(width: 349, height: 52)
                         .background(Color(GREEN_2B4C59))
@@ -44,6 +43,10 @@ struct ProfileScreen: AppNavigator {
                 .padding(.bottom, 20)
             }
             .background(Color(WHITE_FFFFFF).ignoresSafeArea())
+            .onAppear {
+                viewModel.userProfile()
+                viewModel.geUserLicense()
+            }
         })
     }
 }
@@ -70,16 +73,19 @@ extension ProfileScreen {
     private func onPressFeature(feature: ProfileType) {
         switch feature {
         case .myProfile:
-            navigator.pushToView(view: MyProfileScreen(fullname: "",
-                                                       email: "",
-                                                       phoneNumber: "",
-                                                       address: ""))
-        case .helpAndInfo:
-            navigator.pushToView(view: AboutUsScreen())
+            navigator.pushToView(view: MyProfileScreen(fullname: viewModel.userProfileModel?.name ?? "",
+                                                       email: viewModel.userProfileModel?.email ?? "",
+                                                       phoneNumber: viewModel.userProfileModel?.phoneNumber ?? "",
+                                                       address: viewModel.userProfileModel?.address ?? "") )
+        case .license:
+            navigator.pushToView(view: LisenceSreen(idCard: viewModel.userLicense?.idCard ?? "",
+                                                    drivingLicense: viewModel.userLicense?.drivingLicense ?? ""))
+        case .carRental:
+            navigator.pushToView(view: ReservationScreen())
         case .settings:
             navigator.pushToView(view: SettingScreen())
-        case .carRental:
-            navigator.pushToView(view: CarRentalScreen())
+        case .helpAndInfo:
+            navigator.pushToView(view: AboutUsScreen())
         }
     }
 }

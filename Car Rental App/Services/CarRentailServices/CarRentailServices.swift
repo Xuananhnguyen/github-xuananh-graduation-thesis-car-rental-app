@@ -76,4 +76,34 @@ class CarRentailServices: NSObject {
             failBlock(error)
         }
     }
+    
+    func getUserCarReservation(successBlock: @escaping (ReservationResponse) -> Void,
+                          failBlock: @escaping (BaseError) -> Void) {
+        let userID = AppDataManager.shared.authenticate?.userId ?? 0
+        let params: [String : Any] = ["user_id": userID]
+        ClientNetwork.shared.sendRequest(params: getParams(dict: params),
+                                         endPoint: ReservationEndPoint.getUserCarReservation,
+                                         parsingType: ReservationResponse.self,
+                                         httpMethod: .get) { response in
+            successBlock(response)
+        } failBlock: { error in
+            failBlock(error)
+        }
+    }
+    
+    func userReservationDetail(reservationID: Int,
+                               successBlock: @escaping (ReservationDetailResponse) -> Void,
+                               failBlock: @escaping (BaseError) -> Void) {
+        let userID = AppDataManager.shared.authenticate?.userId ?? 0
+        let params: [String : Any] = ["user_id": userID,
+                                      "reservation_id": reservationID]
+        ClientNetwork.shared.sendRequest(params: getParams(dict: params),
+                                         endPoint: ReservationEndPoint.userReservationDetail,
+                                         parsingType: ReservationDetailResponse.self,
+                                         httpMethod: .get) { response in
+            successBlock(response)
+        } failBlock: { error in
+            failBlock(error)
+        }
+    }
 }

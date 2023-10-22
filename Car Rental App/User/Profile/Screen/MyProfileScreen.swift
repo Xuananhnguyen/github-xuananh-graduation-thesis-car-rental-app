@@ -13,30 +13,30 @@ struct MyProfileScreen: AppNavigator {
     @State var email: String = ""
     @State var phoneNumber: String = ""
     @State var address: String = ""
+    
     var body: some View {
-        BaseNavigationView(builderContent: {
+        BaseNavigationView(titleBackbutton: "Thông tin tài khoản",
+                           builderContent: {
             VStack(spacing: 20) {
-                Text("Profile")
-                    .textStyle(.ROBOTO_BOLD, size: 24)
-                    .foregroundColor(Color(BLACK_000000))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.vertical, 10)
+                    TextFieldView(title: "\("fullName".localized):",
+                                  inputContent: $fullname)
+
+                    TextFieldView(title: "\("email".localized):",
+                                  inputContent: $email)
+
+                    TextFieldView(title: "\("phoneNumber".localized):",
+                                  inputContent: $phoneNumber)
+
+                    TextFieldView(title: "\("address".localized):",
+                                  inputContent: $address)
                 
-                TextFieldView(title: "\("fullName".localized):",
-                              inputContent: $fullname)
-                
-                TextFieldView(title: "\("email".localized):",
-                              inputContent: $email)
-                
-                TextFieldView(title: "\("phoneNumber".localized):",
-                              inputContent: $phoneNumber)
-                
-                TextFieldView(title: "\("address".localized):",
-                              inputContent: $address)
                 
                 Spacer()
                 Button(action: {
-                    
+                    viewModel.updateProfile(name: fullname,
+                                            email: email,
+                                            phoneNumber: phoneNumber,
+                                            address: address)
                 }, label: {
                     Text("Save Changes")
                         .textStyle(.ROBOTO_BOLD, size: 20)
@@ -48,6 +48,18 @@ struct MyProfileScreen: AppNavigator {
                 })
             }
             .padding(.horizontal, 16)
+            .onChange(of: fullname) { newValue in
+                fullname = newValue
+            }
+            .onChange(of: email) { newValue in
+                email = newValue
+            }
+            .onChange(of: phoneNumber) { newValue in
+                phoneNumber = newValue
+            }
+            .onChange(of: address) { newValue in
+                address = newValue
+            }
         })
     }
 }

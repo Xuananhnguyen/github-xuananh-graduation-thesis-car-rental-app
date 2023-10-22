@@ -1,27 +1,21 @@
 //
-//  MyProfileViewModel.swift
+//  ReservationViewModel.swift
 //  Car Rental App
 //
-//  Created by NGUYEN XUAN ANH on 16/07/2023.
+//  Created by NGUYEN XUAN ANH on 01/08/2023.
 //
 
 import Foundation
 
-class MyProfileViewModel: ObservableObject {
+class ReservationViewModel: ObservableObject {
+    @Published var listReservations: [ReservationModel] = []
     
-    func updateProfile(name: String,
-                       email: String,
-                       phoneNumber: String,
-                       address: String) {
+    func getUserCarReservation() {
         LoadingViewModel.share.onShowProgress(isShow: true)
-        ProfileServices.shared.updateProfile(name: name,
-                                             email: email,
-                                             phoneNumber: phoneNumber,
-                                             address: address) { response in
+        CarRentailServices.shared.getUserCarReservation() { response in
             if response.code == 1 {
                 LoadingViewModel.share.onShowProgress(isShow: false)
-                let confirmDialog = ConfirmDialog(content: response.message?.removingPercentEncoding ?? "")
-                Popup.presentPopup(alertView: confirmDialog)
+                self.listReservations = response.data ?? []
             } else {
                 LoadingViewModel.share.onShowProgress(isShow: false)
                 let confirmDialog = ConfirmDialog(content: response.message?.removingPercentEncoding ?? "")

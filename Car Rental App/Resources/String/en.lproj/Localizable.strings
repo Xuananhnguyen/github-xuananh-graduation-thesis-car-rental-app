@@ -44,8 +44,8 @@
 "verifyNow" = "Xác thực ngay";
 "carRental" = "Thuê xe";
 "priceRental" = "Giá: ";
-"from" = "Từ - %@";
-"to" = "Đến - %@";
+"from" = "Từ: %@";
+"to" = "Đến: %@";
 "searchCar" = "Tìm kiếm xe theo nhu cầu của bạn";
 "findCar" = "Tìm xe ngay";
 "carRentalLocation" = "Địa điểm thuê xe";
@@ -58,7 +58,7 @@
 "showmore" = "Xem chi tiết";
 "backToHome" = "Về trang chủ";
 "logOut" = "Đăng xuất";
-"carRentalNoti" = "Thuê xe";
+"carRentalNoti" = "Lịch đặt xe của tôi";
 "settings" = "Cài đặt";
 "reachUs" = "Liên hệ chúng tôi";
 "titleSearchCar" = "Kết quả tìm kiếm";
@@ -91,3 +91,4 @@
 "getPassword" = "Lấy lại mật khẩu";
 "passwordInvalid" = "Định dạng mật khẩu không hợp lệ";
 "resetPasswordTitle" = "Nhập mật khẩu mới";
+"license" = "Giấy tờ cá nhân";

@@ -11,6 +11,11 @@ struct HomeScreen: AppNavigator {
     @StateObject var viewModel = HomeViewModel()
     @State var startDay: Date?
     @State var endDay: Date?
+    @State private var brandCar: DropdownMenuOption? = nil
+    @State private var categoryCar: DropdownMenuOption? = nil
+    @State private var yearCar: DropdownMenuOption? = nil
+    @State private var colorCar: DropdownMenuOption? = nil
+    
     var body: some View {
         BaseNavigationView(isHiddenBackButton: false,
                            backgroundColor: Color(GRAY_EEEEEE),
@@ -19,6 +24,7 @@ struct HomeScreen: AppNavigator {
         }, builderContent: {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 15){
+                    selectDescribe
                     searchView
                     voucherView
                     rulesView
@@ -112,12 +118,55 @@ extension HomeScreen {
         return attString
     }
     
+    private var selectDescribe: some View {
+        VStack(alignment: .leading, spacing: 16){
+            Text("Đặc điểm của xe".localized)
+                .textStyle(.ROBOTO_MEDIUM, size: 18)
+                .foregroundColor(Color(GREEN_2B4C59))
+            
+            DropdownMenu(
+                selectedOption: self.$brandCar,
+                placeholder: "Chọn hãng xe",
+                options: DropdownMenuOption.allBrandCar
+            )
+            
+            DropdownMenu(
+                selectedOption: self.$categoryCar,
+                placeholder: "Chọn loại xe",
+                options: DropdownMenuOption.allCategory
+            )
+            
+            DropdownMenu(
+                selectedOption: self.$colorCar,
+                placeholder: "Chọn màu xe",
+                options: DropdownMenuOption.allColor
+            )
+            
+            DropdownMenu(
+                selectedOption: self.$yearCar,
+                placeholder: "Chọn năm sản xuất",
+                options: DropdownMenuOption.allYear
+            )
+            
+            ButtonAuth(title: "Cài lại mô tả",
+                       onPress: {
+                brandCar = nil
+                categoryCar = nil
+                colorCar = nil
+                yearCar = nil
+            })
+        }
+        .padding(EdgeInsets(top: 10, leading: 14, bottom: 10, trailing: 14))
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(WHITE_FFFFFF))
+    }
+    
     private var searchView: some View {
         VStack(alignment: .leading, spacing: 16){
             Text("rentalPeriod".localized)
                 .textStyle(.ROBOTO_MEDIUM, size: 18)
                 .foregroundColor(Color(GREEN_2B4C59))
-                .padding(.bottom, 16)
+            
             DatePickerTextField(placeholder: "startDay".localized,
                                 date: $startDay)
                 .textStyle(.ROBOTO_REGULAR, size: 16)
@@ -125,7 +174,10 @@ extension HomeScreen {
                 .foregroundColor(Color(GREEN_2B4C59))
                 .frame(height: 44)
                 .background(Color(WHITE_F0F0F0))
-                .cornerRadius(10)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(.gray, lineWidth: 2)
+                }
             
             DatePickerTextField(placeholder: "endDay".localized,
                                 date: $endDay,
@@ -145,11 +197,19 @@ extension HomeScreen {
                 .foregroundColor(Color(GREEN_2B4C59))
                 .frame(height: 44)
                 .background(Color(WHITE_F0F0F0))
-                .cornerRadius(10)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(.gray, lineWidth: 2)
+                }
             
             ButtonAuth(title: "findCar".localized,
                        onPress: {
-                navigator.pushToView(view: CarResultScreen(startDay: startDay, endDay: endDay))
+                navigator.pushToView(view: CarResultScreen(startDay: startDay,
+                                                           endDay: endDay,
+                                                           brandID: viewModel.getBrandCarNumber(brandCar: brandCar?.option ?? ""),
+                                                           color: colorCar?.option ?? "",
+                                                           year: yearCar?.option ?? "",
+                                                           categoryID: viewModel.getCategoryCarNumber(categoryCar: categoryCar?.option ?? "")))
             })
         }
         .padding(EdgeInsets(top: 10, leading: 14, bottom: 10, trailing: 14))
