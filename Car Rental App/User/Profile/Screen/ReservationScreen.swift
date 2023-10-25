@@ -10,13 +10,19 @@ import SDWebImageSwiftUI
 
 struct ReservationScreen: AppNavigator {
     @ObservedObject var viewModel = ReservationViewModel()
+    var isBackToHome: Bool = false
     
     var body: some View {
-        BaseNavigationView {
-            headerCarRentalView
-        } builderContent: {
+        BaseNavigationView(onPressBack: {
+            if isBackToHome {
+                navigator.popToView(HomeScreen.self)
+            } else {
+                navigator.pop()
+            }
+        }, title: "carRentalNoti".localized,
+                           builderContent: {
             makeListCarRental
-        }
+        })
         .onAppear {
             viewModel.getUserCarReservation()
         }
@@ -24,25 +30,6 @@ struct ReservationScreen: AppNavigator {
 }
 
 extension ReservationScreen {
-    // MARK: Make Header
-    var headerCarRentalView: some View {
-        HStack(spacing: 16) {
-            Image(IC_ARROW_LEFT)
-                .resizable()
-                .renderingMode(.template)
-                .foregroundColor(Color(BLACK_000000))
-                .frame(width: 13, height: 21)
-                .onTapGesture {
-                    navigator.pop()
-                }
-            Text("carRentalNoti".localized)
-                .textStyle(.ROBOTO_BOLD, size: 23)
-                .foregroundColor(Color(BLACK_000000))
-            Spacer()
-        }
-        .padding(.horizontal, 16)
-    }
-    
     // MARK: Make body
     var makeListCarRental: some View {
         ScrollView(.vertical, showsIndicators: false) {

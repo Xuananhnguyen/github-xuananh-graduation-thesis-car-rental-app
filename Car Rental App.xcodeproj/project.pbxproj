@@ -60,6 +60,8 @@
 		F9780D9B2A780ED8007BC5CE /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9780D9A2A780ED8007BC5CE /* SearchBar.swift */; };
 		F9780D9D2A78143B007BC5CE /* ButtonAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9780D9C2A78143B007BC5CE /* ButtonAuth.swift */; };
 		F97B3E9B2AE90F950033BEB2 /* VehiclesDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97B3E9A2AE90F950033BEB2 /* VehiclesDetailScreen.swift */; };
+		F97B3E9D2AE927700033BEB2 /* AccountVerifiedDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97B3E9C2AE927700033BEB2 /* AccountVerifiedDialog.swift */; };
+		F97B3E9F2AE93B360033BEB2 /* TextFieldShortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97B3E9E2AE93B360033BEB2 /* TextFieldShortView.swift */; };
 		F97BCFCC2AC5C47F00E2996E /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97BCFCB2AC5C47F00E2996E /* BottomSheet.swift */; };
 		F97BCFD12AC5E12C00E2996E /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97BCFD02AC5E12C00E2996E /* AppNavigator.swift */; };
 		F97BCFD32AC5E15D00E2996E /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97BCFD22AC5E15D00E2996E /* NavigationManager.swift */; };
@@ -220,6 +222,8 @@
 		F9780D9A2A780ED8007BC5CE /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		F9780D9C2A78143B007BC5CE /* ButtonAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAuth.swift; sourceTree = "<group>"; };
 		F97B3E9A2AE90F950033BEB2 /* VehiclesDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesDetailScreen.swift; sourceTree = "<group>"; };
+		F97B3E9C2AE927700033BEB2 /* AccountVerifiedDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVerifiedDialog.swift; sourceTree = "<group>"; };
+		F97B3E9E2AE93B360033BEB2 /* TextFieldShortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldShortView.swift; sourceTree = "<group>"; };
 		F97BCFCB2AC5C47F00E2996E /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		F97BCFD02AC5E12C00E2996E /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
 		F97BCFD22AC5E15D00E2996E /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
@@ -996,6 +1000,8 @@
 				F9780D9A2A780ED8007BC5CE /* SearchBar.swift */,
 				F91E43122A89375500898074 /* CarPreviewView.swift */,
 				F99DF23B2A921EB80071A636 /* DatePickerTextField.swift */,
+				F97B3E9C2AE927700033BEB2 /* AccountVerifiedDialog.swift */,
+				F97B3E9E2AE93B360033BEB2 /* TextFieldShortView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1164,6 +1170,7 @@
 				F97E71252AE83254001DCC63 /* ApproveReservationResponse.swift in Sources */,
 				F9F9601029215F6000919CF9 /* ColorName.swift in Sources */,
 				F9F2FD502AE5749B00A21FFF /* LisenceScreen.swift in Sources */,
+				F97B3E9D2AE927700033BEB2 /* AccountVerifiedDialog.swift in Sources */,
 				F9F2FD4C2AE5455600A21FFF /* DropdownMenuListRow.swift in Sources */,
 				F99CB8EA2940FBA600B6E38A /* BackHeader.swift in Sources */,
 				F9780D9D2A78143B007BC5CE /* ButtonAuth.swift in Sources */,
@@ -1222,6 +1229,7 @@
 				F9D37FBC2A40D0B5002D6817 /* View+Extension.swift in Sources */,
 				F91B26D42ADBF403000DA91C /* Int+Extension.swift in Sources */,
 				F94B143C2937D2BF00AC41A1 /* CartItem.swift in Sources */,
+				F97B3E9F2AE93B360033BEB2 /* TextFieldShortView.swift in Sources */,
 				F9AB78EC291AB9CF005F4FF2 /* TextFieldView.swift in Sources */,
 				F94B14272933138600AC41A1 /* MyProfileScreen.swift in Sources */,
 				F99AA8752ACB2E540063EA6E /* EndPoint.swift in Sources */,

@@ -15,6 +15,8 @@ struct CarResultScreen: AppNavigator {
     var color: String?
     var year: String?
     var categoryID: String?
+    var minPrice: String?
+    var maxPrice: String?
     
     var body: some View {
         BaseNavigationView(
@@ -51,7 +53,9 @@ struct CarResultScreen: AppNavigator {
                                 brandID: brandID ?? "",
                                 color: color ?? "",
                                 year: year ?? "",
-                                categoryID: categoryID ?? "")
+                                categoryID: categoryID ?? "",
+                                minPrice: minPrice ?? "",
+                                maxPrice: maxPrice ?? "")
         }
     }
 }

@@ -36,6 +36,10 @@ extension View {
     func width(_ value: CGFloat, alignment: Alignment = .center) -> some View {
         self.frame(width: value, alignment: alignment)
     }
+    
+    func dimissKeyBoard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
 }
 
 // MARK: -

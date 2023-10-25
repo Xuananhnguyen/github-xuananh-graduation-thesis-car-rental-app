@@ -16,6 +16,8 @@ class CarRentailServices: NSObject {
                    color: String,
                    year: String,
                    categoryID: String,
+                   minPrice: String,
+                   maxPrice: String,
                    successBlock: @escaping (SearchCarResponse) -> Void,
                    failBlock: @escaping (BaseError) -> Void) {
         let params: [String : Any] = ["start_day": startDay,
@@ -23,7 +25,9 @@ class CarRentailServices: NSObject {
                                       "brand_id": brandID,
                                       "color": color,
                                       "year": year,
-                                      "category_id": categoryID]
+                                      "category_id": categoryID,
+                                      "min_price": minPrice,
+                                      "max_price": maxPrice]
         ClientNetwork.shared.sendRequest(params: getParams(dict: params),
                                          endPoint: CarRentalEndPoint.searchCar,
                                          parsingType: SearchCarResponse.self,

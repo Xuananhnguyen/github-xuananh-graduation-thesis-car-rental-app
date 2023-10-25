@@ -34,8 +34,7 @@ class ReservationManagementViewModel: ObservableObject {
                                                 statusID: statusID) { response in
             LoadingViewModel.share.onShowProgress(isShow: false)
             if response.code == 1 {
-                let confirmDialog = ConfirmDialog(content: response.message ?? "", confirmAction: completions)
-                Popup.presentPopup(alertView: confirmDialog)
+                completions?()
             } else {
                 let confirmDialog = ConfirmDialog(content: response.message ?? "")
                 Popup.presentPopup(alertView: confirmDialog)

@@ -15,14 +15,18 @@ class CarResultViewModel: ObservableObject {
                    brandID: String,
                    color: String,
                    year: String,
-                   categoryID: String) {
+                   categoryID: String,
+                   minPrice: String,
+                   maxPrice: String) {
         LoadingViewModel.share.onShowProgress(isShow: true)
         CarRentailServices.shared.searchCar(startDay: formatDateToString(startDay),
                                             endDay: formatDateToString(endDay),
                                             brandID: brandID,
                                             color: color,
                                             year: year,
-                                            categoryID: categoryID) { response in
+                                            categoryID: categoryID,
+                                            minPrice: minPrice,
+                                            maxPrice: maxPrice) { response in
             if response.code == 1 {
                 LoadingViewModel.share.onShowProgress(isShow: false)
                 self.listCarResult = response.data ?? []

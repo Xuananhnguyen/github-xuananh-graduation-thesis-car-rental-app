@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeScreen: AppNavigator {
     @StateObject var viewModel = HomeViewModel()
+    @State var minPrice: String = ""
+    @State var maxPrice: String = ""
     @State var startDay: Date?
     @State var endDay: Date?
     @State private var brandCar: DropdownMenuOption? = nil
@@ -16,6 +18,7 @@ struct HomeScreen: AppNavigator {
     @State private var yearCar: DropdownMenuOption? = nil
     @State private var colorCar: DropdownMenuOption? = nil
     @State var advancedSearch: Bool = false
+    @State var pageIndex: Int = 0
     
     var body: some View {
         BaseNavigationView(isHiddenBackButton: false,
@@ -28,10 +31,14 @@ struct HomeScreen: AppNavigator {
                     selectDescribe
                     searchView
                     voucherView
+                    easyToUseView
                     rulesView
                     cancellationView
                 }
                 .padding(.vertical, 16)
+            }
+            .onTapGesture {
+                self.dimissKeyBoard()
             }
         })
     }
@@ -67,10 +74,31 @@ extension HomeScreen {
         .background(Color(GREEN_2B4C59)).ignoresSafeArea(.all, edges: .bottom)
     }
     
+    private var easyToUseView: some View {
+        VStack(alignment: .leading, spacing: 5){
+            Text("Sử dụng đơn giản")
+                .textStyle(.ROBOTO_MEDIUM, size: 18)
+                .foregroundColor(Color(GREEN_2B4C59))
+            ScrollView(.horizontal, showsIndicators: false){
+                HStack(spacing: 2){
+                    ForEach(viewModel.listThumbNails.indices, id: \.self) { index in
+                        let item = viewModel.listThumbNails[index]
+                        Image(item)
+                            .resizable()
+                            .frame(width: 340, height: 190, alignment: .center)
+                    }
+                }
+            }
+        }
+        .padding(EdgeInsets(top: 10, leading: 14, bottom: 10, trailing: 14))
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(WHITE_FFFFFF))
+    }
+    
     private var voucherView: some View {
         VStack(alignment: .leading, spacing: 15){
             Text("voucher".localized)
-                .textStyle(.ROBOTO_MEDIUM, size: 16)
+                .textStyle(.ROBOTO_MEDIUM, size: 18)
                 .foregroundColor(Color(GREEN_2B4C59))
             Image(IMG_SALE)
                 .resizable()
@@ -122,6 +150,7 @@ extension HomeScreen {
     private var selectDescribe: some View {
         VStack(alignment: .leading, spacing: 16){
             Text("Tiêu chí chọn xe".localized)
+                .multilineTextAlignment(.center)
                 .textStyle(.ROBOTO_MEDIUM, size: 18)
                 .foregroundColor(Color(GREEN_2B4C59))
             
@@ -152,6 +181,16 @@ extension HomeScreen {
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+            
+            Text("Lựa chọn khoảng giá")
+                .textStyle(.ROBOTO_MEDIUM, size: 16)
+                .foregroundColor(Color(GREEN_2B4C59))
+            
+            HStack(spacing: 0){
+                TextFieldShortView(title: "Từ", inputContent: $minPrice)
+                Spacer()
+                TextFieldShortView(title: "Đến", inputContent: $maxPrice)
+            }
             
             DropdownMenu(
                 selectedOption: self.$categoryCar,
@@ -227,12 +266,20 @@ extension HomeScreen {
             
             ButtonAuth(title: "findCar".localized,
                        onPress: {
-                navigator.pushToView(view: CarResultScreen(startDay: startDay,
-                                                           endDay: endDay,
-                                                           brandID: viewModel.getBrandCarNumber(brandCar: brandCar?.option ?? ""),
-                                                           color: colorCar?.option ?? "",
-                                                           year: yearCar?.option ?? "",
-                                                           categoryID: viewModel.getCategoryCarNumber(categoryCar: categoryCar?.option ?? "")))
+                if AppDataManager.shared.authenticate?.verified == 1 {
+                    navigator.pushToView(view: CarResultScreen(startDay: startDay,
+                                                               endDay: endDay,
+                                                               brandID: viewModel.getBrandCarNumber(brandCar: brandCar?.option ?? ""),
+                                                               color: colorCar?.option ?? "",
+                                                               year: yearCar?.option ?? "",
+                                                               categoryID: viewModel.getCategoryCarNumber(categoryCar: categoryCar?.option ?? ""),
+                                                               minPrice: minPrice,
+                                                               maxPrice: maxPrice))
+                } else {
+                    Popup.presentPopup(alertView: AccountVerifiedDialog(confirmAction: {
+                        navigator.pushToView(view: LisenceScreen())
+                    }))
+                }
             })
         }
         .padding(EdgeInsets(top: 10, leading: 14, bottom: 10, trailing: 14))

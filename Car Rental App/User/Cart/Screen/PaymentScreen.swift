@@ -32,7 +32,7 @@ struct SuccessScreen: AppNavigator {
                            textColor: Color(GREEN_2B4C59),
                            backgroundColor: Color(WHITE_FFFFFF),
                            onPress: {
-                    navigator.popToView(HomeScreen.self)
+                    navigator.pushToView(view: ReservationScreen())
                 }).overlay(
                     RoundedRectangle(cornerRadius: 10)
                     .stroke(Color(GREEN_2B4C59), lineWidth: 2))

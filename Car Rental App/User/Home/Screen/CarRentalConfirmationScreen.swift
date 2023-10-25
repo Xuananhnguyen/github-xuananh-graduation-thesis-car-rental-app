@@ -11,6 +11,7 @@ import SDWebImageSwiftUI
 struct CarRentalConfirmationScreen: AppNavigator {
     @StateObject var viewModel = CarRentalSubmitViewModel()
     @State private var invoiceCode: Int = 0
+    @State private var noteString: String = ""
     var carModel: CarModel
     var startDay: Date
     var endDay: Date
@@ -32,6 +33,7 @@ struct CarRentalConfirmationScreen: AppNavigator {
                             limitNumberKm
                             descriptionView
                             collateralView
+                            noteView
                             vehicleDeliveryDocuments
                             carRentalButton
                         }
@@ -130,7 +132,7 @@ extension CarRentalConfirmationScreen {
                 Image(IC_LOCATION_BLACK)
                     .resizable()
                     .frame(width: 11.5, height: 17.5)
-                Text("")
+                Text(AppDataManager.shared.authenticate?.address ?? "")
                     .textStyle(.ROBOTO_REGULAR, size: 13)
                     .foregroundColor(Color(GREEN_2B4C59))
             }
@@ -193,6 +195,19 @@ extension CarRentalConfirmationScreen {
                     .textStyle(.ROBOTO_REGULAR, size: 16)
                     .foregroundColor(Color(GREEN_2B4C59))
             }
+        }
+        .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(WHITE_FFFFFF))
+    }
+    
+    private var noteView: some View {
+        VStack(alignment: .leading, spacing: 12){
+            Text("Ghi chú".localized)
+                .textStyle(.ROBOTO_MEDIUM, size: 16)
+                .foregroundColor(Color(GREEN_2B4C59))
+            
+            TextFieldView(inputContent: $noteString)
         }
         .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
         .frame(maxWidth: .infinity, alignment: .leading)
