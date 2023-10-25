@@ -9,7 +9,6 @@ import Foundation
 
 class HomeViewModel: ObservableObject {
     
-    
     func getBrandCarNumber(brandCar: String) -> String {
         if let carBrand = CarBrand(rawValue: brandCar) {
             return carBrand.getNumber()

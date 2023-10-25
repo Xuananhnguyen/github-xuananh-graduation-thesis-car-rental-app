@@ -1,5 +1,5 @@
 //
-//  LisenceSreen.swift
+//  LisenceScreen.swift
 //  Car Rental App
 //
 //  Created by NGUYEN XUAN ANH on 22/10/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LisenceSreen: View {
+struct LisenceScreen: View {
     @StateObject var viewModel = LisenceViewModel()
     @State var idCard: String = ""
     @State var drivingLicense: String = ""
@@ -45,11 +45,5 @@ struct LisenceSreen: View {
                 drivingLicense = newValue
             }
         })
-    }
-}
-
-struct LisenceSreen_Previews: PreviewProvider {
-    static var previews: some View {
-        LisenceSreen()
     }
 }

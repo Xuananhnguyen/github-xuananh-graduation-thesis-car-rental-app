@@ -40,6 +40,9 @@ struct SignUpScreen: AppNavigator {
                             TextFieldView(title: "\("phoneNumber".localized)".uppercased(),
                                           inputContent: $viewModel.phoneNumber)
                             
+                            TextFieldView(title: "\("address".localized)".uppercased(),
+                                          inputContent: $viewModel.address)
+                            
                             SecureTextFieldView(title: "password".localized.uppercased(),
                                                 inputContent: $viewModel.password)
                             
@@ -56,7 +59,9 @@ struct SignUpScreen: AppNavigator {
                                     let confirmDialog = ConfirmDialog(content: "passwordAndConfirmPasswordNotMatch".localized)
                                     Popup.presentPopup(alertView: confirmDialog)
                                 } else {
-                                    viewModel.signUp()
+                                    viewModel.signUp {
+                                        navigator.pop()
+                                    }
                                 }
                             }
                         }, label: {

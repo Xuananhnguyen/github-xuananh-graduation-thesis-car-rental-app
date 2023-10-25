@@ -15,6 +15,7 @@ struct HomeScreen: AppNavigator {
     @State private var categoryCar: DropdownMenuOption? = nil
     @State private var yearCar: DropdownMenuOption? = nil
     @State private var colorCar: DropdownMenuOption? = nil
+    @State var advancedSearch: Bool = false
     
     var body: some View {
         BaseNavigationView(isHiddenBackButton: false,
@@ -120,15 +121,37 @@ extension HomeScreen {
     
     private var selectDescribe: some View {
         VStack(alignment: .leading, spacing: 16){
-            Text("Đặc điểm của xe".localized)
+            Text("Tiêu chí chọn xe".localized)
                 .textStyle(.ROBOTO_MEDIUM, size: 18)
                 .foregroundColor(Color(GREEN_2B4C59))
             
-            DropdownMenu(
-                selectedOption: self.$brandCar,
-                placeholder: "Chọn hãng xe",
-                options: DropdownMenuOption.allBrandCar
-            )
+            HStack {
+                Button {
+                    advancedSearch.toggle()
+                } label: {
+                    Text("Tìm kiếm nâng cao")
+                        .textStyle(.ROBOTO_MEDIUM, size: 14)
+                        .foregroundColor(Color(WHITE_FFFFFF))
+                        .padding(EdgeInsets(top: 5, leading: 14, bottom: 5, trailing: 14))
+                        .background(Color(GREEN_2B4C59))
+                        .cornerRadius(5)
+                }
+                
+                Button {
+                    brandCar = nil
+                    categoryCar = nil
+                    colorCar = nil
+                    yearCar = nil
+                } label: {
+                    Text("Reset")
+                        .textStyle(.ROBOTO_MEDIUM, size: 14)
+                        .foregroundColor(Color(WHITE_FFFFFF))
+                        .padding(EdgeInsets(top: 5, leading: 14, bottom: 5, trailing: 14))
+                        .background(Color(GREEN_2B4C59))
+                        .cornerRadius(5)
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
             
             DropdownMenu(
                 selectedOption: self.$categoryCar,
@@ -136,25 +159,25 @@ extension HomeScreen {
                 options: DropdownMenuOption.allCategory
             )
             
-            DropdownMenu(
-                selectedOption: self.$colorCar,
-                placeholder: "Chọn màu xe",
-                options: DropdownMenuOption.allColor
-            )
-            
-            DropdownMenu(
-                selectedOption: self.$yearCar,
-                placeholder: "Chọn năm sản xuất",
-                options: DropdownMenuOption.allYear
-            )
-            
-            ButtonAuth(title: "Cài lại mô tả",
-                       onPress: {
-                brandCar = nil
-                categoryCar = nil
-                colorCar = nil
-                yearCar = nil
-            })
+            if advancedSearch {
+                DropdownMenu(
+                    selectedOption: self.$brandCar,
+                    placeholder: "Chọn hãng xe",
+                    options: DropdownMenuOption.allBrandCar
+                )
+                
+                DropdownMenu(
+                    selectedOption: self.$colorCar,
+                    placeholder: "Chọn màu xe",
+                    options: DropdownMenuOption.allColor
+                )
+                
+                DropdownMenu(
+                    selectedOption: self.$yearCar,
+                    placeholder: "Chọn năm sản xuất",
+                    options: DropdownMenuOption.allYear
+                )
+            }
         }
         .padding(EdgeInsets(top: 10, leading: 14, bottom: 10, trailing: 14))
         .frame(maxWidth: .infinity, alignment: .leading)

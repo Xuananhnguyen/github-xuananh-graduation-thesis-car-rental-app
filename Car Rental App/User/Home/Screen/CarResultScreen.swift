@@ -24,17 +24,21 @@ struct CarResultScreen: AppNavigator {
             builderContent: {
                 ScrollView(.vertical, showsIndicators: false){
                     VStack(spacing: 16) {
-                        ForEach(viewModel.listCarResult, id: \.self) { item in
-                            CarPreviewView(imageCar: item.imageUrl ?? "",
-                                           nameCar: item.vehicleName ?? "",
-                                           price: item.rentalPricePerDay ?? 0,
-                                           color: item.color ?? "",
-                                           brand: item.brandName ?? "",
-                                           category: item.categoryName ?? "") {
-                                navigator.pushToView(view: CarDetailScreen(vehicleID: item.vehicleId ?? 0,
-                                                                           startDay: startDay ?? Date(),
-                                                                           endDay: endDay ?? Date()))
+                        if !viewModel.listCarResult.isEmpty {
+                            ForEach(viewModel.listCarResult, id: \.self) { item in
+                                CarPreviewView(imageCar: item.imageUrl ?? "",
+                                               nameCar: item.vehicleName ?? "",
+                                               price: item.rentalPricePerDay ?? 0,
+                                               color: item.color ?? "",
+                                               brand: item.brandName ?? "",
+                                               category: item.categoryName ?? "") {
+                                    navigator.pushToView(view: CarDetailScreen(vehicleID: item.vehicleId ?? 0,
+                                                                               startDay: startDay ?? Date(),
+                                                                               endDay: endDay ?? Date()))
+                                }
                             }
+                        } else {
+                            EmptyView
                         }
                     }
                     .padding(16)

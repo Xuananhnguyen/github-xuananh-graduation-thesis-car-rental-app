@@ -32,7 +32,7 @@
 "titleForgotPassword" = "Cung cấp thông tin";
 "passwordResetLink" = "Đã gửi liên kết đặt lại mật khẩu! Kiểm tra hộp thư điện tử của bạn";
 "fullName" = "Họ và tên";
-"phoneNumber" = "số điện thoại";
+"phoneNumber" = "Số điện thoại";
 "address" = "Địa chỉ";
 "confirmPassword" = "xác nhận mật khẩu";
 "passwordAndConfirmPasswordNotMatch" = "Mật khẩu không trùng nhau";

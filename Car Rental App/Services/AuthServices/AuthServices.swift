@@ -30,12 +30,14 @@ class AuthServices: NSObject {
                 email: String,
                 password: String,
                 phoneNumber: String,
+                address: String,
                 successBlock: @escaping (RegisterRespone) -> Void,
                 failBlock: @escaping (BaseError) -> Void) {
         let params: [String : Any] = ["name": fullName,
                                       "email": email,
                                       "password": password,
-                                      "phone_number": phoneNumber]
+                                      "phone_number": phoneNumber,
+                                      "address": address]
         ClientNetwork.shared.sendRequest(params: getParams(dict: params),
                                          endPoint: AuthEndPoint.signUp,
                                          parsingType: RegisterRespone.self,

@@ -11,20 +11,23 @@ final class SignUpViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var fullName: String = ""
     @Published var phoneNumber: String = ""
+    @Published var address: String = ""
     @Published var password: String = ""
     @Published var confirmPassword: String = ""
     
-    func signUp() {
+    func signUp(completion: (() -> Void)?) {
         LoadingViewModel.share.onShowProgress(isShow: true)
         AuthServices.shared.signUp(fullName: fullName,
                                    email: email,
                                    password: password,
-                                   phoneNumber: phoneNumber) { response in
+                                   phoneNumber: phoneNumber,
+                                   address: address) { response in
             if response.code == 1 {
                 LoadingViewModel.share.onShowProgress(isShow: false)
                 AppViewModel.shared.showToast {
                     StatusToast(status: response.message?.removingPercentEncoding ?? "")
                 }
+                completion?()
             } else {
                 LoadingViewModel.share.onShowProgress(isShow: false)
                 let confirmDialog = ConfirmDialog(content: response.message?.removingPercentEncoding ?? "")

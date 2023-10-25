@@ -147,3 +147,63 @@ enum CarCategory: String, CaseIterable {
         }
     }
 }
+
+enum AdminManagerEnum: CaseIterable {
+    case accountManagement
+    case vehiclesManagement
+    case reservationManagement
+    case reviewManagement
+    case revenueManagement
+    
+    var name: String {
+        switch self  {
+        case .accountManagement:
+            return "Quản lý tài khoản"
+        case .vehiclesManagement:
+            return "Quản lý xe"
+        case .reservationManagement:
+            return "Quản lý lịch đặt xe"
+        case .reviewManagement:
+            return "Quản lý đánh giá"
+        case .revenueManagement:
+            return "Quản lý doanh thu"
+        }
+    }
+}
+
+enum UserRole: Int, CaseIterable {
+    case users = 0
+    case admin = 1
+    
+    var nameRole: String {
+        switch self {
+        case .users:
+            return "Người dùng"
+        case .admin:
+            return "Quản trị viên"
+        }
+    }
+}
+
+enum VerifiedType: Int, CaseIterable {
+    case unverified = 0
+    case verified = 1
+    
+    var nameVerified: String {
+        switch self {
+        case .unverified:
+            return "Chưa được xác thực"
+        case .verified:
+            return "Đã xác thực"
+        }
+    }
+    
+    var colorVerified: String {
+        switch self {
+        case .unverified:
+            return RED_C64949
+        case .verified:
+            return DONE_09581A
+        }
+    }
+}

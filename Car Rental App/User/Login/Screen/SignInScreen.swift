@@ -52,7 +52,11 @@ struct SignInScreen: AppNavigator {
                         UIApplication.shared.endEditing()
                         viewModel.validate() {
                             viewModel.signIn {
-                                navigator.pushToView(view: HomeScreen())
+                                if AppDataManager.shared.authenticate?.role == 1 {
+                                    navigator.pushToView(view: AdminHomeScreen())
+                                } else {
+                                    navigator.pushToView(view: HomeScreen())
+                                }
                             }
                         }
                     }, label: {

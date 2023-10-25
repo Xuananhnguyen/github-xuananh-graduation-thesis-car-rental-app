@@ -10,7 +10,7 @@ import SwiftUI
 @MainActor
 struct ProfileScreen: AppNavigator {
     @StateObject var viewModel = ProfileViewModel()
-    var feature: [ProfileType] = [.myProfile, .license, .carRental, .settings, .helpAndInfo]
+    private var feature: [ProfileType] = [.myProfile, .license, .carRental, .settings, .helpAndInfo]
     
     var body: some View {
         BaseNavigationView(isHiddenBackButton: false, builderHeader: {
@@ -78,7 +78,7 @@ extension ProfileScreen {
                                                        phoneNumber: viewModel.userProfileModel?.phoneNumber ?? "",
                                                        address: viewModel.userProfileModel?.address ?? "") )
         case .license:
-            navigator.pushToView(view: LisenceSreen(idCard: viewModel.userLicense?.idCard ?? "",
+            navigator.pushToView(view: LisenceScreen(idCard: viewModel.userLicense?.idCard ?? "",
                                                     drivingLicense: viewModel.userLicense?.drivingLicense ?? ""))
         case .carRental:
             navigator.pushToView(view: ReservationScreen())
