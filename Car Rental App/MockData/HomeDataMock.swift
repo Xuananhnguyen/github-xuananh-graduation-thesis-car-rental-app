@@ -7,20 +7,6 @@
 
 import Foundation
 
-let TypesMockData: [TypeOfCarModel] = [TypeOfCarModel(name: "Family cars", isSeleted: true),
-                                       TypeOfCarModel(name: "Luxuly cars", isSeleted: false),
-                                       TypeOfCarModel(name: "Cheap cars", isSeleted: false)]
-
-
-let CarBoxMockData: [CarModel] = [CarModel(nameCar: "AUDI Red A6", brand: "AUDI", priceDay: "180,000", maxSpeed: 350, image: IMG_AUDI_A6),
-                                  CarModel(nameCar: "Toyota Camry 2022", brand: "Toyota", priceDay: "200,000", maxSpeed: 350, image: IMG_TOYOTA),
-                                  CarModel(nameCar: "Range Rover", brand: "Range Rover", priceDay: "150,000", maxSpeed: 250, image: IMG_RANG_ROVER),
-                                  CarModel(nameCar: "Tesla 1.0", brand: "Tesla", priceDay: "150,000", maxSpeed: 200, image: IMG_TESLA),
-                                  CarModel(nameCar: "Tesla 2.0", brand: "Tesla", priceDay: "200,000", maxSpeed: 300, image: IMG_TESLA),
-                                  CarModel(nameCar: "AUDI Red A8", brand: "AUDI", priceDay: "180,000", maxSpeed: 350, image: IMG_AUDI_A6),
-                                  CarModel(nameCar: "Toyota Camry 2022", brand: "Toyota", priceDay: "250,000", maxSpeed: 399, image: IMG_TOYOTA),
-                                  CarModel(nameCar: "Range Rover 2018", brand: "Range Rover", priceDay: "100,000", maxSpeed: 300, image: IMG_RANG_ROVER)]
-
 struct ProfileModel: Codable, Hashable {
     let nameFeature: String?
     let imageFeature: String?

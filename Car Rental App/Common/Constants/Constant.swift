@@ -12,3 +12,7 @@ struct REGEX {
     static let password = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,50}$"
     static let phone = "^[0-9]$"
 }
+
+struct KEY_CHAIN {
+    static let DEVICE_ID = "DEVICE_ID_\(Configs.APP_INDENTIFIER)"
+}

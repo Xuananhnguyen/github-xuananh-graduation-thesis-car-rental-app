@@ -29,10 +29,10 @@
 "emailOrPasswordEmpty" = "Email hoặc Mật khẩu trống";
 "emailOrPasswordInvalid" = "Định dạng email hoặc mật khẩu không hợp lệ";
 "resetPassword" = "Đặt lại mật khẩu";
-"titleForgotPassword" = "Quên mật khẩu";
+"titleForgotPassword" = "Cung cấp thông tin";
 "passwordResetLink" = "Đã gửi liên kết đặt lại mật khẩu! Kiểm tra hộp thư điện tử của bạn";
 "fullName" = "Họ và tên";
-"phoneNumber" = "số điện thoại";
+"phoneNumber" = "Số điện thoại";
 "address" = "Địa chỉ";
 "confirmPassword" = "xác nhận mật khẩu";
 "passwordAndConfirmPasswordNotMatch" = "Mật khẩu không trùng nhau";
@@ -44,8 +44,8 @@
 "verifyNow" = "Xác thực ngay";
 "carRental" = "Thuê xe";
 "priceRental" = "Giá: ";
-"from" = "Từ - %@";
-"to" = "Đến - %@";
+"from" = "Từ: %@";
+"to" = "Đến: %@";
 "searchCar" = "Tìm kiếm xe theo nhu cầu của bạn";
 "findCar" = "Tìm xe ngay";
 "carRentalLocation" = "Địa điểm thuê xe";
@@ -58,10 +58,10 @@
 "showmore" = "Xem chi tiết";
 "backToHome" = "Về trang chủ";
 "logOut" = "Đăng xuất";
-"carRentalNoti" = "Thuê xe";
+"carRentalNoti" = "Lịch đặt xe của tôi";
 "settings" = "Cài đặt";
 "reachUs" = "Liên hệ chúng tôi";
-"titleSearchCar" = "Xe đang gần bạn";
+"titleSearchCar" = "Kết quả tìm kiếm";
 "noResult" = "Không có kết quả";
 "descriptionContent" = "Xpander số tự động đăng ký tháng 3/2021 xa gia đình mới đẹp, nội thất nguyên bản sạch sẽ, bảo dưỡng thường xuyên, rửa xe miễn phí cho khách. Xe rộng rãi, an toàn, tiện nghi phù hợp với gia đình, nhóm bạn bè du lịch. Xe trang bị camera lùi, gạt mưa tự động, camera hành trình, hệ thống giải trí av cùng nhiều tiện nghi khác ....";
 "collateralContent" = "15 triệu (tiền mặt/ chuyển khoản cho chủ xe khi nhận xe) hoặc Xe máy (kèm cà vẹ gốc) giá trị 15 triệu ";
@@ -87,3 +87,8 @@
 "totalPrice" = "Tổng cộng";
 "payTheCarOwnerAtTheEnd" = "Thanh toán cho chủ xe khi kết thúc";
 "totalPile" = "Tổng cọc";
+"newPassword" = "Mật khẩu mới";
+"getPassword" = "Lấy lại mật khẩu";
+"passwordInvalid" = "Định dạng mật khẩu không hợp lệ";
+"resetPasswordTitle" = "Nhập mật khẩu mới";
+"license" = "Giấy tờ cá nhân";
