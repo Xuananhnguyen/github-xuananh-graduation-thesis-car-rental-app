@@ -60,6 +60,9 @@ struct MyProfileScreen: AppNavigator {
             .onChange(of: address) { newValue in
                 address = newValue
             }
+            .onTapGesture {
+                self.dimissKeyBoard()
+            }
         })
     }
 }

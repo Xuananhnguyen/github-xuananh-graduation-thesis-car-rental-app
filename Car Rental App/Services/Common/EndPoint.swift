@@ -13,7 +13,6 @@ struct AuthEndPoint {
     static let signUp = "/sign_up.php"
     static let forgotPassword = "/forgot_password.php"
     static let resetPassword = "/reset_password.php"
-    static let updatePassword = "/update_password.php"
 }
 
 struct CarRentalEndPoint {
@@ -32,6 +31,8 @@ struct ProfileEndPoint {
     static let updateProfile = "/update_profile.php"
     static let getUserLicense = "/get_user_license.php"
     static let updateLicense = "/update_user_license.php"
+    static let updatePassword = "/update_password.php"
+    static let createReview = "/create_review.php"
 }
 
 // MARK: API FOR ADMIN

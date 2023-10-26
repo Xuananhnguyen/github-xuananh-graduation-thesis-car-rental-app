@@ -39,6 +39,9 @@ struct CarRentalConfirmationScreen: AppNavigator {
                         }
                     }
                 }
+                .onTapGesture {
+                    self.dimissKeyBoard()
+                }
             }
         )
         .onAppear {

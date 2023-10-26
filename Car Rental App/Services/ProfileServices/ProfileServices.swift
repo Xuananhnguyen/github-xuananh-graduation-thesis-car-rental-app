@@ -63,7 +63,7 @@ class ProfileServices: NSObject {
     func updateLicense(idCard: String,
                        drivingLicense: String,
                        successBlock: @escaping (UpdateLicenseResponse) -> Void,
-                        failBlock: @escaping (BaseError) -> Void) {
+                       failBlock: @escaping (BaseError) -> Void) {
         let userID = AppDataManager.shared.authenticate?.userId ?? 0
         let params: [String : Any] = ["user_id": userID,
                                       "id_card": idCard,
@@ -71,6 +71,44 @@ class ProfileServices: NSObject {
         ClientNetwork.shared.sendRequest(params: getParams(dict: params),
                                          endPoint: ProfileEndPoint.updateLicense,
                                          parsingType: UpdateLicenseResponse.self,
+                                         httpMethod: .post) { response in
+            successBlock(response)
+        } failBlock: { error in
+            failBlock(error)
+        }
+    }
+    
+    func updatePassword(password: String,
+                        newPassword: String,
+                        successBlock: @escaping (ChangePasswordResponse) -> Void,
+                        failBlock: @escaping (BaseError) -> Void) {
+        let userID = AppDataManager.shared.authenticate?.userId ?? 0
+        let params: [String : Any] = ["user_id": userID,
+                                      "password": password,
+                                      "new_password":newPassword]
+        ClientNetwork.shared.sendRequest(params: getParams(dict: params),
+                                         endPoint: ProfileEndPoint.updatePassword,
+                                         parsingType: ChangePasswordResponse.self,
+                                         httpMethod: .post) { response in
+            successBlock(response)
+        } failBlock: { error in
+            failBlock(error)
+        }
+    }
+    
+    func createReview(reservationID: Int,
+                      vehicleID: Int,
+                      rating: Int,
+                      comment: String,
+                      successBlock: @escaping (ReivewResponse) -> Void,
+                      failBlock: @escaping (BaseError) -> Void) {
+        let params: [String : Any] = ["reservation_id": reservationID,
+                                      "vehicle_id": vehicleID,
+                                      "rating":rating,
+                                      "comment":comment]
+        ClientNetwork.shared.sendRequest(params: getParams(dict: params),
+                                         endPoint: ProfileEndPoint.createReview,
+                                         parsingType: ReivewResponse.self,
                                          httpMethod: .post) { response in
             successBlock(response)
         } failBlock: { error in

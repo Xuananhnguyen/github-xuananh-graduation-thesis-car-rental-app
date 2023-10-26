@@ -45,6 +45,9 @@ struct ForgotPasswordScreen: AppNavigator {
             }
             .padding(.horizontal, 24)
             .background(Color(WHITE_FFFFFF).ignoresSafeArea())
+            .onTapGesture {
+                self.dimissKeyBoard()
+            }
         }
     }
 }

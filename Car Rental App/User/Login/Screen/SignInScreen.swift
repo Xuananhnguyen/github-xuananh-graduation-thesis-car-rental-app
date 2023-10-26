@@ -75,6 +75,9 @@ struct SignInScreen: AppNavigator {
                 .background(Color(WHITE_FFFFFF).ignoresSafeArea())
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
+            .onTapGesture {
+                self.dimissKeyBoard()
+            }
         }
     }
 }

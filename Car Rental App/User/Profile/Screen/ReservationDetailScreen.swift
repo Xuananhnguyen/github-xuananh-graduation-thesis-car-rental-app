@@ -31,7 +31,13 @@ struct ReservationDetailScreen: AppNavigator {
                 .padding(.horizontal, 16)
             }
             .onAppear {
-                viewModel.getUserCarReservation(reservationID: reservationID)
+                viewModel.getUserCarReservation(reservationID: reservationID) {
+                    if viewModel.reservationData?.statusId == 5 {
+                        let ratingDialog = RatingViewDialog(reservationID: viewModel.reservationData?.reservationId ?? 0,
+                                                             vehicleID: viewModel.reservationData?.vehicleId ?? 0)
+                        Popup.presentPopup(alertView: ratingDialog)
+                    }
+                }
             }
         }
     }

@@ -11,7 +11,7 @@ import SwiftUI
 struct ConfirmDialog: AppNavigator {
     var title: String = ""
     var content: String
-    var textStyleContent: TextStyle = .ROBOTO_BOLD
+    var textStyleContent: TextStyle = .ROBOTO_MEDIUM
     var textContentSize: CGFloat = 18
     var titleButton: String = "ok".uppercased()
     var enableScrollView: Bool = false
@@ -24,7 +24,7 @@ struct ConfirmDialog: AppNavigator {
                 Text(title)
                     .lineSpacing(6)
                     .multilineTextAlignment(.center)
-                    .textStyle(.ROBOTO_BOLD, size: 20)
+                    .textStyle(.ROBOTO_MEDIUM, size: 20)
                     .padding(.horizontal, 16)
             }
             Spacer().frame(height: 20)
@@ -57,7 +57,7 @@ struct ConfirmDialog: AppNavigator {
                     })
                 }, label: {
                     Text(titleButton)
-                        .textStyle(.ROBOTO_BOLD, size: 17)
+                        .textStyle(.ROBOTO_MEDIUM, size: 17)
                         .frame(maxWidth: .infinity)
                         .foregroundColor(Color(GREEN_2B4C59))
                 })

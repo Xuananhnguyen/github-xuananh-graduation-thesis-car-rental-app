@@ -42,8 +42,9 @@ struct AccountVerifiedDialog: AppNavigator {
             .padding(.horizontal, 16)
         }
         .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
-        .background(Color(WHITE_FFFFFF))
         .frame(width: 300, height: 350, alignment: .center)
+        .background(Color(WHITE_FFFFFF))
+        .cornerRadius(10)
     }
 }
 

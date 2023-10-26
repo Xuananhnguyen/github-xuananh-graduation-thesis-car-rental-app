@@ -83,7 +83,7 @@ extension ProfileScreen {
         case .carRental:
             navigator.pushToView(view: ReservationScreen())
         case .settings:
-            navigator.pushToView(view: SettingScreen())
+            navigator.pushToView(view: ChangePasswordScreen())
         case .helpAndInfo:
             navigator.pushToView(view: AboutUsScreen())
         }

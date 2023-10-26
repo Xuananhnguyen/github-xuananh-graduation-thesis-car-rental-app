@@ -44,6 +44,9 @@ struct LisenceScreen: View {
             .onChange(of: drivingLicense) { newValue in
                 drivingLicense = newValue
             }
+            .onTapGesture {
+                self.dimissKeyBoard()
+            }
         })
     }
 }
