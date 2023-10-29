@@ -230,7 +230,7 @@ extension CarDetailScreen {
                         maxWidth: UIScreen.main.bounds.width - 32)
         }
         .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .background(Color(WHITE_FFFFFF))
     }
     

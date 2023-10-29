@@ -43,5 +43,4 @@ struct AdminEndPoint {
     static let getAllReview = "/get_all_review.php"
     static let verifiedUser = "/verified_user.php"
     static let approveReservation = "/approve_reservation.php"
-    static let adminReservationDetail = "/admin_reservation_detail.php"
 }

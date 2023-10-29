@@ -28,4 +28,23 @@ class ReservationDetailViewModel: ObservableObject {
             Popup.presentPopup(alertView: confirmDialog)
         }
     }
+    
+    func approveReservation(reservationID: Int, completions: (() -> Void)? = nil) {
+        LoadingViewModel.share.onShowProgress(isShow: true)
+        AdminServices.shared.approveReservation(reservationID: reservationID,
+                                                statusID: 0) { response in
+            LoadingViewModel.share.onShowProgress(isShow: false)
+            if response.code == 1 {
+                completions?()
+            } else {
+                LoadingViewModel.share.onShowProgress(isShow: false)
+                let confirmDialog = ConfirmDialog(content: response.message?.removingPercentEncoding ?? "")
+                Popup.presentPopup(alertView: confirmDialog)
+            }
+        } failBlock: { error in
+            LoadingViewModel.share.onShowProgress(isShow: false)
+            let confirmDialog = ConfirmDialog(content: error.localizedDescription)
+            Popup.presentPopup(alertView: confirmDialog)
+        }
+    }
 }

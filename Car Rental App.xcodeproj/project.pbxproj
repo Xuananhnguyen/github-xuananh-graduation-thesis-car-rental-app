@@ -38,6 +38,9 @@
 		F952286B292A9EDC00AFF79B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952286A292A9EDC00AFF79B /* ProfileViewModel.swift */; };
 		F952286E292A9FD600AFF79B /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952286D292A9FD600AFF79B /* Enum.swift */; };
 		F9522870292AA2F900AFF79B /* ButtonProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952286F292AA2F900AFF79B /* ButtonProfile.swift */; };
+		F966C9B82AEE6BA9007A7208 /* PaymentViewDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966C9B72AEE6BA9007A7208 /* PaymentViewDialog.swift */; };
+		F966C9BA2AEE93C5007A7208 /* View+LifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966C9B92AEE93C5007A7208 /* View+LifeCycle.swift */; };
+		F966C9BD2AEE941E007A7208 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = F966C9BC2AEE941E007A7208 /* SwiftUIIntrospect */; };
 		F96D18572A55D38B0059D609 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F96D18592A55D38B0059D609 /* Localizable.strings */; };
 		F96D185F2A55DDDD0059D609 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96D185E2A55DDDD0059D609 /* ForgotPasswordViewModel.swift */; };
 		F97294152927E2C200E89C68 /* CarResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97294142927E2C200E89C68 /* CarResultScreen.swift */; };
@@ -205,6 +208,8 @@
 		F952286A292A9EDC00AFF79B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		F952286D292A9FD600AFF79B /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		F952286F292AA2F900AFF79B /* ButtonProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonProfile.swift; sourceTree = "<group>"; };
+		F966C9B72AEE6BA9007A7208 /* PaymentViewDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewDialog.swift; sourceTree = "<group>"; };
+		F966C9B92AEE93C5007A7208 /* View+LifeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+LifeCycle.swift"; sourceTree = "<group>"; };
 		F96D18582A55D38B0059D609 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F96D185E2A55DDDD0059D609 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		F97294142927E2C200E89C68 /* CarResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarResultScreen.swift; sourceTree = "<group>"; };
@@ -339,6 +344,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F966C9BD2AEE941E007A7208 /* SwiftUIIntrospect in Frameworks */,
 				F9FF9CF12A5DCAA1006F95CC /* FirebaseAuthCombine-Community in Frameworks */,
 				F9FF9CF32A5DCAA1006F95CC /* FirebaseDatabase in Frameworks */,
 				F9FF9CF92A5DCAA1006F95CC /* FirebaseFirestoreSwift in Frameworks */,
@@ -525,6 +531,7 @@
 			children = (
 				F952286F292AA2F900AFF79B /* ButtonProfile.swift */,
 				F9AE876F2AEACB3100B75A5F /* RatingView.swift */,
+				F966C9B72AEE6BA9007A7208 /* PaymentViewDialog.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -555,6 +562,7 @@
 			isa = PBXGroup;
 			children = (
 				F9D37FBB2A40D0B5002D6817 /* View+Extension.swift */,
+				F966C9B92AEE93C5007A7208 /* View+LifeCycle.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1056,6 +1064,7 @@
 				F9FF9CF62A5DCAA1006F95CC /* FirebaseFirestoreCombine-Community */,
 				F9FF9CF82A5DCAA1006F95CC /* FirebaseFirestoreSwift */,
 				F93818D62AE3E76300528B4F /* SDWebImageSwiftUI */,
+				F966C9BC2AEE941E007A7208 /* SwiftUIIntrospect */,
 			);
 			productName = "Car Rental App";
 			productReference = F9AB78D2291967E2005F4FF2 /* Car Rental App.app */;
@@ -1088,6 +1097,7 @@
 			packageReferences = (
 				F9FF9CED2A5DCAA1006F95CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				F93818D52AE3E76300528B4F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				F966C9BB2AEE941E007A7208 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = F9AB78D3291967E2005F4FF2 /* Products */;
 			projectDirPath = "";
@@ -1252,6 +1262,7 @@
 				F9F960082921492B00919CF9 /* SignUpScreen.swift in Sources */,
 				F9F9600E2921585400919CF9 /* ImageName.swift in Sources */,
 				F9770A8629BE255C00596443 /* String+Extension.swift in Sources */,
+				F966C9BA2AEE93C5007A7208 /* View+LifeCycle.swift in Sources */,
 				F99CB8EE2945CF8000B6E38A /* PaymentMethodScreen.swift in Sources */,
 				F99CB8E82940FB7100B6E38A /* BaseNavigationView.swift in Sources */,
 				F97BCFCC2AC5C47F00E2996E /* BottomSheet.swift in Sources */,
@@ -1290,6 +1301,7 @@
 				F9AB78E729196C17005F4FF2 /* GetStartedScreen.swift in Sources */,
 				F9F2FD532AE5996300A21FFF /* UserProfileResponse.swift in Sources */,
 				F952286B292A9EDC00AFF79B /* ProfileViewModel.swift in Sources */,
+				F966C9B82AEE6BA9007A7208 /* PaymentViewDialog.swift in Sources */,
 				F96D185F2A55DDDD0059D609 /* ForgotPasswordViewModel.swift in Sources */,
 				F97E71212AE831F1001DCC63 /* GetAllReviewResponse.swift in Sources */,
 				F9AB78EE291AC680005F4FF2 /* SecureTextFieldView.swift in Sources */,
@@ -1549,6 +1561,14 @@
 				version = 2.2.4;
 			};
 		};
+		F966C9BB2AEE941E007A7208 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		F9FF9CED2A5DCAA1006F95CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -1564,6 +1584,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F93818D52AE3E76300528B4F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		F966C9BC2AEE941E007A7208 /* SwiftUIIntrospect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F966C9BB2AEE941E007A7208 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = SwiftUIIntrospect;
 		};
 		F9FF9CEE2A5DCAA1006F95CC /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

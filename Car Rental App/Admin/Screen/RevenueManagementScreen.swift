@@ -14,6 +14,7 @@ struct RevenueManagementScreen: View {
     var body: some View {
         BaseNavigationView(isHiddenBackButton: false,
                            title: "Quản lý doanh thu") {
+            
         }
     }
 }
