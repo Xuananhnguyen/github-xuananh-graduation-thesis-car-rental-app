@@ -21,9 +21,16 @@ struct ReservationDetailScreen: AppNavigator {
                     carView
                     Spacer()
                     if viewModel.reservationData?.statusId == 1 {
-                        ButtonAuth(title: "Đặt cọc", onPress: {})
+                        ButtonAuth(title: "Đặt cọc", onPress: {
+                            let paymentDialog = PaymentViewDialog(invoiceCode: viewModel.reservationData?.invoiceCode ?? "")
+                            Popup.presentPopup(alertView: paymentDialog)
+                        })
                             .padding(.bottom, 8)
-                        ButtonAuth(title: "Huỷ", onPress: {})
+                        ButtonAuth(title: "Huỷ", onPress: {
+                            viewModel.approveReservation(reservationID: reservationID) {
+                                navigator.pop()
+                            }
+                        })
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)

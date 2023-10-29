@@ -13,8 +13,9 @@ struct ProfileScreen: AppNavigator {
     private var feature: [ProfileType] = [.myProfile, .license, .carRental, .settings, .helpAndInfo]
     
     var body: some View {
-        BaseNavigationView(isHiddenBackButton: false, builderHeader: {
-            header
+        BaseNavigationView(isHiddenBackButton: false,
+                           title: "Hồ sơ người dùng",
+                           builderHeader: {
         }, builderContent: {
             VStack {
                 VStack(spacing: 20){
@@ -52,24 +53,6 @@ struct ProfileScreen: AppNavigator {
 }
 
 extension ProfileScreen {
-    private var header: some View {
-        HStack(spacing: 0){
-            Image(IC_ARROW_LEFT)
-                .resizable()
-                .renderingMode(.template)
-                .foregroundColor(Color(GREEN_2B4C59))
-                .frame(width: 13, height: 21)
-                .onTapGesture {
-                    navigator.pop()
-                }
-            
-            Spacer()
-        }
-        .padding(.top, 25)
-        .padding(.bottom, 6)
-        .padding(.horizontal, 16)
-    }
-    
     private func onPressFeature(feature: ProfileType) {
         switch feature {
         case .myProfile:

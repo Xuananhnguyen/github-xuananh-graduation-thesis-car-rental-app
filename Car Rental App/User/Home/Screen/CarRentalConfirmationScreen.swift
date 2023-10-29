@@ -332,7 +332,7 @@ extension CarRentalConfirmationScreen {
                 Text("totalPrice".localized)
                     .textStyle(.ROBOTO_REGULAR, size: 20)
                     .foregroundColor(Color(GREEN_2B4C59))
-                Text("\(calculatorTotalPrice()) đ")
+                Text("\(calculatorTotalPrice()) VND")
                     .textStyle(.ROBOTO_MEDIUM, size: 20)
                     .foregroundColor(Color(GREEN_2B4C59))
             }
@@ -343,7 +343,7 @@ extension CarRentalConfirmationScreen {
                                           endDay: endDay.toString(),
                                           numberOfRentalDays: days,
                                           totalAmount: calculatorTotalPrice(),
-                                          note: "",
+                                          note: noteString,
                                           invoiceCode: invoiceCode) {
                     navigator.pushToView(view: SuccessScreen())
                 }

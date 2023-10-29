@@ -11,13 +11,9 @@ struct ForgotPasswordScreen: AppNavigator {
     @StateObject var viewModel = ForgotPasswordViewModel()
     
     var body: some View {
-        BaseNavigationView(isHiddenBackButton: false) {
+        BaseNavigationView(isHiddenBackButton: false,
+                           title: "titleForgotPassword".localized) {
             VStack(alignment: .leading, spacing: 0){
-                Text("titleForgotPassword".localized)
-                    .textStyle(.ROBOTO_BOLD, size: 25)
-                    .foregroundColor(Color(BLACK_000000))
-                    .padding(.vertical, 20)
-                    
                 TextFieldView(title: "email".localized.uppercased(),
                               inputContent: $viewModel.email)
                 .padding(.bottom, 16)
@@ -43,6 +39,7 @@ struct ForgotPasswordScreen: AppNavigator {
                 })
                 Spacer()
             }
+            .padding(.vertical, 20)
             .padding(.horizontal, 24)
             .background(Color(WHITE_FFFFFF).ignoresSafeArea())
             .onTapGesture {

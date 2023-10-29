@@ -10,4 +10,15 @@ import Foundation
 struct GetAllReviewResponse: CarRentalAppResponse {
     var code: Int?
     var message: String?
+    var data: [ReviewModel]?
 }
+
+struct ReviewModel: Codable {
+    let reviewId: Int?
+    let reservationId: Int?
+    let vehicleId: Int?
+    let vehicleName: String?
+    let rating: Int?
+    let comment: String?
+}
+

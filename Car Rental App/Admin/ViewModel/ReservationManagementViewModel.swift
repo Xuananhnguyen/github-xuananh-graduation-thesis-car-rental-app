@@ -18,7 +18,7 @@ class ReservationManagementViewModel: ObservableObject {
             if response.code == 1 {
                 self.listAllReservation = response.data ?? []
             } else {
-                let confirmDialog = ConfirmDialog(content: response.message ?? "")
+                let confirmDialog = ConfirmDialog(content: response.message?.removingPercentEncoding ?? "")
                 Popup.presentPopup(alertView: confirmDialog)
             }
         } failBlock: { error in
@@ -36,7 +36,7 @@ class ReservationManagementViewModel: ObservableObject {
             if response.code == 1 {
                 completions?()
             } else {
-                let confirmDialog = ConfirmDialog(content: response.message ?? "")
+                let confirmDialog = ConfirmDialog(content: response.message?.removingPercentEncoding ?? "")
                 Popup.presentPopup(alertView: confirmDialog)
             }
         } failBlock: { error in

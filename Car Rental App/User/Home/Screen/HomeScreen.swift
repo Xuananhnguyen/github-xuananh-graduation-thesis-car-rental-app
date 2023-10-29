@@ -240,7 +240,6 @@ extension HomeScreen {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(.gray, lineWidth: 2)
                 }
-            
             DatePickerTextField(placeholder: "endDay".localized,
                                 date: $endDay,
                                 onCommit: {

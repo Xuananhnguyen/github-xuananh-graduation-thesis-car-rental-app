@@ -12,13 +12,9 @@ struct ResetPasswordScreen: AppNavigator {
     var userID: Int?
     
     var body: some View {
-        BaseNavigationView(isHiddenBackButton: false) {
+        BaseNavigationView(isHiddenBackButton: false,
+                           title: "resetPasswordTitle".localized) {
             VStack(alignment: .leading, spacing: 0){
-                Text("resetPasswordTitle".localized)
-                    .textStyle(.ROBOTO_BOLD, size: 25)
-                    .foregroundColor(Color(BLACK_000000))
-                    .padding(.vertical, 20)
-                    
                 SecureTextFieldView(title: "newPassword".localized.uppercased(),
                                     inputContent: $viewModel.newPassword)
                 .padding(.bottom, 16)
@@ -46,6 +42,7 @@ struct ResetPasswordScreen: AppNavigator {
                 })
                 Spacer()
             }
+            .padding(.vertical, 20)
             .padding(.horizontal, 24)
             .background(Color(WHITE_FFFFFF).ignoresSafeArea())
             .onTapGesture {
