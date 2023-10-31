@@ -85,4 +85,20 @@ class AdminServices: NSObject {
             failBlock(error)
         }
     }
+    
+    func getRevenue(startTime: String,
+                    endTime: String,
+                    successBlock: @escaping (GetRevenueResponse) -> Void,
+                    failBlock: @escaping (BaseError) -> Void) {
+        let params: [String : Any] = ["start_time": startTime,
+                                      "end_time": endTime]
+        ClientNetwork.shared.sendRequest(params: getParams(dict: params),
+                                         endPoint: AdminEndPoint.getRevenue,
+                                         parsingType: GetRevenueResponse.self,
+                                         httpMethod: .get) { response in
+            successBlock(response)
+        } failBlock: { error in
+            failBlock(error)
+        }
+    }
 }
