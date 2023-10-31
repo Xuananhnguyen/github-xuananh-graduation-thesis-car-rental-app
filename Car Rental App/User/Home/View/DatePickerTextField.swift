@@ -20,13 +20,14 @@ struct DatePickerTextField: UIViewRepresentable {
     
     var placeholder: String
     @Binding var date: Date?
+    var minimumDate: Date = Date()
     var textColor: String = GREEN_2B4C59
     var onCommit: (() -> Void)?
     
     func makeUIView(context: Context) -> UITextField {
         self.datePicker.datePickerMode = .date
         self.datePicker.preferredDatePickerStyle = .wheels
-        self.datePicker.minimumDate = Date()
+        self.datePicker.minimumDate = self.minimumDate
         self.datePicker.addTarget(self.helper,
                                   action: #selector(self.helper.dateValueChanged),
                                   for: .valueChanged)

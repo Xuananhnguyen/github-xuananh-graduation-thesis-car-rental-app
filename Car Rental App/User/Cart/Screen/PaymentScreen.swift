@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SuccessScreen: AppNavigator {
-    @StateObject var viewModel = SuccessViewModel()
+    
     var body: some View {
         BaseNavigationView(isHiddenBackButton: true,
                            backgroundColor: Color(GRAY_EEEEEE)) {

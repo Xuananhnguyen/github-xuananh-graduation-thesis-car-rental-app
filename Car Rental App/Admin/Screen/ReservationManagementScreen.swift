@@ -15,8 +15,7 @@ struct ReservationManagementScreen: View {
         BaseNavigationView(isHiddenBackButton: false,
                            title: "Quản lý lịch đặt xe") {
             ScrollView(.vertical, showsIndicators: false) {
-                ForEach(viewModel.listAllReservation.indices, id: \.self) { index in
-                    let item = viewModel.listAllReservation[index]
+                ForEach(viewModel.listAllReservation, id: \.self) { item in
                     VStack(spacing: 12) {
                         HStack(spacing: 16){
                             VStack(spacing: 0) {
