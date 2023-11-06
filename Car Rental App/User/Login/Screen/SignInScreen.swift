@@ -29,11 +29,11 @@ struct SignInScreen: AppNavigator {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.bottom, 60)
                     
-                    TextFieldView(title: "email".localized.uppercased(),
+                    TextFieldView(title: "email".localized,
                                   inputContent: $viewModel.email)
                     .padding(.bottom, 28)
                     
-                    SecureTextFieldView(title: "password".localized.uppercased(),
+                    SecureTextFieldView(title: "password".localized,
                                         inputContent: $viewModel.password)
                     
                     Button(action: {

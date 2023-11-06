@@ -34,7 +34,7 @@
 "fullName" = "Họ và tên";
 "phoneNumber" = "Số điện thoại";
 "address" = "Địa chỉ";
-"confirmPassword" = "xác nhận mật khẩu";
+"confirmPassword" = "Xác nhận mật khẩu";
 "passwordAndConfirmPasswordNotMatch" = "Mật khẩu không trùng nhau";
 "successfulAccountRegistration" = "Đăng ký tài khoản thành công";
 "haveAccount" = "Bạn đã có tài khoản?";

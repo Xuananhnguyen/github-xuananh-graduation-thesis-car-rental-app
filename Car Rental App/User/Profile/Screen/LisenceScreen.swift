@@ -13,7 +13,7 @@ struct LisenceScreen: View {
     @State var drivingLicense: String = ""
     
     var body: some View {
-        BaseNavigationView(titleBackbutton: "Giấy tờ cá nhân",
+        BaseNavigationView(title: "Giấy tờ cá nhân",
                            builderContent: {
             VStack(spacing: 20) {
                     TextFieldView(title: "\("Căn cước công dân".localized):",
@@ -27,7 +27,7 @@ struct LisenceScreen: View {
                     Button(action: {
                         viewModel.updateLicense(idCard: idCard, drivingLicense: drivingLicense)
                     }, label: {
-                        Text("Cập nhật")
+                        Text("Lưu thay đổi")
                             .textStyle(.ROBOTO_BOLD, size: 20)
                             .foregroundColor(Color(WHITE_FFFFFF))
                             .frame(maxWidth: .infinity)

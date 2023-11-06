@@ -15,10 +15,10 @@ struct ResetPasswordScreen: AppNavigator {
         BaseNavigationView(isHiddenBackButton: false,
                            title: "resetPasswordTitle".localized) {
             VStack(alignment: .leading, spacing: 0){
-                SecureTextFieldView(title: "newPassword".localized.uppercased(),
+                SecureTextFieldView(title: "newPassword".localized,
                                     inputContent: $viewModel.newPassword)
                 .padding(.bottom, 16)
-                SecureTextFieldView(title: "confirmPassword".localized.uppercased(),
+                SecureTextFieldView(title: "confirmPassword".localized,
                                     inputContent: $viewModel.confirmPassword)
                 .padding(.bottom, 28)
                 

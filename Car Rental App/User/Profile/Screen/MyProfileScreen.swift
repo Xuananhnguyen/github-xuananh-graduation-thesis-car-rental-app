@@ -15,7 +15,7 @@ struct MyProfileScreen: AppNavigator {
     @State var address: String = ""
     
     var body: some View {
-        BaseNavigationView(titleBackbutton: "Thông tin tài khoản",
+        BaseNavigationView(title: "Thông tin tài khoản",
                            builderContent: {
             VStack(spacing: 20) {
                     TextFieldView(title: "\("fullName".localized):",
@@ -38,7 +38,7 @@ struct MyProfileScreen: AppNavigator {
                                             phoneNumber: phoneNumber,
                                             address: address)
                 }, label: {
-                    Text("Save Changes")
+                    Text("Lưu thay đổi")
                         .textStyle(.ROBOTO_BOLD, size: 20)
                         .foregroundColor(Color(WHITE_FFFFFF))
                         .frame(maxWidth: .infinity)
