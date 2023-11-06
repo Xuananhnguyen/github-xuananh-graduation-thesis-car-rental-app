@@ -14,12 +14,12 @@ struct ChangePasswordScreen: AppNavigator {
         BaseNavigationView(isHiddenBackButton: false
         , title: "Thay đổi mật khẩu".localized) {
             VStack(alignment: .leading, spacing: 16){
-                SecureTextFieldView(title: "Mật khẩu cũ".localized.uppercased(),
+                SecureTextFieldView(title: "Mật khẩu cũ".localized,
                                     inputContent: $viewModel.oldPassword)
                 
-                SecureTextFieldView(title: "newPassword".localized.uppercased(),
+                SecureTextFieldView(title: "newPassword".localized,
                                     inputContent: $viewModel.newPassword)
-                SecureTextFieldView(title: "confirmPassword".localized.uppercased(),
+                SecureTextFieldView(title: "confirmPassword".localized,
                                     inputContent: $viewModel.confirmPassword)
                 Spacer()
                 

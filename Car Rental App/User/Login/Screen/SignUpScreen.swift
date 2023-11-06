@@ -31,22 +31,22 @@ struct SignUpScreen: AppNavigator {
                             .padding(.bottom, 20)
                         
                         VStack(spacing: 16){
-                            TextFieldView(title: "\("fullName".localized)".uppercased(),
+                            TextFieldView(title: "\("fullName".localized)",
                                           inputContent: $viewModel.fullName)
                             
-                            TextFieldView(title: "\("email".localized)".uppercased(),
+                            TextFieldView(title: "\("email".localized)",
                                           inputContent: $viewModel.email)
                             
-                            TextFieldView(title: "\("phoneNumber".localized)".uppercased(),
+                            TextFieldView(title: "\("phoneNumber".localized)",
                                           inputContent: $viewModel.phoneNumber)
                             
-                            TextFieldView(title: "\("address".localized)".uppercased(),
+                            TextFieldView(title: "\("address".localized)",
                                           inputContent: $viewModel.address)
                             
-                            SecureTextFieldView(title: "password".localized.uppercased(),
+                            SecureTextFieldView(title: "password".localized,
                                                 inputContent: $viewModel.password)
                             
-                            SecureTextFieldView(title: "confirmPassword".localized.uppercased(),
+                            SecureTextFieldView(title: "confirmPassword".localized,
                                                 inputContent: $viewModel.confirmPassword)
                         }
                         .padding(.bottom, 30)

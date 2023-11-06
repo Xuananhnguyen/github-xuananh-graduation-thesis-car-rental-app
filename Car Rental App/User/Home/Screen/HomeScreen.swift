@@ -9,8 +9,8 @@ import SwiftUI
 
 struct HomeScreen: AppNavigator {
     @StateObject var viewModel = HomeViewModel()
-    @State var minPrice: String = ""
-    @State var maxPrice: String = ""
+    @State var minPrice: String = "100000"
+    @State var maxPrice: String = "1000000"
     @State var startDay: Date?
     @State var endDay: Date?
     @State private var brandCar: DropdownMenuOption? = nil
@@ -38,6 +38,12 @@ struct HomeScreen: AppNavigator {
                 .padding(.vertical, 16)
             }
             .onTapGesture {
+                if minPrice.isEmpty {
+                    minPrice = "100000"
+                }
+                if maxPrice.isEmpty {
+                    maxPrice = "1000000"
+                }
                 self.dimissKeyBoard()
             }
         })

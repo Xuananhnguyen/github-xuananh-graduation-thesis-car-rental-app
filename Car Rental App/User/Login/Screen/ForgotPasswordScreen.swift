@@ -14,10 +14,10 @@ struct ForgotPasswordScreen: AppNavigator {
         BaseNavigationView(isHiddenBackButton: false,
                            title: "titleForgotPassword".localized) {
             VStack(alignment: .leading, spacing: 0){
-                TextFieldView(title: "email".localized.uppercased(),
+                TextFieldView(title: "email".localized,
                               inputContent: $viewModel.email)
                 .padding(.bottom, 16)
-                TextFieldView(title: "phoneNumber".localized.uppercased(),
+                TextFieldView(title: "phoneNumber".localized,
                               inputContent: $viewModel.phoneNumber)
                 .padding(.bottom, 28)
                 
